@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/c-menu.css">
     <title>Front Page</title>
 </head>
 <body>
@@ -14,12 +16,59 @@
         <div class="c-search-block">
             <!-- search_block:検索ブロック -->
             <input type="text" class="c-search-input" placeholder="検索キーワードを入力">
-            <button class="c-search-button">検索</button>
+            <button class="c-search-button">
+                <p>検索</p>
+            </button>
         </div>
         <div class="c-title-Hamburger">
             <!-- title:Hamburger -->
-            <h1 class="c-title">Hamburger</h1>
+            <p class="c-title">Hamburger</p>
         </div>
+        <nav class="c-menu">
+            <!-- Menu: メニュー -->
+            <button class="c-menu__close-button">
+                <span class="c-menu__close-line c-menu__close-line--first"></span>
+                <span class="c-menu__close-line c-menu__close-line--second"></span>
+            </button>
+            <div class="c-menu__overlay"></div>
+            <div class="c-menu__content">
+                <!-- ハンバーガー -->
+                <section class="c-menu__section">
+                    <h2 class="c-menu__section-title">ハンバーガー</h2>
+                    <ul class="c-menu__list">
+                        <li class="c-menu__iteme">ハンバーガー</li>
+                        <li class="c-menu__item">チーズバーガー</li>
+                        <li class="c-menu__item">テリヤキバーガー</li>
+                        <li class="c-menu__item">アボガドバーガー</li>
+                        <li class="c-menu__item">フィッシュバーガー</li>
+                        <li class="c-menu__item">ベーコンバーガー</li>
+                        <li class="c-menu__item">チキンバーガー</li>
+                    </ul>
+                </section>
+                <!-- サイド -->
+                <section class="c-menu__section">
+                    <h2 class="c-menu__section-title">サイド</h2>
+                    <ul class="c-menu__list">
+                        <li class="c-menu__item">ポテト</li>
+                        <li class="c-menu__item">サラダ</li>
+                        <li class="c-menu__item">ナゲット</li>
+                        <li class="c-menu__item">コーン</li>
+                    </ul>
+                </section>
+                <!-- ドリンク -->
+                <section class="c-menu__section">
+                    <h2 class="c-menu__section-title">ドリンク</h2>
+                    <ul class="c-menu__list">
+                        <li class="c-menu__item">コーラ</li>
+                        <li class="c-menu__item">ファンタ</li>
+                        <li class="c-menu__item">オレンジ</li>
+                        <li class="c-menu__item">アップル</li>
+                        <li class="c-menu__item">紅茶(Ice/Hot)</li>
+                        <li class="c-menu__item">コーヒー(Ice/Hot)</li>
+                    </ul>
+                </section>
+            </div>
+        </nav>
     </header>
 
     <main class="l-main">
