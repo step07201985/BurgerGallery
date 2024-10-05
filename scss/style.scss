@@ -1,12 +1,48 @@
+// ==========================================================================
+// Foundation
+// ==========================================================================
 
+@import "scss/fundation/_base.scss";
+@import "scss/fundation/_reset.scss";
+
+// ==========================================================================
+// Layout
+// ==========================================================================
+
+@import "scss/layout/_pc_footer.scss";
+@import "scss/layout/_sp_header.scss";
+
+
+// ==========================================================================
+// Object
+// ==========================================================================
+
+// -----------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------
+
+@import "scss/object/component/_button.scss";
+@import "scss/object/component/_menu.scss";
+@import "scss/object/component/_overlay.scss";
+@import "scss/object/component/_search_block.scss";
+
+// -----------------------------------------------------------------
+// Project
+// -----------------------------------------------------------------
+
+@import "object/project/_articles";
+@import "object/project/_comments";
+@import "object/project/_gallery";
+@import "object/project/_profile";
+
+// -----------------------------------------------------------------
+// Utility
+// -----------------------------------------------------------------
+
+@import "object/utility/_align";
+@import "object/utility/_clearfix";
+@import "object/utility/_margin";
+@import "object/utility/_position";
+@import "object/utility/_size";
+@import "object/utility/_text";
 @use "scss/layout/sp_header.scss";
-
-
-@use "scss/object/component/button.scss";
-@use "scss/object/component/menu.scss";
-@use "scss/object/component/overlay.scss";
-@use "scss/object/component/search_block.scss";
-
-.h1 {
-    width: auto;
-}
