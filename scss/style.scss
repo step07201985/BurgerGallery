@@ -1,11 +1,11 @@
-// レイアウトのインポート
-@use "layout/sp_header";
 
-// コンポーネントのインポート
-@use "object/component/button";
-@use "object/component/menu";
-@use "object/component/overlay";
-@use "object/component/search_block";
+@use "scss/layout/sp_header.scss";
+
+
+@use "scss/object/component/button.scss";
+@use "scss/object/component/menu.scss";
+@use "scss/object/component/overlay.scss";
+@use "scss/object/component/search_block.scss";
 
 .h1 {
     width: auto;
