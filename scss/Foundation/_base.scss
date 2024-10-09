@@ -1,0 +1,43 @@
+$overlay-color: #00000080;
+$color-gray-medium: #707070;
+$color-white:#FFFFFF;
+$color-header-bg: #FFF7EF;
+$color-side-menu-bg: #F2EDE9;
+$color-dark-brown: #3C2A10;
+$color-menu-overlay: #00000080;
+
+
+
+
+html {
+    // ベースを16px→10pxにする
+    font-size: 62.5%;
+}
+
+body {
+    min-width: 320px;
+    width: 100%;
+    margin: 0;
+    background: ;
+    font-size: 1.6rem;
+    color: ;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+

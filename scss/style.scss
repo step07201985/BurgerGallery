@@ -2,15 +2,15 @@
 // Foundation
 // ==========================================================================
 
-@import "scss/fundation/_base.scss";
-@import "scss/fundation/_reset.scss";
+@import "scss/Foundation/_base.scss";
+@import "scss/Foundation/_reset.scss";
 
 // ==========================================================================
 // Layout
 // ==========================================================================
 
-@import "scss/layout/_pc_footer.scss";
-@import "scss/layout/_sp_header.scss";
+@import "scss/Layout/_pc_footer.scss";
+@import "scss/Layout/_sp_header.scss";
 
 
 // ==========================================================================
@@ -21,19 +21,19 @@
 // Component
 // -----------------------------------------------------------------
 
-@import "scss/object/component/_button.scss";
-@import "scss/object/component/_menu.scss";
-@import "scss/object/component/_overlay.scss";
-@import "scss/object/component/_search_block.scss";
+@import "scss/Object/component/_button.scss";
+@import "scss/Object/component/_menu.scss";
+@import "scss/Object/component/_overlay.scss";
+@import "scss/Object/component/_search_block.scss";
 
 // -----------------------------------------------------------------
 // Project
 // -----------------------------------------------------------------
 
-@import "object/project/_articles";
-@import "object/project/_comments";
-@import "object/project/_gallery";
-@import "object/project/_profile";
+@import "Object/Project/_articles";
+@import "Object/Project/_comments";
+@import "Object/Project/_gallery";
+@import "Object/Project/_profile";
 
 // -----------------------------------------------------------------
 // Utility
@@ -45,4 +45,3 @@
 @import "object/utility/_position";
 @import "object/utility/_size";
 @import "object/utility/_text";
-@use "scss/layout/sp_header.scss";
