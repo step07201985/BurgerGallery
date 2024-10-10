@@ -1,47 +1,25 @@
-// ==========================================================================
 // Foundation
-// ==========================================================================
 
-@import "scss/Foundation/_base.scss";
-@import "scss/Foundation/_reset.scss";
+@use "Foundation/_mixin" as mixin ;
+@use "Foundation/_base" as base ;
+@use "Foundation/_typography" as typography;
 
-// ==========================================================================
 // Layout
-// ==========================================================================
-
-@import "scss/Layout/_pc_footer.scss";
-@import "scss/Layout/_sp_header.scss";
+@use "Layout/_pc_footer" as pc_footer;
+@use "Layout/_sp_header" as sp_header;
 
 
-// ==========================================================================
 // Object
-// ==========================================================================
 
-// -----------------------------------------------------------------
 // Component
-// -----------------------------------------------------------------
 
-@import "scss/Object/component/_button.scss";
-@import "scss/Object/component/_menu.scss";
-@import "scss/Object/component/_overlay.scss";
-@import "scss/Object/component/_search_block.scss";
+@use "Object/Component/_button" as button;
+@use "Object/Component/_menu" as menu;
+@use "Object/Component/_overlay" as overlay;
+@use "Object/Component/_search_block" as search_block;
+@use "Object/Component/_sp_header-background" as sp_header-background;
+@use "Object/Component/_title" as title;
 
-// -----------------------------------------------------------------
 // Project
-// -----------------------------------------------------------------
 
-@import "Object/Project/_articles";
-@import "Object/Project/_comments";
-@import "Object/Project/_gallery";
-@import "Object/Project/_profile";
-
-// -----------------------------------------------------------------
 // Utility
-// -----------------------------------------------------------------
-
-@import "object/utility/_align";
-@import "object/utility/_clearfix";
-@import "object/utility/_margin";
-@import "object/utility/_position";
-@import "object/utility/_size";
-@import "object/utility/_text";
