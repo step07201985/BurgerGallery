@@ -1,5 +1,7 @@
+@use "../../Foundation/_base" as base;
+
 .c-sp_header-background {
     width: 100%;
     height: 215px;
-    color: $color-header-bg;
+    color: base.$color-header-bg;
 }
