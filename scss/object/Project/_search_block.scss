@@ -1,13 +1,13 @@
-.c-search-block {
+@use "../../Foundation/_base" as base;
+
+.p-search-block {
     position: absolute;
     left: 8.27%;
     right: 6.93%;
-    top: 60.47%;
-    bottom: 18.14%;
+    top: 130px;
+    bottom: 39px;
     width: 318px;
     height: 46px;
-    gap: 0px;
-    border-radius: 10px 0px 10px 10px;
     display: flex;
     align-items: center;
     padding: 0 10px;

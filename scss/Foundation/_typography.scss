@@ -4,17 +4,18 @@
 // M PLUS 1p bold 700
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;700&display=swap');
 
+$font-primary: "Roboto", sans-serif;
+$font-secondary: "M PLUS 1p", sans-serif;
 
 
-
-.roboto-bold {
-    font-family: "Roboto", sans-serif;
+@mixin roboto-bold {
+    font-family: $font-primary;
     font-weight: 700;
     font-style: normal;
 }
 
-.m-plus-1p-bold {
-    font-family: "M PLUS 1p", sans-serif;
+@mixin m-plus-1p-bold {
+    font-family: $font-secondary;
     font-weight: 700;
     font-style: normal;
 }
