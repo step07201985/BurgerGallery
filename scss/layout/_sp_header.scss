@@ -3,7 +3,9 @@
 
 .l-sp_header {
     width: 100%;
+    max-width: 1553px;
     height: 215px;
+    margin-top: 0px;
     @include mixin.breakpoint(tablet){
         height: 217px;
     }

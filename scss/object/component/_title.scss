@@ -3,14 +3,25 @@
 @use "../../Foundation/_typography" as typography;
 
 .c-title-hamburger {
-    margin-left: 22.93%;
-    margin-right: 22.93%;
-    margin-top: 43px;
-    margin-bottom: 125px;
+    margin: 43px auto 125px auto;
     width: 203px;
     height: 47px;
     font-family: typography.$font-primary;
     font-size: 40px;
     line-height: 46.88px;
     color: base.$color-gray-medium;
+    @include mixin.breakpoint(tablet) {
+        margin: 43px auto 127px auto;
+    }
+    @include mixin.breakpoint(pc) {
+        font-size: 64px;
+        line-height: 75px;
+        width: 325px;
+        height: 84px;
+        padding-top: 3px;
+        padding-bottom: 6px;
+        margin-top: 66px;
+        margin-left: 65px;
+        margin-bottom: 67px;
+    }
 }
