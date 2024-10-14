@@ -1,102 +1,25 @@
 @use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
 
 .p-search-block {
-    position: absolute;
-    left: 8.27%;
-    right: 6.93%;
-    top: 130px;
-    bottom: 39px;
-    width: 318px;
+    margin-left: 8.27%;
+    margin-right: 6.93%;
+    margin-top: 130px;
+    margin-bottom: 39px;
+    width: 84.8%;
     height: 46px;
     display: flex;
     align-items: center;
-    padding: 0 10px;
-}
-
-.c-search-input {
-    position: absolute;
-    left: 8.27%;
-    right: 34.13%;
-    top: 60.47%;
-    bottom: 18.14%;
-    width: 216px;
-    height: 46px;
-    border-radius: 10px 8px 10px 10px;
-    border: 1px solid ;
-    padding: 0 10px;
-    font-size: 14px;
-    outline: none;
-}
-
-.c-group1 {
-    position: absolute;
-    left: 8.27%;
-    right: 34.13%;
-    top: 60.47%;
-    bottom: 18.14%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.c-group1__path270 {
-    position: absolute;
-    left: 9.6%;
-    right: 84%;
-    top: 66.05%;
-    bottom: 22.79%;
-    background-color: #808080;
-    width: 24px;
-    height: 24px;
-}
-
-.c-group1__rectangle38 {
-    position: absolute;
-    left: 8.27%;
-    right: 34.13%;
-    top: 60.47%;
-    bottom: 18.14%;
-    background-color: #FFFFFF;
-    border: 1px solid #707070;
-    border-radius: 10px 8px 10px 10px;
-    box-sizing: border-box;
-}
-
-.c-search-button {
-    position: absolute;
-    left: 69.07%;
-    right: 6.93%;
-    top: 60.47%;
-    bottom: 18.14%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px 0px 0px 0px;
-    border: 1px 0px 0px 0px;
-}
-
-.c-search-button__text {
-    position: absolute;
-    left: 76.27%;
-    right: 15.2%;
-    top: 66.05%;
-    bottom: 22.79%;
-    font-family: 'M+ 1p', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    color: #707070;
-}
-
-.c-search-button__rectangle39 {
-    box-sizing: border-box;
-    position: absolute;
-    left: 93.07%;
-    right: -17.07%;
-    top: 60.47%;
-    bottom: 18.14%;
-    border: 1px solid #707070;
-    border-radius: 10px;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+    @include mixin.breakpoint(tablet) {
+        width: 65.47%;
+        margin-top: 131px;
+        margin-bottom: 40px;
+    }
+    @include mixin.breakpoint(pc) {
+        width: 35.16%;
+        margin-top: 86px;
+        margin-right: 31px;
+    }
 }

@@ -1,5 +1,48 @@
 @use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
 
 .c-search-button {
-    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 130px 26px 39px  259px;
+    @include mixin.breakpoint(tablet) {
+        margin: 131px 144px 40px 554px;
+    }
+    @include mixin.breakpoint(pc) {
+        margin: 86px 31px 85px 1386px;
+    }
+
+    &__background {
+        width: 90px;
+        height: 46px;
+        background: linear-gradient(90deg, base.$color-side-menu-bg 0%, #DED8D3 100%);
+        border: 1px solid base.$color-gray-medium;
+        border-radius: 10px;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        @include mixin.breakpoint(tablet) {
+            width: 136px;
+            height: 46px;
+        }
+    }
+
+    &__text {
+        width: 32px;
+        height: 24px;
+        margin: 142px 57px 49px 286px;
+        @include typography.m-plus-1p-bold;
+        font-size: 1.6rem;
+        line-height: 23.76px;
+        color: base.$color-gray-medium;
+        @include mixin.breakpoint(tablet) {
+            margin: 142px 196px 51px 606px;
+        }
+        @include mixin.breakpoint(pc) {
+            margin: 97px 83px 96px 1438px;
+        }
+
+    }
 }
