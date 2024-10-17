@@ -11,6 +11,11 @@
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
+    @include mixin.breakpoint(tablet){
+        width: 72.5%;
+        max-width: 396px;
+        margin-right: 14px;
+    }
     
     &__icon {
         width: 24px;

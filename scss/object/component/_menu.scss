@@ -1,33 +1,33 @@
 // 閉じるボタン全体のスタイル
-.c-menu__close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 45px;
-    height: 45px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+// .c-menu__close-button {
+//     position: absolute;
+//     top: 10px;
+//     right: 10px;
+//     width: 45px;
+//     height: 45px;
+//     background: none;
+//     border: none;
+//     cursor: pointer;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// // }
 
-// 斜線の基本スタイル
-.c-menu__close-line {
-    position: absolute;
-    width: 45.25px;
-    height: 0px;
-    border: 6px solid #707070;
-    background: none;
-}
+// // 斜線の基本スタイル
+// // .c-menu__close-line {
+//     position: absolute;
+//     width: 45.25px;
+//     height: 0px;
+//     border: 6px solid #707070;
+//     background: none;
+// // }
 
-// 1つ目の斜線(135度の角度)
-.c-menu__close-line--first{
-    transform: rotate(-135deg);
-}
+// // 1つ目の斜線(135度の角度)
+// .c-menu__close-line--first{
+//     transform: rotate(-135deg);
+// }
 
-// 2つ目の斜線(45度)
-.c-menu__close-line--second {
-    transform: rotate(-45deg);
-}
+// // 2つ目の斜線(45度)
+// .c-menu__close-line--second {
+//     transform: rotate(-45deg);
+// }

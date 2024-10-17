@@ -17,6 +17,7 @@
     @include mixin.breakpoint(tablet) {
         width: 24.91%;
         min-width: 90px;
+        max-width: 136px;
     }
 
     &__text {
