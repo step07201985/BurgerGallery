@@ -5,19 +5,31 @@
     width: 216px;
     height: 46px;
     box-sizing: border-box;
-}
-
-.c-search-input__icon {
-    width: 24px;
-    height: 24px;
-    margin-top: 12px;
-    margin-right: 187px;
-    margin-bottom: 10px;
-    margin-left: 5px;
-}
-
-.c-search-input__background {
     background: base.$color-white;
     border: 1px solid base.$color-gray-medium;
     border-radius: 10px 8px 10px 10px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    &__icon {
+        width: 24px;
+        height: 24px;
+        margin-top: 12px;
+        margin-right: 0;
+        margin-bottom: 10px;
+        margin-left: 5px;
+    }
+
+    &__text {
+        flex-grow: 1;
+        width: 170px;
+        height: 46px;
+
+    }
+
+
 }
+
+
+

@@ -3,7 +3,7 @@
 @use "../../Foundation/_typography" as typography;
 
 .c-title-hamburger {
-    margin: 43px auto 125px auto;
+    margin: 43px auto 40px auto;
     width: 203px;
     height: 47px;
     font-family: typography.$font-primary;
@@ -11,7 +11,7 @@
     line-height: 46.88px;
     color: base.$color-gray-medium;
     @include mixin.breakpoint(tablet) {
-        margin: 43px auto 127px auto;
+        margin: 43px auto 40px auto;
     }
     @include mixin.breakpoint(pc) {
         font-size: 6.4rem;
