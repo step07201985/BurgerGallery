@@ -34,11 +34,26 @@ a {
   max-width: 1553px;
   height: 215px;
   margin-top: 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #FFF7EF;
 }
 @media (min-width: 400px) {
   .l-header {
     height: 217px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 800px) {
+  .l-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
