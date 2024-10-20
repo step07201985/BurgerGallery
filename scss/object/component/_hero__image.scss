@@ -1,9 +1,8 @@
-@use "../Foundation/_mixin" as mixin;
-@use "../Foundation/_base" as base;
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
 
-.l-hero {
-    box-sizing: border-box;
-    position: relative;
+.c-hero__image {
     width: 100%;
     height: 285px;
     @include mixin.breakpoint(tablet) {
@@ -13,5 +12,6 @@
     @include mixin.breakpoint(pc) {
         width: 80.9%;
         max-width: 1553px;
+        height: 530px;
     }
 }

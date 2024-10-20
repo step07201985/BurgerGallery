@@ -20,6 +20,8 @@
 @use "Object/Component/_overlay" as overlay;
 @use "Object/Component/_search-input" as search-input;
 @use "Object/Component/_title" as title;
+@use "Object/Component/_hero__image" as hero__image;
+@use "Object/Component/_hero__text" as hero__text;
 
 // Project
 @use "Object/Project/_sp_header-background" as sp_header-background;

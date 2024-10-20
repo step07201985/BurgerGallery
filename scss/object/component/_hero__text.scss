@@ -1,0 +1,38 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
+.c-hero__text {
+    position: absolute;
+    width: 57.6%;
+    max-width: 216px;
+    height: 53px;
+    top: 122px;
+    left: 25px;
+    font-size: 3.6rem;
+    line-height: 53.46px;
+    color: base.$color-white;
+    @include typography.m-plus-1p-bold;
+    @include mixin.breakpoint(tablet) {
+        width: 216px;
+        height: 53px;
+        position: absolute;
+        top: 122px;
+        left: 86px;
+        font-size: 3.6rem;
+        line-height: 53.46px;
+        color: base.$color-white;
+        @include typography.m-plus-1p-bold;
+    }
+    @include mixin.breakpoint(pc) {
+        width: 240px;
+        height: 59px;
+        position: absolute;
+        top:234px;
+        left: 86px;
+        font-size: 3.6rem;
+        line-height: 53.46px;
+        color: base.$color-white;
+        @include typography.m-plus-1p-bold;
+    }
+}
