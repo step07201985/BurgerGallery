@@ -1,0 +1,67 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
+.p-articleCardTakeOut{
+    position: relative;
+    width: 89.3%;
+    max-width: 335px;
+    height: 642px;
+    left: 20px;
+    top: 520px;
+
+    @include mixin.breakpoint(tablet) {
+        width: 42.8%;
+        max-width: 357px;
+        height: 681px;
+        left: 40px;
+        top: 540px;
+    }
+
+    @include mixin.breakpoint(pc) {
+        width: 32.1%;
+        max-width: 616px;
+        height: 1197px;
+        left: 120px;
+        top: 867px;
+    }
+
+    &__headImage {
+        box-sizing: border-box;
+        position: relative;
+        width: 89.3%;
+        max-width: 335px;
+        height: 642px;
+        left: 20px;
+        top: 520px;
+
+        @include mixin.breakpoint(tablet) {
+            width: 42.8%;
+            max-width: 357px;
+            height: 681px;
+            left: 40px;
+            top: 540px;
+        }
+        
+        @include mixin.breakpoint(pc) {
+            width: 32.1%;
+            max-width: 616px;
+            height: 1197px;
+            left: 120px;
+            top: 867px;
+            }
+    }
+
+    &__headTitle {
+        position: relative;
+        width: 43.7%;
+        max-width: 164px;
+        height: 48px;
+        left: 35px;
+        top: 533px;
+        @include typography.roboto-bold;
+        font-size: 4.1rem;
+        line-height: 48px;
+        color: base.$color-light-gray;
+    }
+}

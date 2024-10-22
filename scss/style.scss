@@ -8,6 +8,7 @@
 @use "Layout/_header" as header;
 @use "Layout/_footer" as footer;
 @use "Layout/_hero" as hero;
+@use "Layout/_main" as main;
 
 
 
@@ -26,6 +27,7 @@
 // Project
 @use "Object/Project/_sp_header-background" as sp_header-background;
 @use "Object/Project/_search_block" as _search_block;
+@use "Object/Project/_articleCardTakeOut" as _articleCardTakeOut;
 
 
 // Utility
