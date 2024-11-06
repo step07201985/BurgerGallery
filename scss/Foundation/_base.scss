@@ -1,17 +1,18 @@
-$overlay-color: #00000080;
+$overlay-color: #000080;
 $color-gray-medium: #707070;
-$color-white:#FFFFFF;
+$color-white:#FFF;
 $color-header-bg: #FFF7EF;
 $color-side-menu-bg: #F2EDE9;
 $color-dark-brown: #3C2A10;
-$color-menu-overlay: #00000080;
+$color-menu-overlay: #000080;
 $color-light-gray: #EAEAEA;
+// 2桁省略できる
 
 
 
 html {
     // ベースを16px→10pxにする
-    font-size: 62.5%;
+    // font-size: 62.5%;  やめたほうがいい mixinで記載に修正
 }
 
 body {
