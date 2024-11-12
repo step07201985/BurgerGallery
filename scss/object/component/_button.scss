@@ -7,28 +7,29 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 28%;
+    height: 46px;
+    margin-left: auto;
     cursor: pointer;
     background: linear-gradient(90deg, base.$color-side-menu-bg 0%, #DED8D3 100%);
-    width: 28.3%;
-    height: 46px;
     border: 1px solid base.$color-gray-medium;
     border-radius: 10px;
-    margin-left: auto;
+    
     @include mixin.breakpoint(tablet) {
-        width: 24.91%;
+        width: 24.9%;
         min-width: 90px;
         max-width: 136px;
     }
 
     &__text {
-        width: 32px;
-        height: 24px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        @include typography.m-plus-1p-bold;
+        width: 32px;
+        height: 24px;
         font-size: 1.6rem;
         line-height: 23.76px;
         color: base.$color-gray-medium;
+        @include typography.m-plus-1p-bold;
     }
 }
