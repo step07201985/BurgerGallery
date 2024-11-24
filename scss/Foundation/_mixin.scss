@@ -6,7 +6,7 @@
     }
 
     @if $point==pc {
-        @media (min-width: 800px) {
+        @media (min-width: 834px) {
             @content
         }
     }

@@ -27,7 +27,7 @@ a {
 
 .l-header {
   width: 100%;
-  max-width: 1553px;
+  max-width: 375px;
   height: 215px;
   display: flex;
   flex-direction: column;
@@ -37,17 +37,18 @@ a {
 }
 @media (min-width: 400px) {
   .l-header {
+    max-width: 834px;
     height: 217px;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 834px) {
   .l-header {
-    flex-wrap: wrap;
+    flex-direction: row;
   }
 }
 
 .l-footer {
-  position: absolute;
+  display: flex;
   width: 375px;
   height: 150px;
   left: 0px;
@@ -66,7 +67,7 @@ a {
     width: 100%;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 834px) {
   .l-hero {
     width: 80.9%;
     max-width: 1553px;
@@ -166,7 +167,7 @@ a {
   width: 203px;
   height: 47px;
   font-family: "Roboto", sans-serif;
-  font-size: 4rem;
+  font-size: 40px;
   line-height: 46.88px;
   color: #707070;
 }
@@ -177,7 +178,7 @@ a {
     padding: 3px 0px;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 834px) {
   .c-title-hamburger {
     justify-content: flex-start;
     align-items: center;
@@ -205,7 +206,7 @@ a {
     width: 100%;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 834px) {
   .c-hero__image {
     width: 80.9%;
     max-width: 1553px;
@@ -242,7 +243,7 @@ a {
     font-style: normal;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 834px) {
   .c-hero__text {
     width: 240px;
     height: 59px;
@@ -282,7 +283,7 @@ a {
     margin-right: auto;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 834px) {
   .p-search-block {
     width: 546px;
     margin-right: 0 auto;
@@ -306,7 +307,7 @@ a {
     top: 540px;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 834px) {
   .p-articleCardTakeOut {
     width: 32.1%;
     max-width: 616px;
@@ -333,7 +334,7 @@ a {
     top: 540px;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 834px) {
   .p-articleCardTakeOut__headImage {
     width: 32.1%;
     max-width: 616px;

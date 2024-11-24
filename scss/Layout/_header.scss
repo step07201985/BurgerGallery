@@ -3,17 +3,18 @@
 
 .l-header {
     width: 100%;
-    max-width: base.$max-header-width;
+    max-width: 375px;
     height: 215px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     @include mixin.breakpoint(tablet){
+        max-width: 834px;
         height: 217px;
     }
     @include mixin.breakpoint(pc){
-        flex-wrap: wrap;
+        flex-direction: row;
     }
     background-color: base.$color-header-bg;
 }
