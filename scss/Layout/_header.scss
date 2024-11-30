@@ -15,6 +15,7 @@
     }
     @include mixin.breakpoint(pc){
         flex-direction: row;
+        flex-wrap: nowrap;
     }
     background-color: base.$color-header-bg;
 }

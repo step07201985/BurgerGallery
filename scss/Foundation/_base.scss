@@ -13,7 +13,8 @@ $color-light-gray: #EAEAEA;
 
 html {
     // ベースを16px→10pxにする
-    // font-size: 62.5%;  やめたほうがいい mixinで記載に修正
+    font-size: 62.5%;  
+    // やめたほうがいい mixinで記載に修正
 }
 
 body {
