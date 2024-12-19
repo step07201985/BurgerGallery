@@ -85,8 +85,13 @@ a {
 }
 
 .l-main {
-  display: flex;
   width: 100%;
+  background-color: #FFF;
+}
+
+.l-contents {
+  height: 1374px;
+  display: grid;
 }
 
 .c-search-button {
