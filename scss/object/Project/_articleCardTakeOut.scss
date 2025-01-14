@@ -3,12 +3,14 @@
 @use "../../Foundation/_typography" as typography;
 
 .p-articleCardTakeOut{
-    position: relative;
+    display: flex;
     width: 89.3%;
     max-width: 335px;
     height: 642px;
     left: 20px;
     top: 520px;
+    background: url(../../images/TakeOutSp.jpg) no-repeat center/cover;
+    background-size: cover;
 
     @include mixin.breakpoint(tablet) {
         width: 42.8%;
@@ -53,14 +55,13 @@
     }
 
     &__headTitle {
-        position: relative;
         width: 43.7%;
         max-width: 164px;
         height: 48px;
-        left: 35px;
+        left: px;
         top: 533px;
         @include typography.roboto-bold;
-        font-size: 4.1rem;
+        @include mixin.font-size(41);
         line-height: 48px;
         color: base.$color-light-gray;
     }

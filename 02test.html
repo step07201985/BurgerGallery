@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="おいしいハンバーガーが楽しめるお店の公式サイト。ジューシーでボリューム満点のハンバーガーが楽しめる、地元で愛されるハンバーガー屋。新鮮な食材とオリジナルソースを使った絶品メニューでお待ちしております。テイクアウトも可能！">
+    <title>Hamburger Shop</title>
+    <link rel="icon" href="./images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/ress.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <header class="l-header">
+        <div class="l-header__inner">
+            <button class="c-button--menu js-menu-toggle" aria-label="メニューを開閉">Menu</button>
+            <h1 class="c-logo"><a href="/">Hamburger</a></h1>
+            <form class="c-search-form" action="#" method="get">
+                <input type="search" name="q" class="c-search-form__input" placeholder="検索" aria-label="検索">
+                <button type="submit" class="c-button--search">検索</button>
+            </form>
+        </div>
+    </header>
+    <main class="l-main">
+        <section class="l-main-visual">
+            <img src="./images/mainvisual.jpg" alt="美味しそうなハンバーガー" class="c-main-visual__image">
+            <h2 class="c-main-visual__title">ダミーサイト</h2>
+        </section>
+
+        <section class="l-menu">
+            <div class="l-menu__category">
+                <h3 class="c-category__title">Take Out</h3>
+                <div class="c-category__items">
+                    <article class="c-category__item">
+                        <h4 class="c-category__item-title">Take Out</h4>
+                        <p class="c-category__item-description">当店のテイクアウトで利用できる商品を掲載しています。</p>
+                    </article>
+                    <article class="c-category__item">
+                        <h4 class="c-category__item-title">Take Out</h4>
+                        <p class="c-category__item-description">当店のテイクアウトで利用できる商品を掲載しています。</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="l-menu__category">
+                <h3 class="c-category__title">Eat In</h3>
+                <div class="c-category__items">
+                    <article class="c-category__item">
+                        <h4 class="c-category__item-title">Eat In</h4>
+                        <p class="c-category__item-description">店内でお食事いただけるメニューです。</p>
+                    </article>
+                    <article class="c-category__item">
+                        <h4 class="c-category__item-title">Eat In</h4>
+                        <p class="c-category__item-description">店内でお食事いただけるメニューです。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="l-access">
+            <h3 class="c-access__title">アクセス情報</h3>
+            <div class="c-access__content">
+                <img src="./images/map.png" alt="店舗の地図" class="c-access__map">
+                <p class="c-access__description">当店の所在地はこちらです。お気軽にお越しください。</p>
+            </div>
+        </section>
+    </main>
+
+    <aside class="l-sidebar">
+        <nav class="c-sidebar">
+            <h3 class="c-sidebar__title">Menu</h3>
+            <ul class="c-sidebar__list">
+                <li><a href="#">ハンバーガー</a></li>
+                <li><a href="#">チーズバーガー</a></li>
+                <li><a href="#">テリヤキバーガー</a></li>
+                <li><a href="#">アボカドバーガー</a></li>
+                <li><a href="#">フィッシュバーガー</a></li>
+                <li><a href="#">ベーコンバーガー</a></li>
+                <li><a href="#">チキンバーガー</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <footer class="l-footer">
+        <nav class="c-footer__menu">
+            <ul>
+                <li><a href="#">ショップ情報</a></li>
+                <li><a href="#">ヒストリー</a></li>
+            </ul>
+        </nav>
+        <small class="c-footer__copyright">Copyright &copy; RaiseTech</small>
+    </footer>
+</body>
+
+</html>

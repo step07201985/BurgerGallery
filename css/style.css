@@ -1,9 +1,5 @@
 @import url("//fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap");
 @import url("//fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;700&display=swap");
-html {
-  font-size: 62.5%;
-}
-
 body {
   min-width: 320px;
   width: 100%;
@@ -89,11 +85,6 @@ a {
   background-color: #FFF;
 }
 
-.l-contents {
-  height: 1374px;
-  display: grid;
-}
-
 .c-search-button {
   display: inline-flex;
   align-items: center;
@@ -120,6 +111,7 @@ a {
   width: 32px;
   height: 24px;
   font-size: 16px;
+  font-size: 1rem;
   line-height: 23.76px;
   color: #707070;
   font-family: "M PLUS 1p", sans-serif;
@@ -168,7 +160,7 @@ a {
 }
 .c-search-input__text {
   flex-grow: 1;
-  width: 170px;
+  width: 100%;
   height: 46px;
 }
 
@@ -180,7 +172,8 @@ a {
   width: 203px;
   height: 47px;
   font-family: "Roboto", sans-serif;
-  font-size: 4rem;
+  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 46.88px;
   color: #707070;
 }
@@ -248,7 +241,8 @@ a {
     height: 53px;
     top: 122px;
     left: 86px;
-    font-size: 3.6rem;
+    font-size: 36px;
+    font-size: 2.25rem;
     line-height: 53.46px;
     color: #FFF;
     font-family: "M PLUS 1p", sans-serif;
@@ -262,7 +256,8 @@ a {
     height: 59px;
     top: 234px;
     left: 86px;
-    font-size: 3.6rem;
+    font-size: 36px;
+    font-size: 2.25rem;
     line-height: 53.46px;
     color: #FFF;
     font-family: "M PLUS 1p", sans-serif;
@@ -303,12 +298,14 @@ a {
 }
 
 .p-articleCardTakeOut {
-  position: relative;
+  display: flex;
   width: 89.3%;
   max-width: 335px;
   height: 642px;
   left: 20px;
   top: 520px;
+  background: url(../../images/TakeOutSp.jpg) no-repeat center/cover;
+  background-size: cover;
 }
 @media (min-width: 400px) {
   .p-articleCardTakeOut {
@@ -365,7 +362,8 @@ a {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 4.1rem;
+  font-size: 41px;
+  font-size: 2.5625rem;
   line-height: 48px;
   color: #EAEAEA;
 }

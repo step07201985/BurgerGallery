@@ -13,3 +13,9 @@
 }
 
 // アンドロイド端末も考える
+
+// font-size指定にrem使用 
+@mixin font-size($size, $base:16) {
+    font-size: $size + px;
+    font-size: ($size / $base) + rem;
+}

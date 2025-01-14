@@ -17,7 +17,7 @@
         height: 53px;
         top: 122px;
         left: 86px;
-        font-size: 3.6rem;
+        @include mixin.font-size(36);
         line-height: 53.46px;
         color: base.$color-white;
         @include typography.m-plus-1p-bold;
@@ -27,7 +27,7 @@
         height: 59px;
         top:234px;
         left: 86px;
-        font-size: 3.6rem;
+        @include mixin.font-size(36);
         line-height: 53.46px;
         color: base.$color-white;
         @include typography.m-plus-1p-bold;
