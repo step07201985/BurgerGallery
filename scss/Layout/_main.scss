@@ -3,5 +3,24 @@
 
 .l-main {
     width: 100%;
+    height: 285px;
     background-color: base.$color-white;
+}
+
+/* -------- Tablet 以上 -------- */
+@include mixin.breakpoint(tablet) {
+    .l-main {
+        width: 100%;
+        height: 285px;
+    }
+}
+
+/* -------- PC 以上 -------- */
+@include mixin.breakpoint(pc) {
+    .l-main {
+        max-width: 1553px;
+        height: 530px;
+        margin: 0;
+    }
+
 }

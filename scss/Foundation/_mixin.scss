@@ -1,21 +1,26 @@
+// Breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-pc: 1024px;
+
+
 @mixin breakpoint($point) {
-    @if $point==tablet {
-        @media (min-width: 400px) {
+    @if $point == tablet {
+        @media (min-width: #{$breakpoint-tablet}) {
             @content ;
         }
-    }
-
-    @if $point==pc {
-        @media (min-width: 834px) {
-            @content
+    } @else if $point == pc {
+        @media (min-width: #{$breakpoint-pc}) {
+            @content;
         }
+    } @else {
+        @warn "Undefined breakpoint: #{$point}";
     }
 }
 
 // アンドロイド端末も考える
 
 // font-size指定にrem使用 
-@mixin font-size($size, $base:16) {
+@mixin font-size($size, $base:10) {
     font-size: $size + px;
     font-size: ($size / $base) + rem;
 }

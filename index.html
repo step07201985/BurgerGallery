@@ -11,121 +11,235 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/main.js" defer></script>
 
-    <title>Front Page</title>
+    <title>Hamburger 東京の絶品ジューシーバーガー専門店</title>
     
 </head>
-<body>
-    <!-- Header -->
-    <header class="l-header">
-        <!-- header:ヘッダー全体 -->
-        <div class="c-title-hamburger">
-            <!-- title:Hamburger -->
-            <h1 class="c-title-hamburger__text">BurgerGallery</h1>
-        </div>
-        <div class="p-search-block">
-            <!-- search_block:検索ブロック -->
-            <div class="c-search-input">
-                <img src="images/パス 270mushimegane.svg" alt="検索を表す虫眼鏡マーク" class="c-search-input__icon">
-                <input type="text" class="p-search-input__text" placeholder="検索...">
+<body class="c-body">
+    <!-- l-wrapper:全体のコンテナ -->
+    <div class="l-wrapper">
+
+        <!-- l-header: サイト全体のヘッダー領域 -->
+        <header class="l-header">
+            <div class="l-header__inner">
+                <!-- p-header: ヘッダーの固有スタイル -->
+                <div class="p-header">
+                    <!-- c-menu-button: メニューボタン -->
+                    <button class="c-menu-button js-menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="sidebar-menu">
+                        <span class="c-menu-button__text">Menu</span>
+                    </button>
+
+                    <!-- c-site-title: サイトタイトル -->
+                    <h1 class="c-site-title">
+                        <a href="/" class="c-site-title__link">Hamburger</a>
+                    </h1>
+
+                    <!-- c-search-form: 検索フォーム -->
+                    <form action="#" class="c-search-form" method="get" role="search">
+                        <label class="u-visually-hidden" for="search-input">サイト内検索</label>
+                        <input type="search" class="c-search-form__input" name="search" id="search-input" placeholder="キーワードを入力">
+                        <button class="c-search-form__button" type="submit">検索</button>
+                    </form>
+                </div>
             </div>
-            <button class="c-search-button" aria-label="検索ボタン">
-                <span class="c-search-button__text">検索</span>
-            </button>
-        </div>
-    </header>
-    
-    <!-- Hero -->
-    <section class="l-hero">
-        <h2 class="c-hero__text">ダミーサイト</h2>
-    </section>
+        </header>
 
-    <!-- main -->
-    <main class="l-main">
-        <!-- Main Article Section -->
-        <article class="l-contents">
-            <section class="p-articleCardTakeOut">
-                <li class="p-articleCardTakeOut__head">
-                    <h2 class="p-articleCardTakeOut__headTitle">Take Out</h2>
-                    <div class="c-bar p-articleCardTakeOut__bar"></div>
-                    <dl class="c-articleCard">
-                        <dt class="p-articleCardTakeOut__title">Take OUT</dt>
-                        <dd class="p-articleCardTakeOut__text">当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利</dd>
-                    </dl>
-                    <dl class="c-articleCard">
-                        <dt class="p-articleCardTakeOut__title">Take OUT</dt>
-                        <dd class="p-articleCardTakeOut__text">当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利</dd>
-                    </dl>
-                </li>
-            </section>
-            <section class="p-articleCardEatIn">
-                <li class="p-articleCardEatIn__head">
-                    <img src="images/473d814b175bd517b56eb309f2958725.jpg" alt="店内飲食メニューの料理画像"
-                        class="p-articleCardEatIn__headImage">
-                    <h2 class="p-articleCardEatIn__headTitle">Eat In</h2>
-                    <div class="c-bar p-articleCardEatIn__bar"></div>
-                
-                    <dl class="c-articleCard">
-                        <dt class="p-articleCardEatIn__title">Eat In</dt>
-                        <dd class="p-articleCardEatIn__text">店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです</dd>
-                    </dl>
-                    <dl class="c-articleCard">
-                        <dt class="p-articleCardEatIn__title">Eat In</dt>
-                        <dd class="p-articleCardEatIn__text">店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです</dd>
-                    </dl>
-                </li>
-            </section>
-
-            <!-- Access Section -->
-            <section class="access">
-                <h2>見出しが入ります(アクセス)</h2>
-                <p>テキストが入ります。テキストが入ります。アクセスに関する説明文がここに入ります。</p>
-                <div class="map">
-                    <!-- 地図の埋め込みが入ります -->
-                    <img src="images/Map.png" alt="お店の場所を表す地図">
+        <!-- l-main: メインコンテンツ領域 -->
+        <main class="l-main">
+            <!-- p-main-visual: メインビジュアル -->
+            <section class="p-main-visual">
+                <div class="p-main-visual__inner">
+                    <h2 class="p-main-visual__title">ダミーサイト</h2>
                 </div>
             </section>
-        </article>
-    </main>
 
-    <!-- side menu -->
-    <aside class="l-sidebar">
-        <!-- Menuセクション -->
-        <h2>Menu</h2>
-        <h3>バーガー</h3>
-        <ul>
-            <li class="">ハンバーガー</li>
-            <li class="">チーズバーガー</li>
-            <li class="">テリヤキバーガー</li>
-            <li class="">アボガドバーガー</li>
-            <li class="">フィッシュバーガー</li>
-            <li class="">ベーコンバーガー</li>
-            <li class="">チキンバーガー</li>
-        </ul>
-        <h3>サイド</h3>
-        <ul>
-            <li class="">ポテト</li>
-            <li class="">サラダ</li>
-            <li class="">ナゲット</li>
-            <li class="">コーン</li>
-        </ul>
-        <h3>ドリンク</h3>
-        <ul>
-            <li class="">コーラ</li>
-            <li class="">ファンタ</li>
-            <li class="">オレンジ</li>
-            <li class="">アップル</li>
-            <li class="">紅茶（Ice/Hot）</li>
-            <li class="">コーヒー（Ice/Hot）</li>
-        </ul>
-    </aside>
+            <!-- p-service-menu:提供メニュー -->
+            <section class="p-service-menu">
+                <div class="p-service-menu__inner">
+                    <div class="p-service-menu__container">
+                        <!-- Take Out -->
+                        <div class="p-service-card p-service-card--takeout">
+                            <div class="p-service-card__header">
+                                <h3 class="c-section-title">Take Out</h3>
+                                <span class="c-section-title__line"></span>
+                            </div>
 
-    <!-- footer -->
+                            <div class="p-service-card__content">
+                                <div class="c-info-box">
+                                    <h4 class="c-info-box__title">Take OUT</h4>
+                                    <p class="c-info-box__text">
+                                        当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています
+                                    </p>
+                                </div>
+
+                                <div class="c-info-box">
+                                    <h4 class="c-info-box__title">Take OUT</h4>
+                                    <p class="c-info-box__text">
+                                        当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Eat In -->
+                        <div class="p-service-card p-service-card--eatin">
+                            <div class="p-service-card__header">
+                                <h3 class="c-section-title">Eat In</h3>
+                                <span class="c-section-title__line"></span>
+                            </div>
+
+                            <div class="p-service-card__content">
+                                <div class="c-info-box">
+                                    <h4 class="c-info-box__title">Eat In</h4>
+                                    <p class="c-info-box__text">
+                                        店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです
+                                    </p>
+                                </div>
+
+                                <div class="c-info-box">
+                                    <h4 class="c-info-box__title">Eat In</h4>
+                                    <p class="c-info-box__text">
+                                        店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- p-access: アクセス情報 -->
+            <section class="p-access">
+                <div class="p-access__background">
+                    <div class="p-access__overlay">
+                        <div class="p-access__content">
+                            <h3 class="c-section-title c-section-title--white">見出しが入ります</h3>
+                            <span class="c-section-title__line c-section-title__line--white"></span>
+                            <p class="c-text-box c-text-block--white">
+                                テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- l-sidebar: サイドバー -->
+        <aside class="l-sidebar js-sidebar" aria-hidden="true" id="sidebar-menu" role="dialog" aria-labelledby="sidebar-title">
+            <!-- c-sidebar-overlay: サイドバー背景オーバーレイ -->
+            <div class="c-sidebar-overlay js-sidebar-close"></div>
+
+            <!-- p-sidebar: サイドバー -->
+            <nav class="p-sidebar" role="navigation" aria-label="サイトナビゲーションメニュー">
+                <div class="p-sidebar__header">
+                    <h2 class="c-sidebar-title">Menu</h2>
+                    <!-- c-close-button: 閉じるボタン -->
+                    <button class="c-close-button js-sidebar-close" type="button" aria-label="メニューを閉じる">
+                        <span class="c-close-button__line"></span>
+                        <span class="c-close-button__line"></span>
+                    </button>
+                </div>
+
+                <!-- c-navigation: ナビゲーションメニュー -->
+                <ul class="c-navigation">
+                    <li class="c-navigation__item">
+                        <h3 class="c-navigation__title">ハンバーガー</h3>
+                        <ul class="c-navigation__submenu">
+                            <li class="c-navigation__subitem">
+                                <a href="" class="c-navigation__link">ハンバーガー</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="" class="c-navigation__link">チーズバーガー</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="" class="c-navigation__link">テリヤキバーガー</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="" class="c-navigation__link">アボガドバーガー</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="" class="c-navigation__link">フィッシュバーガー</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="" class="c-navigation__link">ベーコンバーガー</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="" class="c-navigation__link">チキンバーガー</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="c-navigation__item">
+                        <h3 class="c-navigation__title">サイド</h3>
+                        <ul class="c-navigation__submenu">
+                            <li class="c-navigation__subitem">
+                                <a href="#" class="c-navigation__link">ポテト</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="#" class="c-navigation__link">サラダ</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="#" class="c-navigation__link">ナゲット</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="#" class="c-navigation__link">コーン</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="c-navigation__item">
+                        <h3 class="c-navigation__title">ドリンク</h3>
+                        <ul class="c-navigation__submenu">
+                            <li class="c-navigation__subitem">
+                                <a href="#" class="c-navigation__link">コーラ</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="#" class="c-navigation__link">ファンタ</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="#" class="c-navigation__link">オレンジ</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="#" class="c-navigation__link">アップル</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="#" class="c-navigation__link">紅茶(Ice/Hot)</a>
+                            </li>
+                            <li class="c-navigation__subitem">
+                                <a href="#" class="c-navigation__link">コーヒー(Ice/Hot)</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </aside>
+    </div>
+
+    <!-- l-footer: フッター -->
     <footer class="l-footer">
-        <ul class="footer__menu">
-            <li>ショップ情報</li>
-            <li>ヒストリー</li>
-        </ul>
-        <small class="copyright">copyright:Raise Tech © 2024 BurgerGallery. All rights reserved.</small>
-    </footer>
+        <div class="l-footer__inner">
+            <!-- p-footer: フッタープロジェクト -->
+            <div class="p-footer">
+                <!-- c-footer-nav: フッターナビゲーション -->
+                <nav class="c-footer-nav" role="navigation" aria-label="フッターナビゲーション">
+                    <ul class="c-footer-nav__list">
+                        <li class="c-footer-nav__item">
+                            <a href="#" class="c-footer-nav__link">ショップ情報</a>
+                        </li>
+                        <li class="c-footer-nav__separator">|</li>
+                        <li class="c-footer-nav__item">
+                            <a href="#" class="c-footer-nav__link">ヒストリー</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <!-- c-copyright:コピーライト -->
+                <small class="c-copyright">Copyright: RaiseTech</small>
+            </div>
+
+        </div>
+    </footer>    
 </body>
 </html>

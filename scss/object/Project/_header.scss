@@ -1,0 +1,50 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
+.p-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 1 auto ;
+    &__logo {
+        flex: 1 1 auto;
+        text-align: center;
+        @include typography.roboto-bold;
+        font-size: 3.6rem;
+        color: base.$color-dark-gray;
+        margin: 0 auto ;
+    }
+    &__search {
+        display: flex;
+        align-items: center;
+        width: 84.8%;
+        min-width: 318px;
+        height: 46px;
+        margin: 40px 31px 39px 0;
+        @include mixin.breakpoint(tablet) {
+            width: 65.47%;
+            max-width: 546px;
+            margin-top: 38px;
+            margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @include mixin.breakpoint(pc) {
+            width: 546px;
+            margin-right: 0 auto;
+        }
+    }
+
+}
+
+
+.p-header__search {
+    
+}
+
+.p-header-background--sp {
+    width: 100%;
+    height: 215px;
+    color: base.$color-header-bg;
+}

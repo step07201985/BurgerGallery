@@ -1,0 +1,16 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
+.c-logo {
+    margin-top: 43px;
+    @include typography.roboto-bold;
+    font-size: 40px;
+    color: base.$color-dark-gray;
+    text-align: center;
+    line-height: 47px;
+    width: 203px;
+    height: 47px;
+}
+
+

@@ -1,0 +1,52 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
+.p-hero-wrapper {
+    
+    margin-bottom: $spacing-xl;
+}
+    
+    .p-hero {
+        width: 100%;
+        min-width: 375px;
+        height: 285px;
+        overflow: visible;
+    
+        &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+    
+        &__title {
+        width: 216px;
+        height: 53px;
+        left: 25px;
+        top: 122px;
+        @include typography.m-plus-1p-bold;
+        font-size: 3.6rem;
+        font-weight: 700;
+        line-height: 53px;
+        color: $color-white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        z-index: 10;
+        }
+    }
+    
+    // タブレット対応
+    @media screen and (min-width: $breakpoint-tablet) {
+        .p-hero-wrapper {
+        margin-bottom: 40px; // タブレットでの余白調整
+        }
+    
+        .p-hero {
+        max-width: $container-tablet;
+        margin: 0 auto;
+        
+        &__title {
+            left: 86px;
+            top: 122px; // 337px - 215px(ヘッダー高さ) = 122px
+        }
+        }
+    }
