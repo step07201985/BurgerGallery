@@ -1,0 +1,39 @@
+// サイト全体の基本スタイル
+
+// colors
+// 背景色
+$color-bg-primary: #FFFDFA;
+$color-bg-overlay: #000080;
+$color-bg-sidebar: #F2EDE9;
+
+// 文字色
+$color-text-content: #3C2A10;  // Take OUT/Eat In コンテンツ
+$color-text-heading: #707070;  // H1 サイドメニュー
+$color-text-overlay: #FFFFFF;  // 背景画像上
+$color-text-light: #EAEAEA;    // 薄い文字
+$color-black: #000000; //オーバーレイ
+$color-header-bg: #FFF7EF;
+
+// Z-index
+$z-index-header: 100;
+$z-index-overlay: 150;
+$z-index-sidebar: 200;
+
+// Breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-pc: 1024px;
+
+//  Container width
+$container-tablet: 834px;
+
+// 基本フォントサイズ（よく使うもの）
+$font-size-base-mobile: 14px;
+$font-size-base-desktop: 16px;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// その他基本設定
+$line-height-base: 1.6;
+$line-height-heading: 1.4;
+
+$transition-normal: 0.3s;

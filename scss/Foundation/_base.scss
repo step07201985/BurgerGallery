@@ -1,49 +1,39 @@
-// 基本スタイル、変数定義 色
-
-// colors 色
-$overlay-color: #000080;
-$color-dark-gray: #707070;
-$color-white: #FFFFFF;
-$color-header-bg: #FFF7EF;
-$color-side-menu-bg: #F2EDE9;
-$color-dark-brown: #3C2A10;
-$color-menu-overlay: #000080;
-$color-light-gray: #EAEAEA;
-$color-black: #000000;
-$color-gray: #808080;
-$color-dark-charcoal: #333;
-$color-footer-bg: #9D8670;
-$color-gradient-end: #DED8D3;
+// 基本スタイル、変数定義 色 サイト全体の基本スタイル
+@use "../../Foundation/_variables.scss" as vars;
+@use "../../Foundation/_mixin.scss" as mixin;
+@use "../../Foundation/_typography.scss" as typo;
 
 
-
-
-
-// Z-index
-$z-index-header: 100;
-$z-index-overlay: 150;
-$z-index-sidebar: 200;
-
-// Breakpoints
-$breakpoint-tablet: 768px;
-$breakpoint-pc: 1024px;
-
-//  Container width
-$container-tablet: 834px;
+// html,bodyの基本設定
 
 html {
-    // 10px
-    font-size: 62.5%; 
+    /* 
+     * Font sizing strategy:
+     * - Mobile: 14px (vars.$font-size-base-mobile)
+     * - Desktop: 16px (vars.$font-size-base-desktop)
+     */
+    font-size: vars.$font-size-base-mobile; // 14px (スマホ)
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent; 
+    
+    @include mixin.breakpoint(pc) {
+        font-size: vars.$font-size-base-desktop; // 16px (PC)
+    }
 }
 
 body {
     min-width: 320px;
     width: 100%;
     margin: 0;
-    font-size: 1.6rem;
+    @include mixin.font-size(16);
+    @include typo.m-plus-1p-regular;
     line-height: 1.6;
-    color: $color-dark-charcoal;
-    background-color: #f5f5f5;
+    color: vars.$color-dark-brown;
+    background-color: vars.$color-bg-primary;
+    font-weight: vars.$font-weight-normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 img {
@@ -54,8 +44,8 @@ img {
 
 h1, h2, h3, h4, h5, h6, p, figure {
     margin: 0;
-    padding: 0;
-    font-size: 100%;
+    font-weight: vars.$font-weight-bold;
+    line-height: vars.$line-height-heading;
 }
 
 a {
@@ -70,5 +60,11 @@ button {
 }
 
 ul, ol {
+    margin: 0;
+    padding: 0;
     list-style: none;
+}
+
+li {
+    margin: 0;
 }

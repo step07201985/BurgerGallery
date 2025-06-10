@@ -1,3 +1,6 @@
+@use "../../Foundation/_variables.scss" as vars;
+
+
 // Roboto bold 700
 @import url('//fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap');
 // 読み込みのサイトで、httpsとhttpを判断してくれる
@@ -18,24 +21,24 @@ $font-Noto-Sans-JP: "Noto Sans JP", sans-serif;
 
 @mixin roboto-bold {
     font-family: $font-roboto;
-    font-weight: 700;
+    font-weight: vars.$font-weight-bold;
     font-style: normal;
 }
 
 @mixin m-plus-1p-bold {
     font-family: $font-m-plus-1p;
-    font-weight: 700;
+    font-weight: vars.$font-weight-bold;
     font-style: normal;
 }
 
 @mixin m-plus-1p-regular {
     font-family: $font-m-plus-1p;
-    font-weight: 400;
+    font-weight: vars.$font-weight-normal;
     font-style: normal;
 }
 
 @mixin Noto-Sans-JP-regular {
     font-family: $font-Noto-Sans-JP;
-    font-weight: 400;
+    font-weight: vars.$font-weight-normal;
     font-style: normal;
 }

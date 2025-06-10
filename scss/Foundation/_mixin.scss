@@ -17,10 +17,19 @@ $breakpoint-pc: 1024px;
     }
 }
 
-// アンドロイド端末も考える
-
 // font-size指定にrem使用 
 @mixin font-size($size, $base:10) {
     font-size: $size + px;
     font-size: ($size / $base) + rem;
+}
+
+@mixin listreset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin imgauto {
+    max-width: 100%;
+    height: auto;
 }
