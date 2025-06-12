@@ -1,10 +1,10 @@
-// 基本スタイル、変数定義 色 サイト全体の基本スタイル
+// 基本スタイル、変数定義、色、サイト全体の基本スタイル
 @use "../../Foundation/_variables.scss" as vars;
 @use "../../Foundation/_mixin.scss" as mixin;
 @use "../../Foundation/_typography.scss" as typo;
 
 
-// html,bodyの基本設定
+// html, body の基本設定
 
 html {
     /* 
