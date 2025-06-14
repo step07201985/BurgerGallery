@@ -1,0 +1,50 @@
+// ===================================
+// object/project/_service-card.scss
+// サービスカード（Take Out / Eat In）のスタイル
+// ===================================
+
+
+@use "../../Foundation/_variables.scss" as vars;
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
+.p-service-card {
+    min-width: 335px;
+    height: 642px;
+    margin-top: 20px;
+    margin-bottom: 49px;
+
+    // tablet 
+    @include mixin.breakpoint(tablet) {
+        
+    }
+
+    // PC
+    @include mixin.breakpoint(pc) {
+
+    }
+
+
+
+}
+
+.p-service-card--takeout {
+    background-image: url('/../../images/three-burgers-on-brown-wooden-tray-between-white-ceramic-1841108.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    // tablet 
+    @include mixin.breakpoint(tablet) {
+
+    }
+
+    // PC
+    @include mixin.breakpoint(pc) {
+        
+    }
+
+}
+
+

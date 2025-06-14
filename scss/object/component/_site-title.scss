@@ -3,6 +3,8 @@
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
+// サイト名 ｈ１ Hamburger
+
 .c-site-title {
     width: 203px;
     height: 47px;
@@ -10,14 +12,19 @@
     color: vars.$color-text-heading;
     line-height: 1;
     font-size: 40px;
+    margin: 43px  auto 125px;
     
     @include mixin.breakpoint(tablet) {
         height: 47px;
         font-size: 40px;
+        margin: 40px auto 124px;
     }
     // PCサイズは64px
-    @include mixin.breakpoint(tablet) {
+    @include mixin.breakpoint(pc) {
         font-size: 64px;
+        margin-top: 69px;
+        margin-left: 65px;
+        margin-bottom: 73px;
     }
 
     &__link {

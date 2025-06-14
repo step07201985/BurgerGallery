@@ -84,16 +84,21 @@ li {
   color: #707070;
   line-height: 1;
   font-size: 40px;
+  margin: 43px auto 125px;
 }
 @media (min-width: 768px) {
   .c-site-title {
     height: 47px;
     font-size: 40px;
+    margin: 40px auto 124px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .c-site-title {
     font-size: 64px;
+    margin-top: 69px;
+    margin-left: 65px;
+    margin-bottom: 73px;
   }
 }
 .c-site-title__link {
@@ -108,5 +113,71 @@ li {
 .c-site-title__link:focus {
   outline: 2px solid #3C2A10;
   outline-offset: 4px;
+}
+
+.c-section-title {
+  width: 164px;
+  height: 48px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #EAEAEA;
+  font-size: 41px;
+  line-height: 1;
+  margin-top: 13px;
+  margin-left: 15px;
+}
+@media (min-width: 768px) {
+  .c-section-title {
+    width: 176px;
+    height: 52px;
+    font-size: 44px;
+    margin-top: 14px;
+    margin-left: 11px;
+  }
+}
+@media (min-width: 1024px) {
+  .c-section-title {
+    width: 319px;
+    height: 94px;
+    font-size: 80px;
+    margin-top: 24px;
+    margin-left: 10px;
+  }
+}
+.c-section-title__line {
+  display: block;
+  width: 33.89px;
+  height: 0;
+  border: 4px solid #FFFFFF;
+  margin-left: 15.5px;
+  margin-top: 19.34px;
+}
+@media (min-width: 768px) {
+  .c-section-title__line {
+    width: 35.94px;
+    margin-left: 15.12px;
+    margin-top: 25.57px;
+  }
+}
+@media (min-width: 1024px) {
+  .c-section-title__line {
+    width: 63px;
+    margin-left: 17.5px;
+    margin-top: 43px;
+  }
+}
+
+.p-service-card {
+  min-width: 335px;
+  height: 642px;
+  margin-top: 20px;
+  margin-bottom: 49px;
+}
+.p-service-card--takeout {
+  background-image: url("/../../images/three-burgers-on-brown-wooden-tray-between-white-ceramic-1841108.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 /*# sourceMappingURL=style.css.map */
