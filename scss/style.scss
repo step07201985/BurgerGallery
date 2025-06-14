@@ -3,6 +3,7 @@
 @use "Foundation/_mixin" as mixin ;
 @use "Foundation/_base" as base ;
 @use "Foundation/_typography" as typography;
+@use "Foundation/_variables" as variables;
 
 // Layout
 @use "Layout/_header" as header;
@@ -25,6 +26,7 @@
 @use "Object/Component/_hero__image" as hero__image;
 @use "Object/Component/_hero__text" as hero__text;
 @use "Object/Component/_logo" as logo;
+@use "Object/Component/_site-title" as site_title;
 
 // Project
 @use "Object/Project/_header" as _header;

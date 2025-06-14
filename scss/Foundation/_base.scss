@@ -1,7 +1,7 @@
 // 基本スタイル、変数定義、色、サイト全体の基本スタイル
-@use "../../Foundation/_variables.scss" as vars;
-@use "../../Foundation/_mixin.scss" as mixin;
-@use "../../Foundation/_typography.scss" as typo;
+@use "_variables.scss" as vars;
+@use "_mixin.scss" as mixin;
+@use "_typography.scss" as typo;
 
 
 // html, body の基本設定
@@ -32,7 +32,7 @@ body {
     @include mixin.font-size(16);
     @include typo.m-plus-1p-regular;
     line-height: 1.6;
-    color: vars.$color-dark-brown;
+    color: vars.$color-text-content;
     background-color: vars.$color-bg-primary;
     font-weight: vars.$font-weight-normal;
     -webkit-font-smoothing: antialiased;

@@ -1,12 +1,13 @@
 @use "../Foundation/_mixin" as mixin;
 @use "../Foundation/_base" as base;
+@use "../Foundation/_variables" as vars;
 
 .l-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: base.$color-header-bg;
+    background-color: vars.$color-header-bg;
     max-width: 375px;
     height: 217px;
     z-index: base.$z-index-header;
@@ -50,4 +51,3 @@
         }
     }
 }
-    

@@ -1,0 +1,12 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_variables" as variables;
+@use "../../Foundation/_typography" as typography;
+
+.c-site-title {
+    width: 203px;
+    height: 47px;
+    @include typography.roboto-bold;
+    color: varia.$color-text-heading;
+    line-height: 1;
+}
