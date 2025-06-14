@@ -1,12 +1,39 @@
 @use "../../Foundation/_base" as base;
 @use "../../Foundation/_mixin" as mixin;
-@use "../../Foundation/_variables" as variables;
+@use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
 .c-site-title {
     width: 203px;
     height: 47px;
     @include typography.roboto-bold;
-    color: varia.$color-text-heading;
+    color: vars.$color-text-heading;
     line-height: 1;
+    font-size: 40px;
+    
+    @include mixin.breakpoint(tablet) {
+        height: 47px;
+        font-size: 40px;
+    }
+    // PCサイズは64px
+    @include mixin.breakpoint(tablet) {
+        font-size: 64px;
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+
+        transition: opacity vars.$transition-normal;
+        
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:focus {
+            outline: 2px solid vars.$color-accent;
+            outline-offset: 4px;
+        }
+    }
 }

@@ -3,14 +3,14 @@
 @use "Foundation/_mixin" as mixin ;
 @use "Foundation/_base" as base ;
 @use "Foundation/_typography" as typography;
-@use "Foundation/_variables" as variables;
+@use "Foundation/_variables" as vars;
 
 // Layout
-@use "Layout/_header" as header;
-@use "Layout/_footer" as footer;
-@use "Layout/_hero" as hero;
-@use "Layout/_main" as main;
-@use "Layout/_contents" as contents;
+// @use "Layout/_header" as header;
+// @use "Layout/_footer" as footer;
+// @use "Layout/_hero" as hero;
+// @use "Layout/_main" as main;
+// @use "Layout/_contents" as contents;
 
 
 
@@ -18,20 +18,21 @@
 
 // Component
 
-@use "Object/Component/_button" as button;
-@use "Object/Component/_menu" as menu;
-@use "Object/Component/_overlay" as overlay;
-@use "Object/Component/_search-input" as search-input;
-@use "Object/Component/_title" as title;
-@use "Object/Component/_hero__image" as hero__image;
-@use "Object/Component/_hero__text" as hero__text;
-@use "Object/Component/_logo" as logo;
+// @use "Object/Component/_button" as button;
+// @use "Object/Component/_menu" as menu;
+// @use "Object/Component/_overlay" as overlay;
+// @use "Object/Component/_search-input" as search-input;
+// @use "Object/Component/_title" as title;
+// @use "Object/Component/_hero__image" as hero__image;
+// @use "Object/Component/_hero__text" as hero__text;
+// @use "Object/Component/_logo" as logo;
 @use "Object/Component/_site-title" as site_title;
+@use "Object/Component/_section-title" as section_title;
 
 // Project
-@use "Object/Project/_header" as _header;
-@use "Object/Project/_articleCardTakeOut" as _articleCardTakeOut;
-@use "Object/Project/_hero" as _hero;
+// @use "Object/Project/_header" as _header;
+// @use "Object/Project/_articleCardTakeOut" as _articleCardTakeOut;
+// @use "Object/Project/_hero" as _hero;
 
 
 
