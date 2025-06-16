@@ -33,7 +33,7 @@ $font-Noto-Sans-JP: "Noto Sans JP", sans-serif;
 
 @mixin m-plus-1p-regular {
     font-family: $font-m-plus-1p;
-    font-weight: vars.$font-weight-normal;
+    font-weight: vars.$font-weight-normal; //400
     font-style: normal;
 }
 
