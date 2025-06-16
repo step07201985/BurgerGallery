@@ -1,0 +1,53 @@
+// ===================================
+// object/component/_info-box.scss
+// 情報ボックス（Take OUT、Eat In 内のコンテンツ）
+// ===================================
+
+
+
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_variables" as vars;
+@use "../../Foundation/_typography" as typography;
+
+
+.c-info-box {
+    min-width: 303px;
+    height: 156px;
+
+    @include mixin.breakpoint(tablet) {
+        min-width: 325px;
+        height: 154px
+    }
+    // PCサイズ
+    @include mixin.breakpoint(pc) {
+        
+    }
+
+    &__title {
+        @include typography.m-plus-1p-bold;
+        color: vars.$color-text-content;
+        font-size: 22px;
+        line-height: 24px;
+        width: 105px;
+        height: 24px;
+
+        @include mixin.breakpoint(tablet) {
+            min-width: 115px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+
+    &__text {
+        @include typography.m-plus-1p-regular;
+        color: vars.$color-text-content;
+        font-size: 16px;
+        width: 271px;
+        height: 92px;
+        line-height: 1;
+
+    }
+}
