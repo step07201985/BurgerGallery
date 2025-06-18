@@ -1,0 +1,38 @@
+// ===================================
+// object/component/_menu-button.scss
+// ハンバーガーメニューボタンのスタイル
+// ===================================
+
+
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_variables" as vars;
+@use "../../Foundation/_typography" as typography;
+
+.c-menu-button {
+    min-width: 51px;
+    height: 23px;
+    @include typography.roboto-bold;
+    font-size: 20px;
+    line-height: 1;
+    color: vars.$color-text-heading;  //707070
+    position: fixed;
+    top: 8px;
+    left: 316px;
+
+    // tabletサイズ
+    @include mixin.breakpoint(tablet) {
+        min-width: 87px;
+        height: 40px;
+        font-size: 34px;
+        position: fixed;
+        top: 20px;
+        left: 722px;
+    }
+    // PCサイズ
+    @include mixin.breakpoint(pc) {
+        min-width: 88px;
+        height: 40px;
+        font-size: 34px;
+    }
+}

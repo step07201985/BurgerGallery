@@ -14,7 +14,11 @@
 .c-info-box {
     width: 303px;
     height: 156px;
+    box-sizing: border-box;
+    background-color: vars.$color-text-overlay;
+    opacity: 0.8;
 
+    // tabletサイズ
     @include mixin.breakpoint(tablet) {
         width: 325px;
         height: 154px
@@ -35,6 +39,7 @@
         margin-top: 16px;
         margin-left: 16px;
 
+        // tabletサイズ
         @include mixin.breakpoint(tablet) {
             width: 115px;
             height: 24px;
@@ -44,6 +49,7 @@
             margin-left: 16px;
         }
 
+        // PCサイズ
         @include mixin.breakpoint(pc) {
             width: 125px;
             height: 24px;
@@ -65,7 +71,7 @@
         margin-top: 8px;
         margin-left: 16px;
 
-
+        // tabletサイズ
         @include mixin.breakpoint(tablet) {
             width: 293px;
             height: 82px;
@@ -75,6 +81,7 @@
             margin-left: 16px;
         }
 
+        // PCサイズ
         @include mixin.breakpoint(pc) {
             width: 552px;
             height: 90px;

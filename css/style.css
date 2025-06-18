@@ -171,6 +171,9 @@ li {
 .c-info-box {
   width: 303px;
   height: 156px;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  opacity: 0.8;
 }
 @media (min-width: 768px) {
   .c-info-box {
@@ -193,6 +196,8 @@ li {
   line-height: 24px;
   width: 105px;
   height: 24px;
+  margin-top: 16px;
+  margin-left: 16px;
 }
 @media (min-width: 768px) {
   .c-info-box__title {
@@ -200,6 +205,8 @@ li {
     height: 24px;
     line-height: 24px;
     font-size: 24px;
+    margin-top: 16px;
+    margin-left: 16px;
   }
 }
 @media (min-width: 1024px) {
@@ -208,6 +215,8 @@ li {
     height: 24px;
     font-size: 24px;
     line-height: 24px;
+    margin-top: 16px;
+    margin-left: 16px;
   }
 }
 .c-info-box__text {
@@ -219,6 +228,8 @@ li {
   width: 271px;
   height: 92px;
   line-height: 1;
+  margin-top: 8px;
+  margin-left: 16px;
 }
 @media (min-width: 768px) {
   .c-info-box__text {
@@ -226,6 +237,8 @@ li {
     height: 82px;
     line-height: 1;
     font-size: 14px;
+    margin-top: 16px;
+    margin-left: 16px;
   }
 }
 @media (min-width: 1024px) {
@@ -234,6 +247,39 @@ li {
     height: 90px;
     font-size: 16px;
     line-height: 1;
+    margin-top: 10px;
+    margin-left: 16px;
+  }
+}
+
+.c-menu-button {
+  min-width: 51px;
+  height: 23px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  color: #707070;
+  position: fixed;
+  top: 8px;
+  left: 316px;
+}
+@media (min-width: 768px) {
+  .c-menu-button {
+    min-width: 87px;
+    height: 40px;
+    font-size: 34px;
+    position: fixed;
+    top: 20px;
+    left: 722px;
+  }
+}
+@media (min-width: 1024px) {
+  .c-menu-button {
+    min-width: 88px;
+    height: 40px;
+    font-size: 34px;
   }
 }
 
@@ -242,6 +288,7 @@ li {
   height: 642px;
   margin-top: 20px;
   margin-bottom: 49px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -253,6 +300,7 @@ li {
     height: 681px;
     margin-top: 40px;
     margin-left: 40px;
+    flex-direction: row;
   }
 }
 @media (min-width: 1024px) {
@@ -261,6 +309,7 @@ li {
     height: 1197px;
     margin-top: 120px;
     margin-left: 120px;
+    flex-direction: row;
   }
 }
 .p-service-card__header {
@@ -279,13 +328,34 @@ li {
     margin-left: 10px;
   }
 }
-
 .p-service-card--takeout {
   background-image: url("/../../images/three-burgers-on-brown-wooden-tray-between-white-ceramic-1841108.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  min-width: 335px;
+  height: 642px;
+  margin-left: 20px;
+  box-sizing: border-box;
 }
+@media (min-width: 768px) {
+  .p-service-card--takeout {
+    min-width: 357px;
+    height: 681px;
+    margin-left: 40px;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 1024px) {
+  .p-service-card--takeout {
+    box-sizing: border-box;
+    min-width: 616px;
+    height: 1197px;
+    margin-left: 120px;
+    margin-top: 120px;
+  }
+}
+
 .p-service-card--eatin {
   background-image: url("/../../images/473d814b175bd517b56eb309f2958725.jpg");
   background-size: contain;
