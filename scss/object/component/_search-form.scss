@@ -1,0 +1,78 @@
+// ===================================
+// object/component/_search-form.scss
+// 検索フォームのスタイル
+// ===================================
+
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_variables" as vars;
+@use "../../Foundation/_typography" as typography;
+
+.c-search-form {
+    min-width: 318px;
+    height: 46px;
+
+    // tabletサイズ
+    @include mixin.breakpoint(tablet) {
+        min-width: 546px;
+        height: 46px;
+    }
+
+    // PCサイズ
+    @include mixin.breakpoint(pc) {
+        min-width: 546px;
+        height: 46px;
+
+    }
+
+    &__input {
+        min-width: 216px;
+        height: 46px;
+        box-sizing: border-box;
+        background: vars.$color-text-overlay; //#FFFFFF
+        border: 1px solid vars.$color-text-heading; //#707070
+        border-radius: 10px 8px 10px 10px;
+
+        // tabletサイズ
+        @include mixin.breakpoint(tablet) {
+            min-width: 396px;
+            height: 46px;
+            border-radius: 10px;
+        }
+
+        // PCサイズ
+        @include mixin.breakpoint(pc) {
+
+        }
+    }
+}
+
+
+// /* 長方形 38 */
+
+// box-sizing: border-box;
+
+// position: absolute;
+// left: 8.27%;
+// right: 34.13%;
+// top: 60.47%;
+// bottom: 18.14%;
+
+// background: #FFFFFF;
+// border: 1px solid #707070;
+// border-radius: 10px 8px 10px 10px;
+
+
+// /* 長方形 38 */
+
+// box-sizing: border-box;
+
+// position: absolute;
+// left: 0px;
+// right: 150px;
+// top: 0px;
+// bottom: 0px;
+
+// background: #FFFFFF;
+// border: 1px solid #707070;
+// border-radius: 10px;
