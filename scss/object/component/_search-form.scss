@@ -11,17 +11,25 @@
 .c-search-form {
     min-width: 318px;
     height: 46px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 39px;
+    margin-left: 31px;
 
     // tabletサイズ
     @include mixin.breakpoint(tablet) {
         min-width: 546px;
         height: 46px;
+        margin-bottom: 40px;
+        align-items: center;
     }
 
     // PCサイズ
     @include mixin.breakpoint(pc) {
         min-width: 546px;
         height: 46px;
+        margin-bottom: 85px;
+        margin-right: 31px;
 
     }
 
@@ -42,37 +50,46 @@
 
         // PCサイズ
         @include mixin.breakpoint(pc) {
-
+            min-width: 546px;
+            height: 46px;
+            border-radius: 10px;
         }
+    }
+
+    &__button {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(90deg, vars.$color-bg-sidebar 0%, vars.$greige-pale 100%);
+        border: 1px solid vars.$color-text-heading; //#707070
+        border-radius: 10px;
+
+        min-width: 90px;
+        height: 46px;
+        margin-left: 12px;
+        
+        // 検索 文字
+        @include typography.m-plus-1p-bold; // M+ 1p Bold
+        font-size: 16px;
+        line-height: 24px;
+        color: vars.$color-text-heading; //#707070
+        text-align: center;
+
+        // tabletサイズ
+        @include mixin.breakpoint(tablet) {
+            min-width: 136px;
+            height: 46px;
+        }
+
+        // PCサイズ
+        @include mixin.breakpoint(pc) {
+            min-width: 136px;
+            height: 46px; 
+        }  
     }
 }
 
 
-// /* 長方形 38 */
-
-// box-sizing: border-box;
-
-// position: absolute;
-// left: 8.27%;
-// right: 34.13%;
-// top: 60.47%;
-// bottom: 18.14%;
-
-// background: #FFFFFF;
-// border: 1px solid #707070;
-// border-radius: 10px 8px 10px 10px;
 
 
-// /* 長方形 38 */
-
-// box-sizing: border-box;
-
-// position: absolute;
-// left: 0px;
-// right: 150px;
-// top: 0px;
-// bottom: 0px;
-
-// background: #FFFFFF;
-// border: 1px solid #707070;
-// border-radius: 10px;

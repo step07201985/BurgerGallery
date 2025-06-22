@@ -3,14 +3,33 @@
 @use "../Foundation/_variables" as vars;
 
 .l-header {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
     width: 100%;
     background-color: vars.$color-header-bg;
     max-width: 375px;
     height: 217px;
-    z-index: base.$z-index-header;
+
+
+    @include mixin.breakpoint(tablet) {
+        height: 217px;
+        min-width: 834px;
+    }
+
+    @include mixin.breakpoint(pc) {
+        max-width: 1553px;
+        height: 217px;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+
     &__inner {
         max-width: 100%;
         margin-inline: auto;
@@ -19,35 +38,19 @@
         justify-content: space-between;
         height: 217px;
         padding: 0;
-    }
-}
 
-/* -------- Tablet 以上 -------- */
-@include mixin.breakpoint(tablet) {
-    .l-header {
-        height: 217px;
-      /* 高さは変数で拡張、幅は常に 100% のまま */
-        &__inner {
-        max-width: base.$container-tablet;    
-        padding: 0 auto;
+        @include mixin.breakpoint(tablet) {
+            max-width: 834px;    
+            padding: 0 auto;
         }
-    }
-}
 
-
-/* -------- PC 以上 -------- */
-@include mixin.breakpoint(pc) {
-    .l-header {
-        width: 1553px;
-        height: 217px;
-        position: fixed;
-        left: 0;
-        top: 0;
-      /* 端から端までフル幅を維持。width 固定は不要 */
-        &__inner {
+        @include mixin.breakpoint(pc) {
             max-width: none;        
             width: 100%;
             margin: 0;
         }
-    }
+    }   
 }
+
+
+
