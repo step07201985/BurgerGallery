@@ -127,29 +127,18 @@ li {
 }
 
 .c-site-title {
-  width: 203px;
-  height: 47px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-style: normal;
   color: #707070;
-  line-height: 1;
-  font-size: 40px;
   margin: 43px auto 125px;
 }
 @media (min-width: 768px) {
   .c-site-title {
-    height: 47px;
-    font-size: 40px;
     margin: 40px auto 124px;
   }
 }
 @media (min-width: 1024px) {
   .c-site-title {
-    font-size: 64px;
-    margin-top: 69px;
-    margin-left: 65px;
-    margin-bottom: 73px;
+    margin: 66px 0 0 65px;
+    box-sizing: border-box;
   }
 }
 .c-site-title__link {
@@ -157,6 +146,12 @@ li {
   text-decoration: none;
   display: block;
   transition: opacity 0.3s;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 1.175;
+  padding-block: 3px;
 }
 .c-site-title__link:hover {
   opacity: 0.7;
@@ -164,6 +159,13 @@ li {
 .c-site-title__link:focus {
   outline: 2px solid #3C2A10;
   outline-offset: 4px;
+}
+@media (min-width: 1024px) {
+  .c-site-title__link {
+    font-size: 64px;
+    line-height: 1.172;
+    padding-block: 3px 6px;
+  }
 }
 
 .c-section-title {
