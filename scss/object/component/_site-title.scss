@@ -15,16 +15,17 @@
     margin: 43px  auto 125px;
     
     @include mixin.breakpoint(tablet) {
-        height: 47px;
-        font-size: 40px;
         margin: 40px auto 124px;
+        width: 203px;
+        height: 53px;
     }
     // PCサイズは64px
     @include mixin.breakpoint(pc) {
         font-size: 64px;
-        margin-top: 69px;
+        margin-top: 66px;
         margin-left: 65px;
-        margin-bottom: 73px;
+        width: 325px;
+        height: 84px;
     }
 
     &__link {
@@ -41,6 +42,18 @@
         &:focus {
             outline: 2px solid vars.$color-accent;
             outline-offset: 4px;
+        }
+
+        @include mixin.breakpoint(tablet) {
+        font-size: 40px;
+        line-height: 47px;
+        margin: 3px 0;
+        }
+        // PCサイズは64px
+        @include mixin.breakpoint(pc) {
+            font-size: 64px;
+            line-height: 75px;
+            margin: 3px 0 6px; 
         }
     }
 }
