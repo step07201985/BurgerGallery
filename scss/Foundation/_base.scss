@@ -7,22 +7,11 @@
 // html, body の基本設定
 
 html {
-    /* 
-     * Font sizing strategy:
-     * - Mobile: 14px (vars.$font-size-base-mobile)
-     * - Desktop: 16px (vars.$font-size-base-desktop)
-     */
     font-size: vars.$font-size-base-mobile; // 14px (スマホ)
-    scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent; 
-    
+
     @include mixin.breakpoint(pc) {
         font-size: vars.$font-size-base-desktop; // 16px (PC)
     }
-}
-
-* {
-    box-sizing: border-box;
 }
 
 body {
