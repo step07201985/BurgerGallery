@@ -303,16 +303,20 @@ li {
   }
 }
 
-.c-search-form {
+.c-search {
   min-width: 318px;
+  position: absolute;
+  left: 31px;
+  right: 26px;
+  top: 130px;
   height: 46px;
   display: flex;
-  flex-direction: row;
-  margin-bottom: 39px;
-  margin-left: 31px;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
 }
 @media (min-width: 768px) {
-  .c-search-form {
+  .c-search {
     min-width: 546px;
     height: 46px;
     margin-bottom: 40px;
@@ -320,46 +324,71 @@ li {
   }
 }
 @media (min-width: 1024px) {
-  .c-search-form {
+  .c-search {
     min-width: 546px;
     height: 46px;
     margin-bottom: 85px;
     margin-right: 31px;
   }
 }
-.c-search-form__input {
+.c-search__input {
+  position: relative;
   min-width: 216px;
   height: 46px;
-  box-sizing: border-box;
   background: #FFFFFF;
   border: 1px solid #707070;
   border-radius: 10px 8px 10px 10px;
+  padding-left: 40px;
+  outline: none;
+  box-sizing: border-box;
+}
+.c-search__input::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #808080;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.c-search__input::after {
+  content: "";
+  position: absolute;
+  left: 26px;
+  top: 26px;
+  width: 10px;
+  height: 2px;
+  background: #808080;
+  transform: rotate(45deg);
+  transform-origin: left center;
 }
 @media (min-width: 768px) {
-  .c-search-form__input {
+  .c-search__input {
     min-width: 396px;
     height: 46px;
     border-radius: 10px;
   }
 }
 @media (min-width: 1024px) {
-  .c-search-form__input {
+  .c-search__input {
     min-width: 546px;
     height: 46px;
     border-radius: 10px;
   }
 }
-.c-search-form__button {
+.c-search__button {
+  flex: 0 0 94px;
+  height: 46px;
+  display: grid;
+  place-items: center;
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: linear-gradient(90deg, #F2EDE9 0%, #DED8D3 100%);
   border: 1px solid #707070;
   border-radius: 10px;
-  min-width: 90px;
-  height: 46px;
-  margin-left: 12px;
+}
+.c-search__button-text {
   font-family: "M PLUS 1p", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -369,13 +398,13 @@ li {
   text-align: center;
 }
 @media (min-width: 768px) {
-  .c-search-form__button {
+  .c-search__button {
     min-width: 136px;
     height: 46px;
   }
 }
 @media (min-width: 1024px) {
-  .c-search-form__button {
+  .c-search__button {
     min-width: 136px;
     height: 46px;
   }

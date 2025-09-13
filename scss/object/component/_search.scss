@@ -8,13 +8,17 @@
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
-.c-search-form {
+.c-search {
     min-width: 318px;
+    position: absolute;
+    left: 31px;
+    right: 26px;
+    top: 130px;
     height: 46px;
     display: flex;
-    flex-direction: row;
-    margin-bottom: 39px;
-    margin-left: 31px;
+    align-items: center;
+    gap: 8px; //入力とボタンの間隔
+    box-sizing: border-box;
 
     // tabletサイズ
     @include mixin.breakpoint(tablet) {
@@ -34,12 +38,39 @@
     }
 
     &__input {
+        position: relative;
         min-width: 216px;
         height: 46px;
-        box-sizing: border-box;
         background: vars.$color-text-overlay; //#FFFFFF
         border: 1px solid vars.$color-text-heading; //#707070
         border-radius: 10px 8px 10px 10px;
+        padding-left: 40px;
+        outline: none;
+        box-sizing: border-box;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            width: 18px;
+            height: 18px;
+            border: 2px solid vars.$color-loupe;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 26px;
+            top: 26px;
+            width: 10px;
+            height: 2px;
+            background: vars.$color-loupe;
+            transform: rotate(45deg);
+            transform-origin: left center;
+        }
 
         // tabletサイズ
         @include mixin.breakpoint(tablet) {
@@ -57,24 +88,24 @@
     }
 
     &__button {
+        flex: 0 0 94px;
+        height: 46px;
+        display: grid;
+        place-items: center;
         box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         background: linear-gradient(90deg, vars.$color-bg-sidebar 0%, vars.$greige-pale 100%);
         border: 1px solid vars.$color-text-heading; //#707070
         border-radius: 10px;
 
-        min-width: 90px;
-        height: 46px;
-        margin-left: 12px;
-        
         // 検索 文字
-        @include typography.m-plus-1p-bold; // M+ 1p Bold
-        font-size: 16px;
-        line-height: 24px;
-        color: vars.$color-text-heading; //#707070
-        text-align: center;
+        &-text {
+            @include typography.m-plus-1p-bold; // M+ 1p Bold
+            font-size: 16px;
+            line-height: 24px;
+            color: vars.$color-text-heading; //#707070
+            text-align: center;
+        }
+        
 
         // tabletサイズ
         @include mixin.breakpoint(tablet) {
