@@ -14,7 +14,7 @@
     height: 23px;
     position: fixed;
     top: 8px;
-    left: 316px;
+    right: 8px;
 
     // tabletサイズ
     @include mixin.breakpoint(tablet) {
