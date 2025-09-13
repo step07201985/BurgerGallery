@@ -3,7 +3,6 @@
 @use "../Foundation/_variables" as vars;
 
 .l-header {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +11,7 @@
     padding: 0;
     width: 100%;
     background-color: vars.$color-header-bg;
-    max-width: 375px;
+    min-width: 375px;
     height: 217px;
 
 

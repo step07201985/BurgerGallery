@@ -76,7 +76,6 @@ li {
 }
 
 .l-header {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,7 +84,7 @@ li {
   padding: 0;
   width: 100%;
   background-color: #FFF7EF;
-  max-width: 375px;
+  min-width: 375px;
   height: 217px;
 }
 @media (min-width: 768px) {
