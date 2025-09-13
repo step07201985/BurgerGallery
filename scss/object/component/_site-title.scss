@@ -6,8 +6,12 @@
 // サイト名 ｈ１ Hamburger
 
 .c-site-title {
+    position: absolute;
+    left: 86px;
+    top: 43px;
+    width: 203px;
+    height: 47px;
     color: vars.$color-text-heading;
-    margin: 43px auto 125px;
     
     @include mixin.breakpoint(tablet) {
         margin: 40px auto 124px;
@@ -20,8 +24,6 @@
     }
 
     &__link {
-        display: block;
-        transition: opacity vars.$transition-normal;
         @include typography.roboto-bold;
         font-size: 40px;
         line-height: 1.175;

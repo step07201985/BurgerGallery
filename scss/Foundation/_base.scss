@@ -18,7 +18,6 @@ body {
     min-width: 320px;
     width: 100%;
     margin: 0;
-    @include mixin.font-size(16);
     @include typo.m-plus-1p-regular;
     line-height: 1.6;
     color: vars.$color-text-content;
