@@ -32,17 +32,17 @@
     }
 
     &__text {
-    @include typography.roboto-bold;
-    font-size: 20px;
-    line-height: 1;
-    color: vars.$color-text-heading;  //707070
+        @include typography.roboto-bold;
+        font-size: 20px;
+        line-height: 1;
+        color: vars.$color-text-heading;  //707070
 
-    @include mixin.breakpoint(tablet) {
-        font-size: 34px;
-    }
+        @include mixin.breakpoint(tablet) {
+            font-size: 34px;
+        }
 
-    @include mixin.breakpoint(pc) {
-        font-size: 34px;
-    }
+        @include mixin.breakpoint(pc) {
+            font-size: 34px;
+        }
     }
 }
