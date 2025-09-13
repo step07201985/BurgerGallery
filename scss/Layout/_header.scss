@@ -7,7 +7,8 @@
     background-color: vars.$color-header-bg;
     min-width: 375px;
     height: 215px;
-
+    position: relative;
+    box-sizing: border-box;
 
     @include mixin.breakpoint(tablet) {
         height: 217px;
