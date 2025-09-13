@@ -310,7 +310,7 @@ li {
   height: 23px;
   position: fixed;
   top: 8px;
-  left: 316px;
+  right: 8px;
 }
 @media (min-width: 768px) {
   .c-menu-button {
