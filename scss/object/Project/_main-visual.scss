@@ -6,11 +6,12 @@
 // メインビジュアル  ダミー ヒーロー部
 
 .p-main-visual {
-    position: relative;
+    position: absolute;
+    left: 20px;
+    top: 20px;
     width: 100%;
-    min-width: 375px;
-    height: 285px;
-    margin: 0 auo;
+    min-width: 335px;
+    height: 642px;
 
     @include mixin.breakpoint(tablet) {
         position: relative;
