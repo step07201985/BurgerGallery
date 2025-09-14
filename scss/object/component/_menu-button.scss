@@ -44,6 +44,7 @@
         color: vars.$color-text-heading;  //707070
 
         @include mixin.breakpoint(tablet) {
+            display: inline-block;
             font-size: 34px;
         }
 
