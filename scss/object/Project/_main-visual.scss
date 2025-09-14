@@ -1,0 +1,48 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_variables" as vars;
+@use "../../Foundation/_typography" as typography;
+
+// メインビジュアル  ダミー ヒーロー部
+
+.p-main-visual {
+    position: relative;
+    width: 100%;
+    min-width: 375px;
+    height: 500px;
+    margin: 0 auo;
+
+    @include mixin.breakpoint(tablet) {
+        height: 320px;
+        margin-bottom: 80px;
+    }
+
+    @include mixin.breakpoint(pc) {
+        height: 480px;
+        margin-bottom: 120px;
+    }
+
+    &__inner {
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 215px;
+        width: 375px;
+        height: 285px;
+        background: url("../../images/hero.png") no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        @include mixin.breakpoint(tablet) {
+            max-width: 834px;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        @include mixin.breakpoint(pc) {
+            max-width: 1553px;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+    }
+}
