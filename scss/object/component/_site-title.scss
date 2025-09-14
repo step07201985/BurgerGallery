@@ -14,7 +14,10 @@
     color: vars.$color-text-heading;
     
     @include mixin.breakpoint(tablet) {
-        margin: 40px auto 124px;
+        top: 40px;
+        left: 50%;
+        text-align: center;
+        margin: 0;
     }
     
     @include mixin.breakpoint(pc) {
