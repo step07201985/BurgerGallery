@@ -6,8 +6,12 @@
 // セクションタイトル「Take Out」「Eat In」のスタイル
 
 .c-section-title {
+    position: absolute;
+    left: 15px;
+    top: 13px;
     width: 164px;
     height: 48px;
+    margin: 0;
     @include typography.roboto-bold; // roboto 700 
     color: vars.$color-text-light;
     font-size: 41px;
