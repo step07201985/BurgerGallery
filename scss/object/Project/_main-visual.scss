@@ -45,4 +45,25 @@
             border-radius: 8px;
         }
     }
+
+    &__title {
+        position: absolute;
+        left: 25px;
+        top: 122px;
+        width: 216px;
+        height: 53px;
+        margin: 0;
+        @include typography.m-plus-1p-bold; // M PLUS 1p 700
+        font-size: 36px;
+        line-height: 53px;
+        color: vars.$color-text-overlay;
+
+        @include mixin.breakpoint(tablet) {
+            font-size: 36px;
+        }
+
+        @include mixin.breakpoint(pc) {
+            font-size: 48px;
+        }
+    }
 }

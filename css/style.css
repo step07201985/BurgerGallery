@@ -577,4 +577,72 @@ li {
   background-repeat: no-repeat;
   background-position: center;
 }
+.p-main-visual {
+  position: relative;
+  width: 100%;
+  min-width: 375px;
+  height: 500px;
+  margin: 0 auo;
+}
+@media (min-width: 768px) {
+  .p-main-visual {
+    height: 320px;
+    margin-bottom: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-main-visual {
+    height: 480px;
+    margin-bottom: 120px;
+  }
+}
+.p-main-visual__inner {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 215px;
+  width: 375px;
+  height: 285px;
+  background: url("../../images/hero.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 768px) {
+  .p-main-visual__inner {
+    max-width: 834px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-main-visual__inner {
+    max-width: 1553px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+}
+.p-main-visual__title {
+  position: absolute;
+  left: 25px;
+  top: 122px;
+  width: 216px;
+  height: 53px;
+  margin: 0;
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 53px;
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .p-main-visual__title {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-main-visual__title {
+    font-size: 48px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
