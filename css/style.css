@@ -499,15 +499,12 @@ li {
 }
 
 .p-service-card {
+  position: relative;
+  left: 20px;
+  top: 20px;
   min-width: 335px;
+  width: 100%;
   height: 642px;
-  margin-top: 20px;
-  margin-bottom: 49px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 }
 @media (min-width: 768px) {
   .p-service-card {
@@ -528,8 +525,15 @@ li {
   }
 }
 .p-service-card__header {
-  margin-top: 13px;
-  margin-left: 15px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 335px;
+  height: 642px;
+  background: url(../../../images/three-burger.png);
+  background-size: cover;
+  background-position: center;
 }
 @media (min-width: 768px) {
   .p-service-card__header {
