@@ -18,10 +18,14 @@
 
     @include mixin.breakpoint(pc) {
         max-width: 1553px;
-        height: 217px;
+        max-height: 217px;
         position: fixed;
         left: 0;
         top: 0;
+        box-sizing: border-box;
+        position: relative;
+        margin: 0 auto;
+        background: vars.$color-header-bg; //header background
     }
 }
 
