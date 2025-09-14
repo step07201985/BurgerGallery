@@ -46,6 +46,7 @@
         @include mixin.breakpoint(tablet) {
             display: inline-block;
             font-size: 34px;
+            line-height: 40px;
         }
 
         @include mixin.breakpoint(pc) {
