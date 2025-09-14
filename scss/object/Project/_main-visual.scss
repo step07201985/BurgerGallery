@@ -15,7 +15,7 @@
     @include mixin.breakpoint(tablet) {
         position: relative;
         min-width: 834px;
-        height: 500px;
+        height: 285px;
         margin: 0 auto;
     }
 
@@ -29,7 +29,7 @@
         position: absolute;
         left: 0;
         width: 375px;
-        height: 285px;
+        height: 100%;
         background: url("../../images/hero.png") no-repeat;
         background-size: cover;
         background-position: center;
@@ -39,7 +39,7 @@
             position: absolute;
             left: 0;
             width: 834px;
-            height: 285px;
+            height: 100%;
             background: url("../../images/hero.png") no-repeat;
             background-size: cover;
             background-position: center;
