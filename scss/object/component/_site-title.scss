@@ -15,7 +15,7 @@
     
     @include mixin.breakpoint(tablet) {
         top: 40px;
-        left: 50%;
+        left: 316px;
         text-align: center;
         margin: 0;
     }
@@ -31,6 +31,14 @@
         font-size: 40px;
         line-height: 1.175;
         padding-block: 3px;
+
+        @include mixin.breakpoint(tablet) {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        text-decoration: none;
+        }
 
         @include mixin.breakpoint(pc) {
             font-size: 64px;

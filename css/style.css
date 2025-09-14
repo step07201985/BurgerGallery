@@ -72,8 +72,9 @@ li {
 }
 @media (min-width: 768px) {
   .l-header {
-    height: 217px;
+    min-height: 217px;
     min-width: 834px;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1024px) {
@@ -96,7 +97,10 @@ li {
 }
 @media (min-width: 768px) {
   .c-site-title {
-    margin: 40px auto 124px;
+    top: 40px;
+    left: 316px;
+    text-align: center;
+    margin: 0;
   }
 }
 @media (min-width: 1024px) {
@@ -276,6 +280,8 @@ li {
     position: fixed;
     top: 20px;
     right: 25px;
+    margin: 0;
+    padding: 0;
   }
 }
 @media (min-width: 1024px) {
@@ -294,7 +300,9 @@ li {
 }
 @media (min-width: 768px) {
   .c-menu-button__text {
+    display: inline-block;
     font-size: 34px;
+    line-height: 40px;
   }
 }
 @media (min-width: 1024px) {
