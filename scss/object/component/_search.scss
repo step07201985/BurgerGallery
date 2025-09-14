@@ -109,6 +109,22 @@
         border: 1px solid vars.$color-text-heading; //#707070
         border-radius: 10px;
 
+        // tabletサイズ
+        @include mixin.breakpoint(tablet) {
+            position: absolute;
+            left: 410px;
+            top: 0;
+            min-width: 136px;
+            height: 46px;
+            border: 1px solid vars.$color-text-heading; //#707070
+            border-radius: 10px;
+            background: linear-gradient(90deg, vars.$color-bg-sidebar 0%, vars.$greige-pale 100%);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         // 検索 文字
         &-text {
             @include typography.m-plus-1p-bold; // M+ 1p Bold
@@ -121,8 +137,10 @@
 
         // tabletサイズ
         @include mixin.breakpoint(tablet) {
-            min-width: 136px;
-            height: 46px;
+            @include typography.m-plus-1p-bold; // M+ 1p Bold
+            font-size: 16px;
+            line-height: 24px;
+            color: vars.$color-text-heading; //#707070
         }
 
         // PCサイズ
