@@ -13,8 +13,10 @@
     margin: 0 auo;
 
     @include mixin.breakpoint(tablet) {
-        height: 320px;
-        margin-bottom: 80px;
+        position: relative;
+        min-width: 834px;
+        height: 500px;
+        margin: 0 auto;
     }
 
     @include mixin.breakpoint(pc) {
@@ -33,9 +35,14 @@
         background-position: center;
 
         @include mixin.breakpoint(tablet) {
-            max-width: 834px;
-            margin: 0 auto;
-            border-radius: 8px;
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            width: 834px;
+            height: 285px;
+            background: url("../../images/hero.png") no-repeat;
+            background-size: cover;
+            background-position: center;
         }
 
         @include mixin.breakpoint(pc) {
@@ -58,7 +65,16 @@
         color: vars.$color-text-overlay;
 
         @include mixin.breakpoint(tablet) {
+            position: absolute;
+            left: 86px;
+            top: 122px;
+            width: 216px;
+            height: 53px;
+            margin: 0;
+            @include typography.m-plus-1p-bold; // M PLUS 1p 700
             font-size: 36px;
+            line-height: 53px;
+            color: vars.$color-text-overlay;
         }
 
         @include mixin.breakpoint(pc) {
