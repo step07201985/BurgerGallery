@@ -86,7 +86,7 @@ li {
     top: 0;
     box-sizing: border-box;
     position: relative;
-    margin: 0 auto;
+    margin: 0 0;
     background: #FFF7EF;
   }
 }
