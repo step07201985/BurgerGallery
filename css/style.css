@@ -334,8 +334,9 @@ li {
 }
 @media (min-width: 768px) {
   .c-search {
+    position: absolute;
     min-width: 546px;
-    height: 46px;
+    min-height: 46px;
     margin-bottom: 40px;
     align-items: center;
     left: 144px;
@@ -396,7 +397,9 @@ li {
     outline: none;
     font-size: 16px;
     line-height: 24px;
+    padding-left: 42px;
     color: #333;
+    background-image: url(../images/mushimegane.svg);
   }
 }
 @media (min-width: 1024px) {
@@ -416,6 +419,22 @@ li {
   border: 1px solid #707070;
   border-radius: 10px;
 }
+@media (min-width: 768px) {
+  .c-search__button {
+    position: absolute;
+    left: 410px;
+    top: 0;
+    min-width: 136px;
+    height: 46px;
+    border: 1px solid #707070;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #F2EDE9 0%, #DED8D3 100%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .c-search__button-text {
   font-family: "M PLUS 1p", sans-serif;
   font-weight: 700;
@@ -427,8 +446,12 @@ li {
 }
 @media (min-width: 768px) {
   .c-search__button {
-    min-width: 136px;
-    height: 46px;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #707070;
   }
 }
 @media (min-width: 1024px) {
