@@ -13,6 +13,7 @@
     @include mixin.breakpoint(tablet) {
         min-height: 217px;
         min-width: 834px;
+        margin: 0 auto;
     }
 
     @include mixin.breakpoint(pc) {
