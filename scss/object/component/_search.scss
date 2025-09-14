@@ -81,7 +81,13 @@
             top: 0;
             min-width: 396px;
             height: 46px;
+            background: vars.$color-text-overlay;
+            border: 1px solid vars.$color-text-heading; //#707070
             border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+            line-height: 24px;
+            color: #333;
         }
 
         // PCサイズ
