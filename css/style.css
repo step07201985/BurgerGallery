@@ -586,8 +586,10 @@ li {
 }
 @media (min-width: 768px) {
   .p-main-visual {
-    height: 320px;
-    margin-bottom: 80px;
+    position: relative;
+    min-width: 834px;
+    height: 500px;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1024px) {
@@ -608,9 +610,14 @@ li {
 }
 @media (min-width: 768px) {
   .p-main-visual__inner {
-    max-width: 834px;
-    margin: 0 auto;
-    border-radius: 8px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 834px;
+    height: 285px;
+    background: url("../../images/hero.png") no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 @media (min-width: 1024px) {
@@ -636,7 +643,18 @@ li {
 }
 @media (min-width: 768px) {
   .p-main-visual__title {
+    position: absolute;
+    left: 86px;
+    top: 122px;
+    width: 216px;
+    height: 53px;
+    margin: 0;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     font-size: 36px;
+    line-height: 53px;
+    color: #FFFFFF;
   }
 }
 @media (min-width: 1024px) {
