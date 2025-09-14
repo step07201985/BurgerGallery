@@ -27,6 +27,8 @@
         position: fixed;
         top: 20px;
         right: 25px;
+        margin: 0;
+        padding: 0;
     }
     // PCサイズ
     @include mixin.breakpoint(pc) {
