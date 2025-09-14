@@ -9,7 +9,7 @@
     position: relative;
     width: 100%;
     min-width: 375px;
-    height: 500px;
+    height: 285px;
     margin: 0 auo;
 
     @include mixin.breakpoint(tablet) {
@@ -20,8 +20,11 @@
     }
 
     @include mixin.breakpoint(pc) {
-        height: 480px;
-        margin-bottom: 120px;
+        position: relative;
+        max-width: 1553px;
+        width: 100%;
+        height: 530px;
+        margin: 0 0;
     }
 
     &__inner {
@@ -46,9 +49,15 @@
         }
 
         @include mixin.breakpoint(pc) {
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
             max-width: 1553px;
-            margin: 0 auto;
-            border-radius: 8px;
+            width: 100%;
+            height: 530px;
+            background: url("../../images/hero.png") no-repeat;
+            background-size: cover;
+            background-position: center;
         }
     }
 
@@ -78,7 +87,16 @@
         }
 
         @include mixin.breakpoint(pc) {
-            font-size: 48px;
+            position: absolute;
+            left: 86px;
+            top: 234px;
+            width: 240px;
+            height: 59px;
+            margin: 0;
+            @include typography.m-plus-1p-bold; // M PLUS 1p 700
+            font-size: 40px;
+            line-height: 59px;
+            color: vars.$color-text-overlay;
         }
     }
 }
