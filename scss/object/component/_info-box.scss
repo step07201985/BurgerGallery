@@ -12,9 +12,15 @@
 
 
 .c-info-box {
+    box-sizing: border-box;
+    position: absolute;
+    left: 16px;
     width: 303px;
     height: 156px;
-    box-sizing: border-box;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     background-color: vars.$color-text-overlay;
     opacity: 0.8;
 
@@ -29,15 +35,24 @@
         height: 161px;
     }
 
+
+    &:nth-of-type(1) {
+        top: 298px;
+    }
+
+    &:nth-of-type(2) {
+        top: 470px;
+    }
+
     &__title {
-        @include typography.m-plus-1p-bold;
-        color: vars.$color-text-content;
-        font-size: 22px;
-        line-height: 24px;
         width: 105px;
         height: 24px;
-        margin-top: 16px;
-        margin-left: 16px;
+        margin: 0;
+        @include typography.m-plus-1p-bold;
+        font-size: 22px;
+        line-height: 24px;
+        color: vars.$color-text-content;
+        
 
         // tabletサイズ
         @include mixin.breakpoint(tablet) {
@@ -62,14 +77,12 @@
     }
 
     &__text {
+        width: 271px;
         @include typography.m-plus-1p-regular;
         color: vars.$color-text-content;
         font-size: 16px;
-        width: 271px;
-        height: 92px;
-        line-height: 1;
-        margin-top: 8px;
-        margin-left: 16px;
+        line-height: 24px;
+        margin: 0;
 
         // tabletサイズ
         @include mixin.breakpoint(tablet) {

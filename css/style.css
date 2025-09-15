@@ -206,9 +206,15 @@ li {
 }
 
 .c-info-box {
+  box-sizing: border-box;
+  position: absolute;
+  left: 16px;
   width: 303px;
   height: 156px;
-  box-sizing: border-box;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   background-color: #FFFFFF;
   opacity: 0.8;
 }
@@ -224,17 +230,22 @@ li {
     height: 161px;
   }
 }
+.c-info-box:nth-of-type(1) {
+  top: 298px;
+}
+.c-info-box:nth-of-type(2) {
+  top: 470px;
+}
 .c-info-box__title {
+  width: 105px;
+  height: 24px;
+  margin: 0;
   font-family: "M PLUS 1p", sans-serif;
   font-weight: 700;
   font-style: normal;
-  color: #3C2A10;
   font-size: 22px;
   line-height: 24px;
-  width: 105px;
-  height: 24px;
-  margin-top: 16px;
-  margin-left: 16px;
+  color: #3C2A10;
 }
 @media (min-width: 768px) {
   .c-info-box__title {
@@ -257,16 +268,14 @@ li {
   }
 }
 .c-info-box__text {
+  width: 271px;
   font-family: "M PLUS 1p", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #3C2A10;
   font-size: 16px;
-  width: 271px;
-  height: 92px;
-  line-height: 1;
-  margin-top: 8px;
-  margin-left: 16px;
+  line-height: 24px;
+  margin: 0;
 }
 @media (min-width: 768px) {
   .c-info-box__text {
@@ -550,6 +559,10 @@ li {
     margin-left: 10px;
   }
 }
+.p-service-card__content {
+  position: relative;
+}
+
 .p-service-card--takeout {
   background-image: url("/../../images/three-burgers-on-brown-wooden-tray-between-white-ceramic-1841108.png");
   background-size: contain;
