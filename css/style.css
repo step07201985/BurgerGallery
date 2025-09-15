@@ -166,11 +166,13 @@ li {
 }
 @media (min-width: 768px) {
   .c-section-title {
+    left: 11px;
+    top: 14px;
     width: 176px;
     height: 52px;
+    margin: 0;
     font-size: 44px;
-    margin-top: 14px;
-    margin-left: 11px;
+    line-height: 52px;
   }
 }
 @media (min-width: 1024px) {
@@ -192,9 +194,9 @@ li {
 }
 @media (min-width: 768px) {
   .c-section-title__line {
+    left: 15.12px;
+    top: 91.57px;
     width: 35.94px;
-    margin-left: 15.12px;
-    margin-top: 25.57px;
   }
 }
 @media (min-width: 1024px) {
@@ -233,8 +235,18 @@ li {
 .c-info-box:nth-of-type(1) {
   top: 298px;
 }
+@media (min-width: 768px) {
+  .c-info-box:nth-of-type(1) {
+    top: 341px;
+  }
+}
 .c-info-box:nth-of-type(2) {
   top: 470px;
+}
+@media (min-width: 768px) {
+  .c-info-box:nth-of-type(2) {
+    top: 511px;
+  }
 }
 .c-info-box__title {
   width: 105px;
@@ -249,12 +261,10 @@ li {
 }
 @media (min-width: 768px) {
   .c-info-box__title {
+    font-size: 24px;
+    line-height: 24px;
     width: 115px;
     height: 24px;
-    line-height: 24px;
-    font-size: 24px;
-    margin-top: 16px;
-    margin-left: 16px;
   }
 }
 @media (min-width: 1024px) {
@@ -281,10 +291,8 @@ li {
   .c-info-box__text {
     width: 293px;
     height: 82px;
-    line-height: 1;
+    line-height: 21px;
     font-size: 14px;
-    margin-top: 16px;
-    margin-left: 16px;
   }
 }
 @media (min-width: 1024px) {
@@ -514,17 +522,16 @@ li {
   position: relative;
   margin-left: 20px;
   margin-top: 20px;
-  min-width: 335px;
+  max-width: 335px;
   width: 100%;
   height: 642px;
 }
 @media (min-width: 768px) {
   .p-service-card {
-    min-width: 357px;
+    width: 357px;
     height: 681px;
     margin-top: 40px;
     margin-left: 40px;
-    flex-direction: row;
   }
 }
 @media (min-width: 1024px) {
@@ -543,14 +550,11 @@ li {
   top: 0;
   width: 335px;
   height: 642px;
-  background: url(../../../images/three-burger.png);
-  background-size: cover;
-  background-position: center;
 }
 @media (min-width: 768px) {
   .p-service-card__header {
-    margin-top: 14px;
-    margin-left: 11px;
+    width: 357px;
+    height: 681px;
   }
 }
 @media (min-width: 1024px) {
@@ -562,21 +566,28 @@ li {
 .p-service-card__content {
   position: relative;
 }
+@media (min-width: 768px) {
+  .p-service-card__content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 357px;
+    height: 681px;
+  }
+}
 
 .p-service-card--takeout {
-  background-image: url("/../../images/three-burgers-on-brown-wooden-tray-between-white-ceramic-1841108.png");
-  background-size: contain;
+  background-image: url("/../../images/three-burger.png");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-width: 335px;
-  height: 642px;
-  margin-left: 20px;
-  box-sizing: border-box;
 }
 @media (min-width: 768px) {
   .p-service-card--takeout {
+    position: relative;
     min-width: 357px;
     height: 681px;
+    margin-top: 40px;
     margin-left: 40px;
     box-sizing: border-box;
   }

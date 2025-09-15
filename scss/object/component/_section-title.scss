@@ -20,11 +20,14 @@
 
     // tablet 
     @include mixin.breakpoint(tablet) {
+        left: 11px;
+        top: 14px;
         width: 176px;
         height: 52px;
+        margin: 0;
         font-size: 44px;
-        margin-top: 14px;
-        margin-left: 11px;
+        line-height: 52px;
+        
     }
 
     // PC
@@ -48,9 +51,9 @@
 
         // tablet 
         @include mixin.breakpoint(tablet) {
+            left: 15.12px;
+            top: 91.57px;
             width: 35.94px;
-            margin-left: 15.12px;
-            margin-top: 25.57px;
         }
 
         // PC
