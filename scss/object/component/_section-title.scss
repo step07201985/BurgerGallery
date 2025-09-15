@@ -32,12 +32,13 @@
 
     // PC
     @include mixin.breakpoint(pc) {
+        left: 10px;
+        top: 24px;
         width: 319px;
         height: 94px;
         font-size: 80px;
-        margin-top: 24px;
-        margin-left: 10px;
-
+        line-height: 94px;
+        margin: 0;
     }
 
     &__line {
@@ -58,17 +59,12 @@
 
         // PC
         @include mixin.breakpoint(pc) {
+            left: 17.5px;
+            top: 161px;
             width: 63px;
-            margin-left: 17.5px;
-            margin-top: 43px;
-            
-
-    
+            border-width: 8px;
         }
-
     }
-
-
 }
 
 
