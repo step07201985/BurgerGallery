@@ -1,0 +1,66 @@
+// ===================================
+// object/project/_service-menu.scss
+// メニュー（Take Out / Eat In）のスタイル
+// ===================================
+
+
+@use "../../Foundation/_variables.scss" as vars;
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
+.p-service-menu {
+    margin: 0 auto;
+
+    // tablet
+    @include mixin.breakpoint(tablet) {
+        max-width: 834px;
+        width: 100%;
+        margin: 0;
+    }
+
+    @include mixin.breakpoint(pc) {
+        max-width: 1553px;
+        width: 100%;
+
+    }
+
+    &__inner {
+        max-width: 375px; // スマホサイズ
+        padding: 0 20px;
+        margin: 20px auto;
+
+        // tablet
+        @include mixin.breakpoint(tablet) {
+            max-width: 834px;
+            margin: 40px auto;
+        }                                               
+
+        @include mixin.breakpoint(pc) {
+            max-width: 1553px;
+            margin: 120px auto;
+
+        }
+    }
+
+    &__container {
+        display: block;
+
+        // tablet
+        @include mixin.breakpoint(tablet) {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            column-gap: 41px;
+        }
+
+        // PC
+        @include mixin.breakpoint(pc) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            column-gap: 81px;
+        }
+    }
+}
