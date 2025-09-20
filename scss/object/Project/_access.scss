@@ -17,6 +17,22 @@
     margin: 0 auto;
     background: vars.$color-black;
 
+    // tablet 
+    @include mixin.breakpoint(tablet) {
+        box-sizing: border-box;
+        position: relative;
+        max-width: 834px;
+        height: 415px;
+        margin: 0 auto;
+        background: vars.$color-black; //#000000
+
+    }
+
+    // PC
+    @include mixin.breakpoint(pc) {
+
+    }
+
 
 
 
@@ -31,11 +47,23 @@
         opacity: 0.6;
         z-index: 0;
 
+        // tablet 
+        @include mixin.breakpoint(tablet) {
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 415px;
+            background: url(/images/Map.png) no-repeat center/cover;
+            opacity: 0.6;
+            z-index: 0;
+        }
 
+        // PC
+        @include mixin.breakpoint(pc) {
 
-
-
-
+        }
 
     } 
 
@@ -51,9 +79,23 @@
         opacity: 0.29;
         z-index: 1;
 
+        // tablet 
+        @include mixin.breakpoint(tablet) {
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 415px;
+            background: vars.$color-black;  // #000000
+            opacity: 0.29;
+            z-index: 1;
+        }
 
+        // PC
+        @include mixin.breakpoint(pc) {
 
-
+        }
 
     }
 
@@ -64,6 +106,19 @@
         width: 100%;
         height: 100%;
         z-index: 2;
+
+        // tablet 
+        @include mixin.breakpoint(tablet) {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        // PC
+        @include mixin.breakpoint(pc) {
+
+        }
     }
 }
 

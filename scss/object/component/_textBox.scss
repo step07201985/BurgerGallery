@@ -15,4 +15,24 @@
     font-size: 14px;
     line-height: 33px;
     color: vars.$color-text-overlay; //#FFFFFF
+
+    // tablet 
+    @include mixin.breakpoint(tablet) {
+        position: absolute;
+        left: 42px;
+        top: 116px;
+        width: 763px;
+        height: 259px;
+        margin: 0;
+
+        @include typography.m-plus-1p-bold; // M PLUS 1p 700
+        font-size: 14px;
+        line-height: 33px;
+        color: vars.$color-text-overlay;  //#FFFFFF
+    }
+
+            // PC
+            @include mixin.breakpoint(pc) {
+                
+            }
 }
