@@ -64,6 +64,15 @@
             width: 63px;
             border-width: 8px;
         }
+
+        &--white {
+            position: absolute;
+            left: 42.5px;
+            top: 102px;
+            width: 75px;
+            height: 0;
+            border-top: 2px solid vars.$color-text-overlay; //#FFFFFF
+        }
     }
 
 
@@ -80,6 +89,8 @@
         line-height: 45px;
         color: vars.$color-text-overlay; //#FFFFFF
     }
+
+
 }
 
 

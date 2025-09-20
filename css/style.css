@@ -209,6 +209,20 @@ li {
     border-width: 8px;
   }
 }
+.c-section-title--white {
+  position: absolute;
+  left: 42px;
+  top: 42px;
+  width: 240px;
+  height: 45px;
+  margin: 0;
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 45px;
+  color: #FFFFFF;
+}
 
 .c-info-box {
   box-sizing: border-box;
