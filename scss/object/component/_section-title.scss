@@ -65,6 +65,21 @@
             border-width: 8px;
         }
     }
+
+
+    &--white {
+        position: absolute;
+        left: 42px;
+        top: 42px;
+        width: 240px;
+        height: 45px;
+        margin: 0;
+
+        @include typography.m-plus-1p-bold; // M PLUS 1p 700
+        font-size: 30px;
+        line-height: 45px;
+        color: vars.$color-text-overlay; //#FFFFFF
+    }
 }
 
 
