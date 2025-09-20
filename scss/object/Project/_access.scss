@@ -1,0 +1,20 @@
+// ===================================
+// object/project/_access.scss
+// アクセス情報のスタイル
+// ===================================
+
+
+@use "../../Foundation/_variables.scss" as vars;
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
+.p-access {
+    box-sizing: border-box;
+    position: relative;
+    width: 375px;
+    height: 691px;
+    margin: 0 auto;
+    background: vars.$color-black;
+
+}
