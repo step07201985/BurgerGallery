@@ -227,6 +227,16 @@ li {
     border-top: 2px solid #FFFFFF;
   }
 }
+@media (min-width: 1024px) {
+  .c-section-title__line--white {
+    position: absolute;
+    left: 119.5px;
+    top: 189.5px;
+    width: 75px;
+    height: 0;
+    border-top: 2px solid #FFFFFF;
+  }
+}
 .c-section-title--white {
   position: absolute;
   left: 42px;
@@ -257,6 +267,23 @@ li {
     color: #FFFFFF;
   }
 }
+@media (min-width: 1024px) {
+  .c-section-title--white {
+    position: absolute;
+    left: 119px;
+    top: 86px;
+    width: 288px;
+    height: 53px;
+    margin: 0;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 53px;
+    color: #FFFFFF;
+  }
+}
+
 .c-info-box {
   box-sizing: border-box;
   position: absolute;
@@ -604,6 +631,23 @@ li {
     color: #FFFFFF;
   }
 }
+@media (min-width: 1024px) {
+  .c-textBox {
+    position: absolute;
+    left: 119px;
+    top: 248px;
+    width: 697px;
+    height: 326px;
+    margin: 0;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 33px;
+    color: #FFFFFF;
+  }
+}
+
 .p-service-menu {
   margin: 0 auto;
 }
@@ -883,6 +927,16 @@ li {
     background: #000000;
   }
 }
+@media (min-width: 1024px) {
+  .p-access {
+    box-sizing: border-box;
+    position: relative;
+    max-width: 1553px;
+    height: 649px;
+    margin: 0 auto;
+    background: #000000;
+  }
+}
 .p-access__background {
   box-sizing: border-box;
   position: absolute;
@@ -902,6 +956,19 @@ li {
     top: 0;
     width: 100%;
     height: 415px;
+    background: url(/images/Map.png) no-repeat center/cover;
+    opacity: 0.6;
+    z-index: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .p-access__background {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 649px;
     background: url(/images/Map.png) no-repeat center/cover;
     opacity: 0.6;
     z-index: 0;
@@ -931,6 +998,19 @@ li {
     z-index: 1;
   }
 }
+@media (min-width: 1024px) {
+  .p-access__overlay {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 950px;
+    height: 649px;
+    background: #000000;
+    opacity: 0.29;
+    z-index: 1;
+  }
+}
 .p-access__content {
   position: relative;
   width: 100%;
@@ -938,6 +1018,14 @@ li {
   z-index: 2;
 }
 @media (min-width: 768px) {
+  .p-access__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+}
+@media (min-width: 1024px) {
   .p-access__content {
     position: relative;
     width: 100%;

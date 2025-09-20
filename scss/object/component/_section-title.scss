@@ -85,7 +85,12 @@
 
             // PC
             @include mixin.breakpoint(pc) {
-                
+                position: absolute;
+                left: 119.5px;
+                top: 189.5px;
+                width: 75px;
+                height: 0;
+                border-top: 2px solid vars.$color-text-overlay;
             }
         }
     }
@@ -121,7 +126,17 @@
 
             // PC
             @include mixin.breakpoint(pc) {
-                
+                position: absolute;
+                left: 119px;
+                top: 86px;
+                width: 288px;
+                height: 53px;
+                margin: 0;
+
+                @include typography.m-plus-1p-bold; // M PLUS 1p 700
+                font-size: 36px;
+                line-height: 53px;
+                color: vars.$color-text-overlay;  //#FFFFFF
             }
 
     }
