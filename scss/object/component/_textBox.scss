@@ -1,0 +1,18 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_variables" as vars;
+@use "../../Foundation/_typography" as typography;
+
+.c-textBox {
+    position: absolute;
+    left: 40px;
+    top: 116px;
+    width: 295px;
+    height: 518px;
+
+    margin: 0;
+    @include typography.m-plus-1p-bold; // M PLUS 1p 700
+    font-size: 14px;
+    line-height: 33px;
+    color: vars.$color-text-overlay; //#FFFFFF
+}
