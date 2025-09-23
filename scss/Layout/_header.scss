@@ -2,30 +2,43 @@
 @use "../Foundation/_base" as base;
 @use "../Foundation/_variables" as vars;
 
+
+// PCカンプ基準幅（％化の基準）
+$pc-canvas: 1920px;
+
+// px→%（PCカンプ基準）の補助関数（横方向の値に使用）
+@function pcw($px) {
+  @return ($px / $pc-canvas) * 100%;
+}
+
+
+/* =========================
+ * Layout: ヘッダー
+ * - SP基準で全幅（100%）
+ * - Tabletは高さだけ差分
+ * - PCは全幅のまま、右サイド（368px=19.1667%）分の幅を％で確保
+ * ========================= */
+
+
 .l-header {
     width: 100%;
     background-color: vars.$color-header-bg;
-    min-width: 375px;
-    height: 215px;
+    height: 215px;              // SPカンプ
     position: relative;
-    box-sizing: border-box;
 
+    // --- Tablet (400–834px)：最小限の差分 ---
     @include mixin.breakpoint(tablet) {
-        min-height: 217px;
-        min-width: 834px;
-        margin: 0 auto;
+        height: 217px;  // iPadカンプの高さ
+        // 横方向はそのまま全幅。中央寄せ等が必要なら親側で .l-container などを用意して制御
     }
 
     @include mixin.breakpoint(pc) {
-        max-width: 1553px;
-        max-height: 217px;
-        position: fixed;
-        left: 0;
+        height: 217px;              // PCカンプ
+        position: sticky;
+        z-index: 999;              //zの値は調整
         top: 0;
-        box-sizing: border-box;
-        position: relative;
-        margin: 0 0;
-        background: vars.$color-header-bg; //header background
+        // 右常設サイドバー 368px を％で確保（背景は全幅、内容が潜り込まないように右余白を取る）
+        padding-right: pcw(368px);         
     }
 }
 
