@@ -4,6 +4,19 @@
 @use "../../Foundation/_typography" as typography;
 
 // サイト名 ｈ１ Hamburger
+/* =========================================
+ * Component: サイト名（h1）.c-site-title
+ * - SP基準 → Tablet(400–834) → PC(835〜)
+ * - PCのみ横方向を%化（カンプ基準 1920px）
+ * ========================================= */
+
+$pc-canvas: 1920px; // PCカンプの横幅（%化の基準）
+
+/* px → %（横方向のみで使用） */
+@function pcw($px) {
+    @return ($px / $pc-canvas) * 100%;
+}
+
 
 .c-site-title {
     position: absolute;
@@ -11,47 +24,39 @@
     top: 43px;
     width: 203px;
     height: 47px;
+    margin: 0;
     color: vars.$color-text-heading;
     
-    @include mixin.breakpoint(tablet) {
-        top: 40px;
-        left: 316px;
-        text-align: center;
-        margin: 0;
-    }
-    
-    @include mixin.breakpoint(pc) {
-        position: absolute;
-        left: 65px;
-        top: 66px;
-        width: 325px;
-        height: 84px;
-        margin: 0;
-    }
-
     &__link {
         @include typography.roboto-bold;
-        font-size: 40px;
-        line-height: 1.175;
-        padding-block: 3px;
-
-        @include mixin.breakpoint(tablet) {
         display: block;
         width: 100%;
         height: 100%;
         color: inherit;
         text-decoration: none;
-        }
+        font-size: 40px;
+        line-height: 1.175;
+        padding-block: 3px;
 
-        @include mixin.breakpoint(pc) {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-            @include typography.roboto-bold;
+    }
+
+    /* ========== Tablet (400–834px) ========== */
+    @include mixin.breakpoint(tablet) {
+        top: 40px;
+        left: 316px;
+        text-align: center;
+    }
+    
+    /* ========== PC (835px〜)：横方向を%化 ========== */
+    @include mixin.breakpoint(pc) {
+        left: pcw(65px);
+        top: 66px;
+        width: pcw(325px);
+        height: 84px;
+        .c-site-title__link {
             font-size: 64px;
             line-height: 75px;
-            color: vars.$color-text-heading;  //707070                            
+            // 色・太さは継承/既定でOK（重複指定を回避）
         }
     }
 }
