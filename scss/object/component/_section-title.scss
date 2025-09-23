@@ -5,42 +5,56 @@
 
 // セクションタイトル「Take Out」「Eat In」のスタイル
 
+// PCカンプ横幅（%化の基準）: 1920px
+$pc-canvas: 1920px;
+
+// 横方向(px)→PC％変換の補助関数（width/leftなど=親がページ幅基準のときに使用）
+@function pcw($px) {
+    @return ($px / $pc-canvas) * 100%;
+}
+
+/* =========================================
+ * Component: セクションタイトル
+ * - BEM: .c-section-title / &__line / &--white / &__line--white
+ * - SP基準 → Tablet(400–834) → PC(835〜)
+ * ========================================= */
+
 .c-section-title {
     position: absolute;
     left: 15px;
     top: 13px;
     width: 164px;
     height: 48px;
-    margin: 0;
+    margin: 0;    // 重複回避：ベースで1回だけ指定
     @include typography.roboto-bold; // roboto 700 
     color: vars.$color-text-light;
     font-size: 41px;
     line-height: 48px;
-    margin: 0;
 
     // tablet 
+    // === Tablet (400–834px)：必要な差分のみ上書き ===
     @include mixin.breakpoint(tablet) {
         left: 11px;
         top: 14px;
         width: 176px;
         height: 52px;
-        margin: 0;
         font-size: 44px;
         line-height: 52px;
         
     }
 
     // PC
+    // === PC (835px〜)：横方向は％に変換 ===
     @include mixin.breakpoint(pc) {
-        left: 10px;
-        top: 24px;
-        width: 319px;
+        left: pcw(10px);       // 10 / 1920 *100 = 0.5208%
+        top: 24px;             // 縦は親の高さ基準になるためpx維持
+        width: pcw(319px);      // 319 /1920 *100 = 16.6146% 
         height: 94px;
         font-size: 80px;
         line-height: 94px;
-        margin: 0;
     }
 
+    /* ---------- 下線（カラー可変） ---------- */
     &__line {
         position: absolute;
         left: 15.5px;
@@ -55,16 +69,18 @@
             left: 15.12px;
             top: 91.57px;
             width: 35.94px;
+            // border幅は据え置き
         }
 
         // PC
         @include mixin.breakpoint(pc) {
-            left: 17.5px;
+            left: pcw(17.5px);         // ≒0.9115%
             top: 161px;
-            width: 63px;
+            width: pcw(63px);          // ≒3.2813%
             border-width: 8px;
         }
 
+        /* ---- 白線バリアント（タイトル下の短い白線） ---- */
         &--white {
             position: absolute;
             left: 42.5px;
@@ -75,27 +91,23 @@
 
             // tablet 
             @include mixin.breakpoint(tablet) {
-                position: absolute;
+                // TabletはSPと同寸なら上書き不要（変更があるときのみ書く）
                 left: 42.5px;
                 top: 102px;
                 width: 75px;
-                height: 0;
-                border-top: 2px solid vars.$color-text-overlay;
             }
 
             // PC
             @include mixin.breakpoint(pc) {
-                position: absolute;
-                left: 119.5px;
+                left: pcw(119.5px);            
                 top: 189.5px;
-                width: 75px;
-                height: 0;
-                border-top: 2px solid vars.$color-text-overlay;
+                width: pcw(75px);
+                // border-top幅は据え置き
             }
         }
     }
 
-
+     /* ---------- タイトル白バリアント（文字色/サイズ違い） ---------- */
     &--white {
         position: absolute;
         left: 42px;
@@ -111,32 +123,25 @@
 
         // tablet 
         @include mixin.breakpoint(tablet) {
-            position: absolute;
+            // Tabletで差分がなければ上書き不要（必要時のみ）
             left: 42px;
             top: 42px;
             width: 240px;
             height: 45px;
-            margin: 0;
-
-            @include typography.m-plus-1p-bold; // M PLUS 1p 700
+            
             font-size: 30px;
             line-height: 45px;
-            color: vars.$color-text-overlay;  //#FFFFFF
         }
 
             // PC
             @include mixin.breakpoint(pc) {
-                position: absolute;
-                left: 119px;
+                left: pcw(119px);
                 top: 86px;
-                width: 288px;
+                width: pcw(288px);
                 height: 53px;
-                margin: 0;
 
-                @include typography.m-plus-1p-bold; // M PLUS 1p 700
                 font-size: 36px;
                 line-height: 53px;
-                color: vars.$color-text-overlay;  //#FFFFFF
             }
 
     }

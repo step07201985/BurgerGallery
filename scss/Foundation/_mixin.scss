@@ -1,18 +1,64 @@
+// === Breakpoints (プロジェクト基準) ===
+// SP:    ～399px
+// Tablet:400px ～ 834px 
+// PC:    835px～
+
+
+
 // Breakpoints
-$breakpoint-tablet: 768px;
-$breakpoint-pc: 1024px;
+// $breakpoint-tablet: 768px;
+// $breakpoint-pc: 1024px;
+$bp-sp-max: 399px;
+$bp-tab-min: 400px;
+$bp-tab-max: 834px;
+$bp-pc-min: 835px;
 
 
+// 汎用：上方向
+@mixin up($min) {
+    @media (min-width: $min) { @content; }
+}
+
+// 汎用：範囲（タブレット専用などに便利）
+@mixin between($min, $max) {
+    @media (min-width: $min) and (max-width: $max) { @content; }
+}
+
+// 指定しやすいエイリアス
+@mixin sp-only {
+    @media (max-width: $bp-sp-max) { @content; }
+}
+
+@mixin tablet-only {
+    @media (min-width: $bp-tab-min) and (max-width: $bp-tab-max) { @content; }
+}
+
+@mixin pc-up {
+    @media (min-width: $bp-pc-min) { @content; }
+}
+
+// 互換：既存APIの名前を残したい場合（tablet/pc）
+// ※ tablet は「only（範囲）」に変更し、pc は「835px～」だけに当てる
 @mixin breakpoint($point) {
     @if $point == tablet {
-        @media (min-width: #{$breakpoint-tablet}) {
-            @content ;
-        }
+        @include tablet-only { @content; }
     } @else if $point == pc {
-        @media (min-width: #{$breakpoint-pc}) {
-            @content;
-        }
+        @include pc-up { @content; }
     } @else {
         @warn "Undefined breakpoint: #{$point}";
     }
 }
+
+// @mixin breakpoint($point) {
+//     @if $point == tablet {
+//         @media (min-width: #{$breakpoint-tablet}) {
+//             @content ;
+//         }
+//     } @else if $point == pc {
+//         @media (min-width: #{$breakpoint-pc}) {
+//             @content;
+//         }
+//     } @else {
+//         @warn "Undefined breakpoint: #{$point}";
+//     }
+// }
