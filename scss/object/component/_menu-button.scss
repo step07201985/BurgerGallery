@@ -10,11 +10,11 @@
 @use "../../Foundation/_typography" as typography;
 
 .c-menu-button {
-    min-width: 51px;
-    height: 23px;
     position: fixed;
     top: 8px;
     right: 8px;
+    min-width: 51px;
+    height: 23px;    
     padding: 0;
     border: none;
     background: transparent;
@@ -22,18 +22,15 @@
 
     // tabletサイズ
     @include mixin.breakpoint(tablet) {
-        min-width: 87px;
-        height: 40px;
-        position: fixed;
         top: 20px;
         right: 25px;
+        min-width: 87px;
+        height: 40px;
         margin: 0;
-        padding: 0;
     }
     // PCサイズ
     @include mixin.breakpoint(pc) {
-        min-width: 88px;
-        height: 40px;
+        display: none;
         
     }
 
@@ -47,10 +44,6 @@
             display: inline-block;
             font-size: 34px;
             line-height: 40px;
-        }
-
-        @include mixin.breakpoint(pc) {
-            font-size: 34px;
         }
     }
 }
