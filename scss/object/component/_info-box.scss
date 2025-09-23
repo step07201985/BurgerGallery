@@ -11,6 +11,20 @@
 @use "../../Foundation/_typography" as typography;
 
 
+// --- PCカンプの基準幅 & 左コンテンツ幅（PCは右サイド常設：368px） ---
+$pc-canvas: 1920px;
+$pc-right: 368px;
+$pc-left-col: $pc-canvas - $pc-right; // 1552px
+
+// 左コンテンツ幅（1552px）に対する%変換（内部カードの横幅比率に使用）
+@function pclw($px) {
+  @return ($px / $pc-left-col) * 100%;
+}
+
+
+
+
+
 .c-info-box {
     box-sizing: border-box;
     position: absolute;
@@ -21,17 +35,21 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background-color: vars.$color-text-overlay;
-    opacity: 0.8;
+    background-color: rgb(vars.$color-text-overlay, 0.8);
 
     // tabletサイズ
+    // ========== Tablet (400–834px) ==========
     @include mixin.breakpoint(tablet) {
         width: 325px;
         height: 154px
     }
+
+
     // PCサイズ
+    // ========== PC (835px〜) ==========
     @include mixin.breakpoint(pc) {
-        width: 584px;
+        // PCは内部カードの横方向を%化（左コンテンツ幅=1552px基準）
+        width: pclw(584px);        // 584 / 1552 ≒ 37.6%
         height: 161px;
     }
 
@@ -60,10 +78,13 @@
         }
     }
 
+
+
+    /* ------- タイトル ------- */
     &__title {
+        margin: 0;
         width: 105px;
         height: 24px;
-        margin: 0;
         @include typography.m-plus-1p-bold;
         font-size: 22px;
         line-height: 24px;
@@ -72,10 +93,10 @@
 
         // tabletサイズ
         @include mixin.breakpoint(tablet) {
-            font-size: 24px;
-            line-height: 24px;
             width: 115px;
             height: 24px;
+            font-size: 24px;
+            line-height: 24px;
         }
 
         // PCサイズ
@@ -87,20 +108,21 @@
         }
     }
 
+    /* ------- 本文テキスト ------- */
     &__text {
+        margin: 0;
         width: 271px;
         @include typography.m-plus-1p-regular;
         color: vars.$color-text-content;
         font-size: 16px;
         line-height: 24px;
-        margin: 0;
 
         // tabletサイズ
         @include mixin.breakpoint(tablet) {
             width: 293px;
             height: 82px;
-            line-height: 21px;
             font-size: 14px;
+            line-height: 21px;
         }
 
         // PCサイズ
