@@ -78,27 +78,18 @@ $pc-canvas: 1920px;
 
         // PCサイズ
         @include mixin.breakpoint(pc) {
-            box-sizing: border-box;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 396px;
+            width: pcw(396px);        // 396 / 1920 = 20.625%
             height: 46px;
-            background: vars.$color-text-overlay; //#FFFFFF
-            border: 1px solid vars.$color-text-heading; //#707070
             border-radius: 10px;
-            outline: none;
             font-size: 16px;
             line-height: 24px;
             color: #333;
             padding-left: 42px;
-            background-image: url(../images/mushimegane.svg);
-            background-repeat: no-repeat;
-            background-size: 24px 24px;
             background-position: 12px 11px;
         }
     }
 
+    // 検索ボタン
     &__button {
         flex: 0 0 94px;
         height: 46px;
@@ -108,21 +99,16 @@ $pc-canvas: 1920px;
         background: linear-gradient(90deg, vars.$color-bg-sidebar 0%, vars.$greige-pale 100%);
         border: 1px solid vars.$color-text-heading; //#707070
         border-radius: 10px;
+        cursor: pointer;
 
         // tabletサイズ
         @include mixin.breakpoint(tablet) {
-            position: absolute;
-            left: 410px;
-            top: 0;
-            min-width: 136px;
+            flex: 0 0 136px;
             height: 46px;
-            border: 1px solid vars.$color-text-heading; //#707070
-            border-radius: 10px;
-            background: linear-gradient(90deg, vars.$color-bg-sidebar 0%, vars.$greige-pale 100%);
-            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 10px;
         }
 
         // PCサイズ
