@@ -39,8 +39,8 @@
 // @use "Object/Project/_hero" as _hero;
 @use "Object/Project/_service-menu" as _service-menu;    //OK
 @use "Object/Project/_service-card" as _service-card;   //OK
-@use "Object/Project/_main-visual" as _main-visual;    
-@use "Object/Project/_access" as _access;
+@use "Object/Project/_main-visual" as _main-visual;    //OK
+@use "Object/Project/_access" as _access;             //OK
 
 
 // Utility

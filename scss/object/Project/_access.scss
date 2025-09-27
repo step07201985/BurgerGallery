@@ -9,118 +9,68 @@
 @use "../../Foundation/_mixin" as mixin;
 @use "../../Foundation/_typography" as typography;
 
+// PCカンプの横幅と、右サイド固定幅
+$pc-canvas: 1920px;
+$pc-right: 368px;
+$pc-left-col: $pc-canvas - $pc-right; // = 1552px
+
+// 画面全体に対する% 
+@function pcw($px) { @return ($px / $pc-canvas) * 100%; }
+// 左コンテンツ幅(1552px)に対する%：PC内部の横寸に使用 
+@function pclw($px) { @return ($px / $pc-left-col) * 100%; }
+
+
 .p-access {
     box-sizing: border-box;
     position: relative;
+    width: 100%;
     max-width: 375px;
     height: 691px;
     margin: 0 auto;
     background: vars.$color-black;
 
-    // tablet 
+    // tablet (400-834px)
     @include mixin.breakpoint(tablet) {
-        box-sizing: border-box;
-        position: relative;
         max-width: 834px;
         height: 415px;
-        margin: 0 auto;
-        background: vars.$color-black; //#000000
-
     }
 
-    // PC
+    // PC  (835px以上)
     @include mixin.breakpoint(pc) {
-        box-sizing: border-box;
-        position: relative;
-        max-width: 1553px;
+        max-width: pcw($pc-left-col);    // 1552/1920=  80.83%
         height: 649px;
-        margin: 0 auto;
-        background: vars.$color-black; //#000000
     }
 
-
-
-
+    // 背景マップ
     &__background {
         box-sizing: border-box;
         position: absolute;
-        left: 0;
-        top: 0;
+        inset: 0;
         width: 100%;
-        height: 691px;
+        height: 100%;
         background: url(/images/Map.png) no-repeat center/cover;
         opacity: 0.6;
         z-index: 0;
-
-        // tablet 
-        @include mixin.breakpoint(tablet) {
-            box-sizing: border-box;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 415px;
-            background: url(/images/Map.png) no-repeat center/cover;
-            opacity: 0.6;
-            z-index: 0;
-        }
-
-        // PC
-        @include mixin.breakpoint(pc) {
-            box-sizing: border-box;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 649px;
-
-            background: url(/images/Map.png) no-repeat center/cover;
-            opacity: 0.6;
-            z-index: 0;
-        }
-
     } 
 
-
+    // 半透明オーバーレイ SP・tablet:全面  PC：カンプ準拠で横幅を限定（950px → 左コンテンツ幅比 ≒ 61.24%）
     &__overlay {
         box-sizing: border-box;
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
-        height: 415px;
-        background: vars.$color-black;
-        opacity: 0.29;
+        height: 100%;   
+        background: rgba(vars.$color-black, 0.29);  // #000000
         z-index: 1;
-
-        // tablet 
-        @include mixin.breakpoint(tablet) {
-            box-sizing: border-box;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 415px;
-            background: vars.$color-black;  // #000000
-            opacity: 0.29;
-            z-index: 1;
-        }
 
         // PC
         @include mixin.breakpoint(pc) {
-            box-sizing: border-box;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 950px;
-            height: 649px;
-            background: vars.$color-black;  // #000000
-            opacity: 0.29;
-            z-index: 1;
+            width: pclw(950px);      // 950/1552 = 61.24%
+            height: 100%;
         }
 
     }
-
 
 
     &__content {
@@ -128,22 +78,7 @@
         width: 100%;
         height: 100%;
         z-index: 2;
-
-        // tablet 
-        @include mixin.breakpoint(tablet) {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-        }
-
-        // PC
-        @include mixin.breakpoint(pc) {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-        }
     }
+    
 }
 

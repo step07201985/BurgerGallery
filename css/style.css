@@ -657,65 +657,44 @@ li {
   background-repeat: no-repeat;
   background-position: center;
 }
+/* PCカンプ基準（横幅） */
+/* 右サイド固定 368px → 左コンテンツ幅 1552px */
+/* 画面全体に対する%（必要時） */
+/* 左コンテンツ幅に対する%（PC内側の要素用：タイトルのleft/widthなど） */
+/* =========================================
+ * Project: メインビジュアル（ヒーロー）
+ * 
+ * ========================================= */
 .p-main-visual {
   position: relative;
   width: 100%;
-  min-width: 375px;
   height: 285px;
   margin: 0 auo;
+  /* ========== Tablet (400–834px) ========== */
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .p-main-visual {
-    position: relative;
-    min-width: 834px;
     height: 285px;
-    margin: 0 auto;
+    /* 幅は100%維持。min/max-widthは使わず親側で制御 */
   }
 }
 @media (min-width: 835px) {
   .p-main-visual {
-    position: relative;
-    max-width: 1553px;
-    width: 100%;
+    /* 右サイド常設のため、左カラム幅に合わせて最大幅を%で制御 */
+    max-width: 80.8333333333%;
     height: 530px;
-    margin: 0 0;
+    margin: 0 auto;
   }
 }
 .p-main-visual__inner {
   box-sizing: border-box;
   position: absolute;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background: url("../../images/hero.png") no-repeat;
   background-size: cover;
   background-position: center;
-}
-@media (min-width: 400px) and (max-width: 834px) {
-  .p-main-visual__inner {
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    min-width: 834px;
-    width: 100%;
-    height: 100%;
-    background: url("../../images/hero.png") no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-}
-@media (min-width: 835px) {
-  .p-main-visual__inner {
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    max-width: 1553px;
-    width: 100%;
-    height: 530px;
-    background: url("../../images/hero.png") no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
 }
 .p-main-visual__title {
   position: absolute;
@@ -730,43 +709,30 @@ li {
   font-size: 36px;
   line-height: 53px;
   color: #FFFFFF;
+  /* ========== Tablet (400–834px) ========== */
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .p-main-visual__title {
-    position: absolute;
     left: 86px;
     top: 122px;
-    width: 216px;
-    height: 53px;
-    margin: 0;
-    font-family: "M PLUS 1p", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 36px;
-    line-height: 53px;
-    color: #FFFFFF;
   }
 }
 @media (min-width: 835px) {
   .p-main-visual__title {
-    position: absolute;
-    left: 86px;
+    left: 5.5412371134%;
     top: 234px;
-    width: 240px;
+    width: 15.4639175258%;
+    min-width: 240px;
     height: 59px;
-    margin: 0;
-    font-family: "M PLUS 1p", sans-serif;
-    font-weight: 700;
-    font-style: normal;
     font-size: 40px;
     line-height: 59px;
-    color: #FFFFFF;
   }
 }
 
 .p-access {
   box-sizing: border-box;
   position: relative;
+  width: 100%;
   max-width: 375px;
   height: 691px;
   margin: 0 auto;
@@ -774,60 +740,25 @@ li {
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .p-access {
-    box-sizing: border-box;
-    position: relative;
     max-width: 834px;
     height: 415px;
-    margin: 0 auto;
-    background: #000000;
   }
 }
 @media (min-width: 835px) {
   .p-access {
-    box-sizing: border-box;
-    position: relative;
-    max-width: 1553px;
+    max-width: 80.8333333333%;
     height: 649px;
-    margin: 0 auto;
-    background: #000000;
   }
 }
 .p-access__background {
   box-sizing: border-box;
   position: absolute;
-  left: 0;
-  top: 0;
+  inset: 0;
   width: 100%;
-  height: 691px;
+  height: 100%;
   background: url(/images/Map.png) no-repeat center/cover;
   opacity: 0.6;
   z-index: 0;
-}
-@media (min-width: 400px) and (max-width: 834px) {
-  .p-access__background {
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 415px;
-    background: url(/images/Map.png) no-repeat center/cover;
-    opacity: 0.6;
-    z-index: 0;
-  }
-}
-@media (min-width: 835px) {
-  .p-access__background {
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 649px;
-    background: url(/images/Map.png) no-repeat center/cover;
-    opacity: 0.6;
-    z-index: 0;
-  }
 }
 .p-access__overlay {
   box-sizing: border-box;
@@ -835,35 +766,14 @@ li {
   left: 0;
   top: 0;
   width: 100%;
-  height: 415px;
-  background: #000000;
-  opacity: 0.29;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.29);
   z-index: 1;
-}
-@media (min-width: 400px) and (max-width: 834px) {
-  .p-access__overlay {
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 415px;
-    background: #000000;
-    opacity: 0.29;
-    z-index: 1;
-  }
 }
 @media (min-width: 835px) {
   .p-access__overlay {
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 950px;
-    height: 649px;
-    background: #000000;
-    opacity: 0.29;
-    z-index: 1;
+    width: 61.2113402062%;
+    height: 100%;
   }
 }
 .p-access__content {
@@ -871,21 +781,5 @@ li {
   width: 100%;
   height: 100%;
   z-index: 2;
-}
-@media (min-width: 400px) and (max-width: 834px) {
-  .p-access__content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
-}
-@media (min-width: 835px) {
-  .p-access__content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
 }
 /*# sourceMappingURL=style.css.map */
