@@ -180,6 +180,7 @@ li {
     height: 94px;
     font-size: 80px;
     line-height: 94px;
+    min-width: 319px;
   }
 }
 .c-section-title__line {
@@ -204,6 +205,7 @@ li {
     top: 161px;
     width: 3.28125%;
     border-width: 8px;
+    min-width: 63px;
   }
 }
 .c-section-title__line--white {

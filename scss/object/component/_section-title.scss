@@ -52,6 +52,7 @@ $pc-canvas: 1920px;
         height: 94px;
         font-size: 80px;
         line-height: 94px;
+        min-width: 319px;
     }
 
     /* ---------- 下線（カラー可変） ---------- */
@@ -78,6 +79,7 @@ $pc-canvas: 1920px;
             top: 161px;
             width: pcw(63px);          // ≒3.2813%
             border-width: 8px;
+            min-width: 63px;
         }
 
         /* ---- 白線バリアント（タイトル下の短い白線） ---- */
