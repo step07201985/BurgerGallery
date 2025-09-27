@@ -3,63 +3,52 @@
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
-// メインビジュアル  ダミー ヒーロー部
+/* PCカンプ基準（横幅） */
+$pc-canvas: 1920px;
+/* 右サイド固定 368px → 左コンテンツ幅 1552px */
+$pc-right: 368px;
+$pc-left-col: $pc-canvas - $pc-right; // 1552px
+
+/* 画面全体に対する%（必要時） */
+@function pcw($px) { @return ($px / $pc-canvas) * 100%; }
+/* 左コンテンツ幅に対する%（PC内側の要素用：タイトルのleft/widthなど） */
+@function pclw($px) { @return ($px / $pc-left-col) * 100%; }
+
+
+/* =========================================
+ * Project: メインビジュアル（ヒーロー）
+ * 
+ * ========================================= */
 
 .p-main-visual {
     position: relative;
     width: 100%;
-    min-width: 375px;
     height: 285px;
     margin: 0 auo;
 
+    /* ========== Tablet (400–834px) ========== */
     @include mixin.breakpoint(tablet) {
-        position: relative;
-        min-width: 834px;
         height: 285px;
-        margin: 0 auto;
+        /* 幅は100%維持。min/max-widthは使わず親側で制御 */
     }
 
     @include mixin.breakpoint(pc) {
-        position: relative;
-        max-width: 1553px;
-        width: 100%;
+        /* 右サイド常設のため、左カラム幅に合わせて最大幅を%で制御 */
+        max-width: pcw($pc-left-col);           // 1552 / 1920 ≒ 80.833%
         height: 530px;
-        margin: 0 0;
+        margin: 0 auto;
     }
 
     &__inner {
         box-sizing: border-box;
         position: absolute;
-        left: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         background: url("../../images/hero.png") no-repeat;
         background-size: cover;
         background-position: center;
 
-        @include mixin.breakpoint(tablet) {
-            box-sizing: border-box;
-            position: absolute;
-            left: 0;
-            min-width: 834px;
-            width: 100%;
-            height: 100%;
-            background: url("../../images/hero.png") no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
-
-        @include mixin.breakpoint(pc) {
-            box-sizing: border-box;
-            position: absolute;
-            left: 0;
-            max-width: 1553px;
-            width: 100%;
-            height: 530px;
-            background: url("../../images/hero.png") no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
     }
 
     &__title {
@@ -74,30 +63,20 @@
         line-height: 53px;
         color: vars.$color-text-overlay;
 
+        /* ========== Tablet (400–834px) ========== */
         @include mixin.breakpoint(tablet) {
-            position: absolute;
             left: 86px;
             top: 122px;
-            width: 216px;
-            height: 53px;
-            margin: 0;
-            @include typography.m-plus-1p-bold; // M PLUS 1p 700
-            font-size: 36px;
-            line-height: 53px;
-            color: vars.$color-text-overlay;
         }
 
         @include mixin.breakpoint(pc) {
-            position: absolute;
-            left: 86px;
+            left: pclw(86px);
             top: 234px;
-            width: 240px;
+            width: pclw(240px);
+            min-width: 240px;
             height: 59px;
-            margin: 0;
-            @include typography.m-plus-1p-bold; // M PLUS 1p 700
             font-size: 40px;
             line-height: 59px;
-            color: vars.$color-text-overlay;
         }
     }
 }

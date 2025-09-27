@@ -611,68 +611,38 @@ li {
 
 .p-service-card {
   position: relative;
-  left: auto;
-  top: auto;
-  width: 335px;
-  margin: 0 auto 32px;
   width: 100%;
+  max-width: 335px;
   height: 642px;
+  margin: 0 auto 32px;
+  /* ====== ヘッダー層（見出し/ラインなどの基準面） ====== */
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .p-service-card {
-    width: 357px;
+    max-width: 357px;
     height: 681px;
     margin: 0;
   }
 }
 @media (min-width: 835px) {
   .p-service-card {
-    width: 616px;
+    width: 39.6907216495%;
+    max-width: 616px;
     height: 1197px;
-    margin-top: 120px;
-    margin-left: 120px;
+    margin: 0;
   }
 }
 .p-service-card__header {
   box-sizing: border-box;
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 335px;
-  height: 642px;
-}
-@media (min-width: 400px) and (max-width: 834px) {
-  .p-service-card__header {
-    width: 357px;
-    height: 681px;
-  }
-}
-@media (min-width: 835px) {
-  .p-service-card__header {
-    width: 616px;
-    height: 1197px;
-  }
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 .p-service-card__content {
   position: relative;
-}
-@media (min-width: 400px) and (max-width: 834px) {
-  .p-service-card__content {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 357px;
-    height: 681px;
-  }
-}
-@media (min-width: 835px) {
-  .p-service-card__content {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 584px;
-    height: 161px;
-  }
+  width: 100%;
+  height: 100%;
 }
 
 .p-service-card--takeout {
@@ -681,26 +651,6 @@ li {
   background-repeat: no-repeat;
   background-position: center;
 }
-@media (min-width: 400px) and (max-width: 834px) {
-  .p-service-card--takeout {
-    position: relative;
-    min-width: 357px;
-    height: 681px;
-    margin-top: 40px;
-    margin-left: 40px;
-    box-sizing: border-box;
-  }
-}
-@media (min-width: 835px) {
-  .p-service-card--takeout {
-    box-sizing: border-box;
-    min-width: 616px;
-    height: 1197px;
-    margin-left: 120px;
-    margin-top: 120px;
-  }
-}
-
 .p-service-card--eatin {
   background-image: url("/../../images/Hamburger _and_fries.jpg");
   background-size: cover;
