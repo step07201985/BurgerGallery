@@ -6,7 +6,7 @@
 @use "Foundation/_variables" as vars;
 
 // Layout
-@use "Layout/_header" as header;
+@use "Layout/_header" as header;             //OK
 // @use "Layout/_footer" as footer;
 // @use "Layout/_hero" as hero;
 // @use "Layout/_main" as main;
@@ -26,10 +26,10 @@
 // @use "Object/Component/_hero__image" as hero__image;
 // @use "Object/Component/_hero__text" as hero__text;
 // @use "Object/Component/_logo" as logo;
-@use "Object/Component/_site-title" as site_title;
-@use "Object/Component/_section-title" as section_title;
-@use "Object/Component/_info-box" as info-box;
-@use "Object/Component/_menu-button" as menu-button;
+@use "Object/Component/_site-title" as site_title;    //OK
+@use "Object/Component/_section-title" as section_title;      //OK
+@use "Object/Component/_info-box" as info-box;         //OK
+@use "Object/Component/_menu-button" as menu-button;            //OK
 @use "Object/Component/_search" as search;    //OK
 @use "Object/Component/_textBox" as textBox;  
 
