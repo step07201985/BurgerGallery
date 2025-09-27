@@ -1,6 +1,7 @@
 // ===================================
 // object/project/_service-card.scss
 // サービスカード（Take Out / Eat In）のスタイル
+// 外側の余白は親（.p-service-menu__inner / __container）のmargin/gapで管理
 // ===================================
 
 
@@ -9,69 +10,53 @@
 @use "../../Foundation/_mixin" as mixin;
 @use "../../Foundation/_typography" as typography;
 
+
+// --- PCカンプ基準（1920px）と左コンテンツ幅（右サイド368px常設） ---
+$pc-canvas: 1920px;
+$pc-right: 368px;
+$pc-left-col: $pc-canvas - $pc-right; // 1552px
+
+// 画面全体に対する%（PC全体レイアウト用）              
+@function pcw($px) { @return ($px / $pc-canvas) * 100%; }
+// 左コンテンツ幅（1552px）に対する%（PC内部レイアウト用）
+@function pclw($px) { @return ($px / $pc-left-col) * 100%; }
+
 .p-service-card {
     position: relative;
-    left: auto;
-    top: auto;
-    width: 335px;
-    margin: 0 auto 32px;
     width: 100%;
+    max-width: 335px;
     height: 642px;
+    margin: 0 auto 32px;
 
-    // tablet 
+    // tablet (400px - 834px)
     @include mixin.breakpoint(tablet) {
-        width: 357px;
+        max-width: 357px;
         height: 681px;
-        margin: 0;
+        margin: 0;     // 左右の余白は親要素で管理
     }
 
-    // PC
+    // PC (835px - )
     @include mixin.breakpoint(pc) {
-        width: 616px;
+        // カード幅616px → 左コンテンツ1552pxに対して約39.69%
+        width: pclw(616px);   // 39.69%
+        max-width: 616px;
         height: 1197px;
-        margin-top: 120px;
-        margin-left: 120px;
+        margin: 0;    // 左右の余白は親要素で管理
     }
 
+    /* ====== ヘッダー層（見出し/ラインなどの基準面） ====== */
     &__header {
         box-sizing: border-box;
         position: absolute;
-        left: 0;
-        top: 0;
-        width: 335px;
-        height: 642px;
-
-        // tablet 
-        @include mixin.breakpoint(tablet) {
-            width: 357px;
-            height: 681px;
-        }
-        // PC
-        @include mixin.breakpoint(pc) {
-            width: 616px;
-            height: 1197px;
-        }
+        inset: 0;    // left:0; top:0; right:0; bottom:0 の短縮
+        width: 100%;
+        height: 100%;
     }
 
     &__content {
         position: relative;
-        // tablet 
-        @include mixin.breakpoint(tablet) {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 357px;
-            height: 681px;
-        }
-        // PC
-        @include mixin.breakpoint(pc) {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 584px;
-            height: 161px;
-        }
-
+        width: 100%;
+        height: 100%;
     }
 
 
@@ -86,21 +71,13 @@
 
     // tablet 
     @include mixin.breakpoint(tablet) {
-        position: relative;
-        min-width: 357px;
-        height: 681px;
-        margin-top: 40px;
-        margin-left: 40px;
-        box-sizing: border-box;
+    // 寸法は親.card側で管理済み。ここでは余白を持たせない
+    //（親 .p-service-menu__container の gap を使用）
     }
 
     // PC
     @include mixin.breakpoint(pc) {
-        box-sizing: border-box;
-        min-width: 616px;
-        height: 1197px;
-        margin-left: 120px;
-        margin-top: 120px;
+         // こちらも余白は親で管理（margin-left/top は付けない）
     }
 
 }
@@ -112,6 +89,7 @@
     background-repeat: no-repeat;
     background-position: center;
 
+    // Tablet / PC：カード寸法・余白は親とベースで統一管理
     // tablet 
     @include mixin.breakpoint(tablet) {
 
