@@ -113,19 +113,12 @@ $pc-canvas: 1920px;
 
         // PCサイズ
         @include mixin.breakpoint(pc) {
-            box-sizing: border-box;
-            position: absolute;
-            left: 410px;
-            top: 0;
-            width: 136px;
+            flex: 0 0 pcw(136px);        // 136 / 1920 = 7.083%
             height: 46px;
-            border: 1px solid vars.$color-text-heading; //#707070
-            border-radius: 10px;
-            background: linear-gradient(90deg, vars.$color-bg-sidebar 0%, vars.$greige-pale 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
+            border-radius: 10px;
             }
 
         // 検索 文字
