@@ -226,6 +226,7 @@ li {
     left: 6.2239583333%;
     top: 189.5px;
     width: 3.90625%;
+    min-width: 75px;
   }
 }
 .c-section-title--white {
@@ -260,6 +261,7 @@ li {
     height: 53px;
     font-size: 36px;
     line-height: 53px;
+    min-width: 288px;
   }
 }
 
@@ -521,6 +523,10 @@ li {
   text-align: center;
 }
 
+/* PCカンプの横幅（%化の基準） */
+/* ================================
+ * Component: アクセス内テキストボックス
+ * ================================ */
 .c-textBox {
   position: absolute;
   left: 40px;
@@ -537,34 +543,21 @@ li {
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .c-textBox {
-    position: absolute;
     left: 42px;
     top: 116px;
     width: 763px;
     height: 259px;
-    margin: 0;
-    font-family: "M PLUS 1p", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 33px;
-    color: #FFFFFF;
   }
 }
 @media (min-width: 835px) {
   .c-textBox {
-    position: absolute;
-    left: 119px;
+    left: 6.1979166667%;
     top: 248px;
-    width: 697px;
+    width: 36.3020833333%;
     height: 326px;
-    margin: 0;
-    font-family: "M PLUS 1p", sans-serif;
-    font-weight: 700;
-    font-style: normal;
     font-size: 16px;
     line-height: 33px;
-    color: #FFFFFF;
+    min-width: 697px;
   }
 }
 

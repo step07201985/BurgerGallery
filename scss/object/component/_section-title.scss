@@ -102,6 +102,7 @@ $pc-canvas: 1920px;
                 left: pcw(119.5px);            
                 top: 189.5px;
                 width: pcw(75px);
+                min-width: 75px;
                 // border-top幅は据え置き
             }
         }
@@ -142,6 +143,7 @@ $pc-canvas: 1920px;
 
                 font-size: 36px;
                 line-height: 53px;
+                min-width: 288px;
             }
 
     }
