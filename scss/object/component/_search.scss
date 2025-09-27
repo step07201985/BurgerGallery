@@ -8,49 +8,56 @@
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
+// PCカンプ基準幅（横方向%化の基準値）
+$pc-canvas: 1920px;
+@function pcw($px) { @return ($px / $pc-canvas) * 100%; }
+
+
 .c-search {
-    min-width: 318px;
     position: absolute;
     left: 31px;
     right: 26px;
     top: 130px;
+    min-width: 318px;
     height: 46px;
     display: flex;
     align-items: center;
     gap: 8px; //入力とボタンの間隔
     box-sizing: border-box;
 
-    // tabletサイズ
+    // tabletサイズ (480px〜834px)
     @include mixin.breakpoint(tablet) {
-        position: absolute;
-        min-width: 546px;
-        min-height: 46px;
-        margin-bottom: 40px;
-        align-items: center;
         left: 144px;
         top: 131px;
+
+        // 幅は固定で扱い、内部はflexで横並び（子にabsoluteは使わない）
+        right: auto;
+        width: 546px;
+        height: 46px;
+        gap: 14px;
+        margin-bottom: 40px;
     }
 
-    // PCサイズ
+    // PCサイズ (835px〜)
     @include mixin.breakpoint(pc) {
-        position: absolute;
-        left: 976px;
+        left: pcw(976px);        // 976 / 1920 = 50.833%
         top: 86px;
-        max-width: 546px;
+        width: pcw(546px);        // 546 / 1920 = 28.438%
         height: 46px;
+        gap: 14px;
     }
 
     &__input {
         position: relative;
         min-width: 216px;
         height: 46px;
+        box-sizing: border-box;
         background: vars.$color-text-overlay; //#FFFFFF
         border: 1px solid vars.$color-text-heading; //#707070
         border-radius: 10px 8px 10px 10px;
         padding-left: 40px;
-        outline: none;
-        box-sizing: border-box;
 
+        // アイコン（虫眼鏡）
         background-image: url(../images/mushimegane.svg);
         background-repeat: no-repeat;
         background-size: 24px 24px;
@@ -59,22 +66,13 @@
 
         // tabletサイズ
         @include mixin.breakpoint(tablet) {
-            position: absolute;
-            left: 0;
-            top: 0;
-            min-width: 396px;
+            width: 396px;
             height: 46px;
-            background: vars.$color-text-overlay;
-            border: 1px solid vars.$color-text-heading; //#707070
             border-radius: 10px;
-            outline: none;
             font-size: 16px;
             line-height: 24px;
-            padding-left: 42px;
             color: #333;
-            background-image: url(../images/mushimegane.svg);
-            background-repeat: no-repeat;
-            background-size: 24px 24px;
+            padding-left: 42px;
             background-position: 12px 11px;
         }
 
