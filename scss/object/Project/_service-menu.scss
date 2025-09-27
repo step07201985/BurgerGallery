@@ -9,23 +9,24 @@
 @use "../../Foundation/_mixin" as mixin;
 @use "../../Foundation/_typography" as typography;
 
+
+// PCカンプ基準（横幅）
+$pc-canvas: 1920px;
+// 右サイド固定幅（PC）：368px → 左コンテンツ幅 1552px
+$pc-right: 368px;
+$pc-left-col: $pc-canvas - $pc-right; // 1552px
+
+// 画面幅に対する%（全体基準）
+@function pcw($px) { @return ($px / $pc-canvas) * 100%; }
+// 左コンテンツ幅に対する%（PCの内部レイアウト用）
+@function pclw($px) { @return ($px / $pc-left-col) * 100%; }
+
+
 .p-service-menu {
     margin: 0 auto;
 
-    // tablet
-    @include mixin.breakpoint(tablet) {
-        max-width: 834px;
-        width: 100%;
-        margin: 0;
-    }
-
-    @include mixin.breakpoint(pc) {
-        max-width: 1553px;
-        width: 100%;
-
-    }
-
     &__inner {
+        width: 100%;
         max-width: 375px; // スマホサイズ
         padding: 0 20px;
         margin: 20px auto;
@@ -36,10 +37,11 @@
             margin: 40px auto;
         }                                               
 
+        // PC：左コンテンツ幅 1552px を%で指定（＝80.833%）
         @include mixin.breakpoint(pc) {
-            max-width: 1553px;
+            max-width: pcw($pc-left-col);   // 1552 / 1920 ≒ 80.833%
             margin: 120px auto;
-
+            padding-right: pcw($pc-right);   // 368 / 1920 ≒ 19.167%
         }
     }
 
@@ -60,7 +62,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            column-gap: 81px;
+            column-gap: pclw(81px);     // 81 / 1552 ≒ 5.22%
         }
     }
 }

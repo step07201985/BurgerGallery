@@ -52,6 +52,7 @@ $pc-canvas: 1920px; // PCカンプの横幅（%化の基準）
         left: pcw(65px);
         top: 66px;
         width: pcw(325px);
+        min-width: 325px;
         height: 84px;
         .c-site-title__link {
             font-size: 64px;
