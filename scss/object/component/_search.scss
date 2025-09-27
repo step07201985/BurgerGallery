@@ -78,7 +78,7 @@ $pc-canvas: 1920px;
 
         // PCサイズ
         @include mixin.breakpoint(pc) {
-            width: pcw(396px);        // 396 / 1920 = 20.625%
+            width: 396px;        
             height: 46px;
             border-radius: 10px;
             font-size: 16px;
@@ -113,7 +113,7 @@ $pc-canvas: 1920px;
 
         // PCサイズ
         @include mixin.breakpoint(pc) {
-            flex: 0 0 pcw(136px);        // 136 / 1920 = 7.083%
+            flex: 0 0 136px;        
             height: 46px;
             display: flex;
             align-items: center;

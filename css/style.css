@@ -446,12 +446,11 @@ li {
   position: relative;
   min-width: 216px;
   height: 46px;
+  box-sizing: border-box;
   background: #FFFFFF;
   border: 1px solid #707070;
   border-radius: 10px 8px 10px 10px;
   padding-left: 40px;
-  outline: none;
-  box-sizing: border-box;
   background-image: url(../images/mushimegane.svg);
   background-repeat: no-repeat;
   background-size: 24px 24px;
@@ -459,44 +458,25 @@ li {
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .c-search__input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    min-width: 396px;
+    width: 396px;
     height: 46px;
-    background: #FFFFFF;
-    border: 1px solid #707070;
     border-radius: 10px;
-    outline: none;
     font-size: 16px;
     line-height: 24px;
-    padding-left: 42px;
     color: #333;
-    background-image: url(../images/mushimegane.svg);
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
+    padding-left: 42px;
     background-position: 12px 11px;
   }
 }
 @media (min-width: 835px) {
   .c-search__input {
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 0;
     width: 396px;
     height: 46px;
-    background: #FFFFFF;
-    border: 1px solid #707070;
     border-radius: 10px;
-    outline: none;
     font-size: 16px;
     line-height: 24px;
     color: #333;
     padding-left: 42px;
-    background-image: url(../images/mushimegane.svg);
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
     background-position: 12px 11px;
   }
 }
@@ -509,38 +489,26 @@ li {
   background: linear-gradient(90deg, #F2EDE9 0%, #DED8D3 100%);
   border: 1px solid #707070;
   border-radius: 10px;
+  cursor: pointer;
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .c-search__button {
-    position: absolute;
-    left: 410px;
-    top: 0;
-    min-width: 136px;
+    flex: 0 0 136px;
     height: 46px;
-    border: 1px solid #707070;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #F2EDE9 0%, #DED8D3 100%);
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
   }
 }
 @media (min-width: 835px) {
   .c-search__button {
-    box-sizing: border-box;
-    position: absolute;
-    left: 410px;
-    top: 0;
-    width: 136px;
+    flex: 0 0 136px;
     height: 46px;
-    border: 1px solid #707070;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #F2EDE9 0%, #DED8D3 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    border-radius: 10px;
   }
 }
 .c-search__button-text {
@@ -551,26 +519,6 @@ li {
   line-height: 24px;
   color: #707070;
   text-align: center;
-}
-@media (min-width: 400px) and (max-width: 834px) {
-  .c-search__button-text {
-    font-family: "M PLUS 1p", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 24px;
-    color: #707070;
-  }
-}
-@media (min-width: 835px) {
-  .c-search__button-text {
-    font-family: "M PLUS 1p", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 24px;
-    color: #707070;
-  }
 }
 
 .c-textBox {

@@ -30,8 +30,8 @@
 @use "Object/Component/_section-title" as section_title;
 @use "Object/Component/_info-box" as info-box;
 @use "Object/Component/_menu-button" as menu-button;
-@use "Object/Component/_search" as search;
-@use "Object/Component/_textBox" as textBox;
+@use "Object/Component/_search" as search;    //OK
+@use "Object/Component/_textBox" as textBox;  
 
 // Project
 // @use "Object/Project/_header" as _header;
