@@ -1,0 +1,22 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_variables" as vars;
+@use "../../Foundation/_typography" as typography;
+
+// =========================
+// Component: オーバーレイ
+// 
+// =========================
+
+.c-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 200ms ease;
+    z-index: 800;
+
+    .l-sidebar.is-open & {
+        opacity: 1;
+    }
+}

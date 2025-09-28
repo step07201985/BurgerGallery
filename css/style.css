@@ -91,6 +91,16 @@ li {
   }
 }
 
+.l-sidebar {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+}
+.l-sidebar.is-open {
+  pointer-events: auto;
+}
+
 /* =========================================
  * Component: サイト名（h1）.c-site-title
  * - SP基準 → Tablet(400–834) → PC(835〜)
@@ -562,6 +572,18 @@ li {
     line-height: 33px;
     min-width: 697px;
   }
+}
+
+.c-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 200ms ease;
+  z-index: 800;
+}
+.l-sidebar.is-open .c-sidebar-overlay {
+  opacity: 1;
 }
 
 .p-service-menu {
