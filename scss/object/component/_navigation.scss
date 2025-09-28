@@ -1,0 +1,73 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_variables" as vars;
+@use "../../Foundation/_typography" as typography;
+
+
+// =========================
+// ナビ本体
+// =========================
+
+.c-navigation {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// 上位のカテゴリーメニュー （バーガー・サイド・ドリンク）
+.c-navigation__item {
+    position: absolute;
+    left: 46px;
+}
+
+// 1つめバーガー
+.c-navigation__item:nth-child(1) {
+    top: 178px;
+}
+
+// 2つめサイド
+.c-navigation__item:nth-child(2) {
+    top: 644px;
+}
+
+// 3つめドリンク
+.c-navigation__item:nth-child(3) {
+    top: 960px;
+}
+
+.c-navigation__title {
+    margin: 0;
+    @include typography.m-plus-1p-bold;
+    font-size: 24px;
+    line-height: 36px;
+    color: vars.$color-text-heading;         // #707070
+}
+
+.c-navigation__submenu {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    margin-top: 76px;
+    margin-left: 20px;    //66-46=20
+}
+
+// サブメニュー各項目：50pxピッチ（行高30 + 下余白20）
+.c-navigation__subitem + .c-navigation__subitem {
+    margin-top: 20px;
+}
+
+// サブメニューのリンク（20/30・並び替えなし）
+.c-navigation__link {
+    display: block;
+    width: 100%;
+    height: 30px;
+    @include typography.m-plus-1p-regular;
+    font-size: 20px;
+    line-height: 30px;
+    color: vars.$color-text-heading; 
+    text-decoration: none;
+}
+
