@@ -1,0 +1,22 @@
+@use "../Foundation/_base" as base;
+@use "../Foundation/_mixin" as mixin;
+@use "../Foundation/_variables" as vars;
+@use "../Foundation/_typography" as typography;
+
+// =========================
+// Layout: サイドバー（SP）
+// - デフォルトは閉じた状態（.is-open で開く）
+// =========================
+
+.l-sidebar {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    pointer-events: none;   //閉じた状態では操作不可
+
+    // 開いている状態（JSで .is-open を付与） 
+    &.is-open {
+        pointer-events: auto;
+    }
+}
+
