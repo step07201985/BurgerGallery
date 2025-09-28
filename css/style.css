@@ -574,18 +574,6 @@ li {
   }
 }
 
-.c-sidebar-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 200ms ease;
-  z-index: 800;
-}
-.l-sidebar.is-open .c-sidebar-overlay {
-  opacity: 1;
-}
-
 .p-service-menu {
   margin: 0 auto;
 }
@@ -803,5 +791,25 @@ li {
   width: 100%;
   height: 100%;
   z-index: 2;
+}
+
+.p-sidebar {
+  position: fixed;
+  right: -328px;
+  top: 0;
+  width: 328px;
+  height: 100vh;
+  overflow-y: auto;
+  background: #F2EDE9;
+  z-index: 901;
+}
+
+.l-sidebar.is-open .p-sidebar {
+  right: 0;
+}
+
+.p-sidebar__header {
+  position: relative;
+  height: 140px;
 }
 /*# sourceMappingURL=style.css.map */

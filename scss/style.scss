@@ -32,8 +32,9 @@
 @use "Object/Component/_info-box" as info-box;         //OK
 @use "Object/Component/_menu-button" as menu-button;            //OK
 @use "Object/Component/_search" as search;    //OK
-@use "Object/Component/_textBox" as textBox;
-@use "Object/Component/_sidebar" as sidebar;  //OK
+@use "Object/Component/_textBox" as textBox;       //OK
+@use "Object/Component/_sidebar" as sidebar;  
+@use "Object/Component/_closeButton" as closeButton;  
 
 // Project
 // @use "Object/Project/_header" as _header;
@@ -43,6 +44,6 @@
 @use "Object/Project/_service-card" as _service-card;   //OK
 @use "Object/Project/_main-visual" as _main-visual;    //OK
 @use "Object/Project/_access" as _access;             //OK
-
+@use "Object/Project/_sidebar" as _sidebar;
 
 // Utility

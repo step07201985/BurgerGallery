@@ -1,0 +1,32 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_variables" as vars;
+@use "../../Foundation/_typography" as typography;
+
+.c-close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.c-close-button__line {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 50%;
+    border-top: 6px solid vars.$color-text-heading;
+}
+
+.c-close-button__line:first-child {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.c-close-button__line:last-child {
+    transform: translateY(-50%) rotate(135deg);
+}

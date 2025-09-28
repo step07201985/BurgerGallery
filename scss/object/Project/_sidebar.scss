@@ -2,3 +2,28 @@
 @use "../../Foundation/_mixin" as mixin;
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
+
+// =========================
+// Project: サイドバー本体（パネル）
+// 
+// =========================
+
+.p-sidebar {
+    position: fixed;
+    right: -328px;
+    top: 0;
+    width: 328px;
+    height: 100vh;
+    overflow-y: auto;
+    background: vars.$color-bg-sidebar;
+    z-index: 901;        //オーバーレイより手前
+}
+
+.l-sidebar.is-open .p-sidebar {
+    right: 0;
+}
+
+.p-sidebar__header {
+    position: relative;
+    height: 140px;
+}
