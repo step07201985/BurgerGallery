@@ -9,7 +9,10 @@
 // =========================
 
 .l-sidebar {
-    position: fixed;
+    position: relative;
+    width: 100%;
+    max-width: 375px;
+    height: 2716px;
     inset: 0;
     z-index: 900;
     pointer-events: none;   //閉じた状態では操作不可
