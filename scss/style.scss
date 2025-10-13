@@ -35,7 +35,8 @@
 @use "Object/Component/_textBox" as textBox;       //OK
 @use "Object/Component/_sidebar" as sidebar_component;  
 @use "Object/Component/_closeButton" as closeButton;
-@use "Object/Component/_navigation" as navigation;  
+@use "Object/Component/_copyright" as copyright;
+  
 
 // Project
 // @use "Object/Project/_header" as _header;

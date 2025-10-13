@@ -912,6 +912,12 @@ li {
   top: 50%;
   border-top: 6px solid #707070;
 }
+.c-close-button__line:first-child {
+  transform: translateY(-50%) rotate(45deg);
+}
+.c-close-button__line:last-child {
+  transform: rotateY(-50%) rotate(135deg);
+}
 
 .p-service-menu {
   margin: 0 auto;

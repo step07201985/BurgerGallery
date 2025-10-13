@@ -1,0 +1,24 @@
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_variables" as vars;
+@use "../../Foundation/_typography" as typography;
+
+// ===================================
+// component/_copyright.scss
+// Component: コピーライト（Figma抽出値のみ）
+// 対応HTML: <small class="c-copyright">Copyright: RaiseTech</small>
+// ===================================
+
+.c-copyright {
+    position: absolute;
+    width: 141px;
+    height: 21px;
+    left: 109px;
+    top: 113px;
+
+    @include typography.m-plus-0p-regular;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: vars.$color-text-overlay;  // #FFFFFF
+}
