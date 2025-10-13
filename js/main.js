@@ -18,6 +18,27 @@ document.addEventListener('DOMContentLoaded', () => {
     sidebar.setAttribute('aria-hidden', 'true'); 
     openBtn.setAttribute('aria-expanded', 'false');
 
-    
+    // 開く (ムーブイン Right:ease-out / 300ms / delay 1ms)
+    function openSidebar() {
+        overlay.style.display = 'block'; 
+
+        panel.animate(
+            [
+                { transform: 'translateX(100%)' },
+                { transform: 'translateX(0)' }
+            ],
+            {
+                duration: 300,    // animation duration 300ms
+                easing: 'ease-out',  // animation timing function ease-out
+                fill: 'forwards',   
+                delay: 1          // animation delay 1ms
+            }
+        );
+        
+        sidebar.setAttribute('aria-hidden', 'false');
+        openBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    // 閉じる (即時 0ms)
 
 })
