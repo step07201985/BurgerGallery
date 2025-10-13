@@ -215,5 +215,69 @@
             line-height: 30px;
             color: vars.$color-text-heading;     // #707070
         }
+        // オレンジ
+        & .c-navigation__subitem:nth-child(3) .c-navigation__link {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            left: 66px;
+            top: 1136px;
+            @include typography.m-plus-1p-regular;
+            font-size: 20px;
+            line-height: 30px;
+            color: vars.$color-text-heading;     // #707070
+        }
+        // アップル
+        & .c-navigation__subitem:nth-child(4) .c-navigation__link {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            left: 66px;
+            top: 1186px;
+            @include typography.m-plus-1p-regular;
+            font-size: 20px;
+            line-height: 30px;
+            color: vars.$color-text-heading;     // #707070
+        }
+        // 紅茶(Ice/Hot)
+        & .c-navigation__subitem:nth-child(5) .c-navigation__link {
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            left: 66px;
+            top: 1236px;
+            @include typography.m-plus-1p-regular;
+            font-size: 20px;
+            line-height: 30px;
+            color: vars.$color-text-heading;     // #707070
+        }
+        // コーヒー(Ice/Hot)
+        & .c-navigation__subitem:nth-child(6) .c-navigation__link {
+            position: absolute;
+            width: 190px;
+            height: 30px;
+            left: 66px;
+            top: 1286px;
+            @include typography.m-plus-1p-regular;
+            font-size: 20px;
+            line-height: 30px;
+            color: vars.$color-text-heading;     // #707070
+        }
+    }
+}
+
+.c-close-button {
+    position: absolute;
+    &__line {
+        left: 0;
+        right: 0;
+        top: 50%;
+        border-top: 6px solid vars.$color-text-heading;  // #707070
+        &:first-child {
+            transform: translateY(-50%) rotate(45deg);
+        }
+        &:last-child {
+            transform: rotateY(-50%) rotate(135deg);
+        }
     }
 }
