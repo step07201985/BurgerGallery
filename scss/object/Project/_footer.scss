@@ -1,0 +1,10 @@
+@use "../../Foundation/_variables.scss" as vars;
+@use "../../Foundation/_base" as base;
+@use "../../Foundation/_mixin" as mixin;
+@use "../../Foundation/_typography" as typography;
+
+.p-footer {
+    min-height: 150px;
+    padding-top: 16px;
+    padding-left: 80px;
+}

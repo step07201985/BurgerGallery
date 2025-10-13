@@ -1,5 +1,13 @@
+@use "../Foundation/_mixin" as mixin;
+@use "../Foundation/_base" as base;
+@use "../Foundation/_variables" as vars;
+
 .l-footer {
-    display: flex;
-    width: 375px;
-    height: 150px;
+    width: 100%;
+    background: vars.$color-footer-bg;     //#9D8670
+    background-image: url(/images/footer-imge.png) no-repeat center/cover;
+    &__inner {
+        max-width: 375px;       //スマホ画面サイズ
+        margin: 0 auto;  
+    }
 }
