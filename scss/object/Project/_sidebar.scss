@@ -9,14 +9,13 @@
 // =========================
 
 .p-sidebar {
-    position: fixed;
-    right: -328px;
-    top: 0;
+    position: absolute;
     width: 328px;
-    height: 100vh;
-    overflow-y: auto;
+    height: 2716px;
+    left: 47px;
+    top: 0px;
+    box-sizing: border-box;
     background: vars.$color-bg-sidebar;
-    z-index: 901;        //オーバーレイより手前
 }
 
 .l-sidebar.is-open .p-sidebar {
