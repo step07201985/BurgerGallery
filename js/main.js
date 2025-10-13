@@ -40,5 +40,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 閉じる (即時 0ms)
+    function closeSidebarInstant() {
+        panel.animate(
+            [
+                { transform: 'translateX(0)' },
+                { transform: 'translateX(100%)' }
+            ],
+            {
+                duration: 0,  // animation duration : 0ms(即時)
+                fill: 'forwards'
+            }
+        );
 
-})
+        overlay.style.display = 'none';
+        sidebar.setAttribute('aria-hidden', 'true');
+        openBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    //イベントの割当
+    openBtn.addEventListener('click', openSidebar);
+    closeEls.forEach((el) => el.addEventListener('click', closeSidebarInstant));
+
+});
