@@ -35,8 +35,9 @@
 @use "Object/Component/_textBox" as textBox;       //OK
 @use "Object/Component/_sidebar" as sidebar_component;  
 @use "Object/Component/_closeButton" as closeButton;
+@use "Object/Component/_footer-nav" as footer-nav;
 @use "Object/Component/_copyright" as copyright;
-  
+
 
 // Project
 // @use "Object/Project/_header" as _header;
@@ -47,5 +48,6 @@
 @use "Object/Project/_main-visual" as _main-visual;    //OK
 @use "Object/Project/_access" as _access;             //OK
 @use "Object/Project/_sidebar" as _sidebar;
+@use "Object/Project/_footer" as _footer_project;    //OK
 
 // Utility

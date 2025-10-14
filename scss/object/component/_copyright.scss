@@ -10,15 +10,9 @@
 // ===================================
 
 .c-copyright {
-    position: absolute;
-    width: 141px;
-    height: 21px;
-    left: 109px;
-    top: 113px;
-
     @include typography.m-plus-1p-regular;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 1.5;
 
     color: vars.$color-text-overlay;  // #FFFFFF
 }

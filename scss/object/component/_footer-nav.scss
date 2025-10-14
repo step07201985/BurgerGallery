@@ -3,3 +3,37 @@
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
+.c-footer-nav {
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        @include typography.m-plus-1p-regular;
+        font-size: 18px;
+        line-height: 1.5;
+        color: inherit;
+    }
+
+    &__item,
+    &__separator {
+        color: inherit;
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: underline;
+        }
+    }
+}
+
+.c-footer-nav__separator {
+    pointer-events: none;
+}

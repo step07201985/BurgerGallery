@@ -6,8 +6,7 @@
     position: relative;
     width: 100%;
     min-height: 150px;
-    background-color: vars.$color-footer-bg;     //#9D8670
-    background-image: url(../images/footer-imge.png) no-repeat center/cover;
+    background:vars.$color-footer-bg url(../images/footer-imge.png) center/cover no-repeat;
     color: vars.$color-text-overlay;   //#FFFFFF
     &__inner {
         max-width: 375px;       //スマホ画面サイズ
