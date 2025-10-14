@@ -8,7 +8,7 @@
 // Layout
 @use "Layout/_header" as header;      //OK
 @use "Layout/_sidebar" as sidebar;            
-// @use "Layout/_footer" as footer;
+@use "Layout/_footer" as footer;
 // @use "Layout/_hero" as hero;
 // @use "Layout/_main" as main;
 // @use "Layout/_contents" as contents;

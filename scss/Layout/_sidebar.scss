@@ -9,10 +9,7 @@
 // =========================
 
 .l-sidebar {
-    position: relative;
-    width: 100%;
-    max-width: 375px;
-    height: 2716px;
+    position: fixed;
     inset: 0;
     z-index: 900;
     pointer-events: none;   //閉じた状態では操作不可
@@ -20,6 +17,6 @@
     // 開いている状態（JSで .is-open を付与） 
     &.is-open {
         pointer-events: auto;
-    }
+    }   
 }
 

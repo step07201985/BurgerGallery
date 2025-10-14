@@ -9,14 +9,10 @@
 // =========================
 
 .c-sidebar-overlay {
-    box-sizing: border-box;
-    position: absolute;
-    width: 100%;
-    max-width: 375px;
-    height: 2716px;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.501961);
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
     transition: opacity 200ms ease;
     z-index: 800;
 
