@@ -15,12 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // 初期状態:閉じ
     panel.style.transform = 'translateX(100%)';   //画面の右外で待機
     overlay.style.display = 'none';     // オーバーレイ非表示
+    sidebar.classList.remove('is-open');
     sidebar.setAttribute('aria-hidden', 'true'); 
     openBtn.setAttribute('aria-expanded', 'false');
 
     // 開く (ムーブイン Right:ease-out / 300ms / delay 1ms)
     function openSidebar() {
-        overlay.style.display = 'block'; 
+        overlay.style.display = 'block';
+        sidebar.classList.add('is-open');
+        
+        panel.getAnimations().forEach((animation) => animation.cancel()); // 既存のアニメーションをキャンセル
 
         panel.animate(
             [
@@ -30,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 duration: 300,    // animation duration 300ms
                 easing: 'ease-out',  // animation timing function ease-out
-                fill: 'forwards',   
+                fill: 'forwards',
                 delay: 1          // animation delay 1ms
             }
         );
@@ -41,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 閉じる (即時 0ms)
     function closeSidebarInstant() {
+        panel.getAnimations().forEach((animation) => animation.cancel());
+
         panel.animate(
             [
                 { transform: 'translateX(0)' },
@@ -53,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         overlay.style.display = 'none';
+        sidebar.classList.remove('is-open');
         sidebar.setAttribute('aria-hidden', 'true');
         openBtn.setAttribute('aria-expanded', 'false');
     }
