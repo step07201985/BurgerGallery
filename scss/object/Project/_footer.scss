@@ -32,12 +32,6 @@ $pc-canvas: 1920px;
         }
 
         @include mixin.breakpoint(pc) {
-            left: pclw(86px);
-            top: 234px;
-            width: pclw(240px);
-            min-width: 240px;
-            height: 59px;
-            font-size: 40px;
-            line-height: 59px;
+        
         }
 }
