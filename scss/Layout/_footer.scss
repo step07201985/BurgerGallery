@@ -2,16 +2,49 @@
 @use "../Foundation/_base" as base;
 @use "../Foundation/_variables" as vars;
 
+
+// PCカンプ基準幅（％化の基準）
+$pc-canvas: 1920px;
+
+// px→%（PCカンプ基準）の補助関数（横方向の値に使用）
+@function pcw($px) {
+  @return ($px / $pc-canvas) * 100%;
+}
+
+
 .l-footer {
     position: relative;
     width: 100%;
     min-height: 150px;
     background:vars.$color-footer-bg url(../images/footer-imge.png) center/cover no-repeat;
-    color: vars.$color-text-overlay;   //#FFFFFF
+    color: vars.$color-text-overlay;   // #FFFFFF
     &__inner {
-        max-width: 375px;       //スマホ画面サイズ
+        max-width: 375px;       // スマホ画面サイズ
         margin: 0 auto;
-        padding: 0 24px;
         box-sizing: border-box;  
+    }
+
+    // --- Tablet (400–834px)：最小限の差分 ---
+    @include mixin.breakpoint(tablet) {
+        min-height: 149px;  // iPadカンプの高さ
+        &__inner {
+        max-width: 834px;       // tablet画面サイズ
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        min-height: 149px;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        }
+    }
+
+    @include mixin.breakpoint(pc) {
+        height: 217px;              // PCカンプ
+        position: sticky;
+        z-index: 999;              // zの値は調整
+        top: 0;
+        // 右常設サイドバー 368px を％で確保（背景は全幅、内容が潜り込まないように右余白を取る）
+        padding-right: pcw(368px);         
     }
 }

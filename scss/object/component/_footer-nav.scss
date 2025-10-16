@@ -3,7 +3,17 @@
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
+// PCカンプ基準幅（％化の基準）
+$pc-canvas: 1920px;
+
+// px→%（PCカンプ基準）の補助関数（横方向の値に使用）
+@function pcw($px) {
+  @return ($px / $pc-canvas) * 100%;
+}
+
 .c-footer-nav {
+    width: 100%;
+
     &__list {
         display: flex;
         align-items: center;
@@ -16,6 +26,11 @@
         font-size: 18px;
         line-height: 1.5;
         color: inherit;
+        @include mixin.breakpoint(tablet) {
+            gap: 28px;
+            font-size: 20px;
+            line-height: 30px;
+        }
     }
 
     &__item,
@@ -32,6 +47,11 @@
             text-decoration: underline;
         }
     }
+
+    
+        @include mixin.breakpoint(pc) {
+            
+        }
 }
 
 .c-footer-nav__separator {

@@ -3,13 +3,41 @@
 @use "../../Foundation/_mixin" as mixin;
 @use "../../Foundation/_typography" as typography;
 
+// PCカンプ基準幅（％化の基準）
+$pc-canvas: 1920px;
+
+// px→%（PCカンプ基準）の補助関数（横方向の値に使用）
+@function pcw($px) {
+  @return ($px / $pc-canvas) * 100%;
+}
+
+
 .p-footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     min-height: 150px;
     padding: 16px 0 20px;
     text-align: center;
     gap: 56px;
+
+    /* ========== Tablet (400–834px) ========== */
+        @include mixin.breakpoint(tablet) {
+            min-height: 149px;
+            padding: 30px 0 24px;
+            justify-content: flex-start;
+            gap: 44px;
+        }
+
+        @include mixin.breakpoint(pc) {
+            left: pclw(86px);
+            top: 234px;
+            width: pclw(240px);
+            min-width: 240px;
+            height: 59px;
+            font-size: 40px;
+            line-height: 59px;
+        }
 }

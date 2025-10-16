@@ -111,8 +111,32 @@ li {
 .l-footer__inner {
   max-width: 375px;
   margin: 0 auto;
-  padding: 0 24px;
   box-sizing: border-box;
+}
+@media (min-width: 400px) and (max-width: 834px) {
+  .l-footer {
+    min-height: 149px;
+  }
+  .l-footer__inner {
+    max-width: 834px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    min-height: 149px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+}
+@media (min-width: 835px) {
+  .l-footer {
+    height: 217px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    padding-right: 19.1666666667%;
+  }
 }
 
 /* =========================================
@@ -639,6 +663,9 @@ li {
   transform: translateY(-50%) rotate(135deg);
 }
 
+.c-footer-nav {
+  width: 100%;
+}
 .c-footer-nav__list {
   display: flex;
   align-items: center;
@@ -654,6 +681,13 @@ li {
   line-height: 1.5;
   color: inherit;
 }
+@media (min-width: 400px) and (max-width: 834px) {
+  .c-footer-nav__list {
+    gap: 28px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
 .c-footer-nav__item, .c-footer-nav__separator {
   color: inherit;
 }
@@ -664,7 +698,6 @@ li {
 .c-footer-nav__link:hover, .c-footer-nav__link:focus-visible {
   text-decoration: underline;
 }
-
 .c-footer-nav__separator {
   pointer-events: none;
 }
@@ -677,7 +710,6 @@ li {
   line-height: 1.5;
   color: #FFFFFF;
 }
-
 .p-service-menu {
   margin: 0 auto;
 }
@@ -922,9 +954,30 @@ li {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   min-height: 150px;
   padding: 16px 0 20px;
   text-align: center;
   gap: 56px;
+  /* ========== Tablet (400–834px) ========== */
+}
+@media (min-width: 400px) and (max-width: 834px) {
+  .p-footer {
+    min-height: 149px;
+    padding: 30px 0 24px;
+    justify-content: flex-start;
+    gap: 44px;
+  }
+}
+@media (min-width: 835px) {
+  .p-footer {
+    left: pclw(86px);
+    top: 234px;
+    width: pclw(240px);
+    min-width: 240px;
+    height: 59px;
+    font-size: 40px;
+    line-height: 59px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

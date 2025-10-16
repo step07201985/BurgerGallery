@@ -15,4 +15,13 @@
     line-height: 1.5;
 
     color: vars.$color-text-overlay;  // #FFFFFF
+
+    // --- Tablet (400–834px)：最小限の差分 ---
+    @include mixin.breakpoint(tablet) {
+        
+    }
+
+    @include mixin.breakpoint(pc) {
+        
+    }
 }
