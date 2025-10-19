@@ -32,6 +32,8 @@ $pc-canvas: 1920px;
         }
 
         @include mixin.breakpoint(pc) {
-        
+            box-sizing: border-box;
+            padding-top: 41px;
+            padding-bottom: 27px;
         }
 }
