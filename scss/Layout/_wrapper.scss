@@ -1,0 +1,25 @@
+@use "../Foundation/_base" as base;
+@use "../Foundation/_mixin" as mixin;
+@use "../Foundation/_variables" as vars;
+@use "../Foundation/_typography" as typography;
+
+@include mixin.breakpoint(pc) {
+    .l-wrapper {
+        /* PCキャンバスの最大幅をFigmaに合わせて中央寄せ */
+        max-width: 1920px;
+        margin: 0 auto;
+
+        /* 2カラムグリッド */
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 368px; /* 左=可変, 右=固定368px */
+        grid-template-rows: auto 1fr;               /* 1行目=ヘッダー, 2行目=コンテンツ */
+        grid-template-areas:
+        "header header"     
+        "main   sidebar";
+    }
+
+    /* 各領域の割当（HTMLのクラスそのまま） */
+    .l-header  { grid-area: header; }
+    .l-main    { grid-area: main;   max-width: 1553px; width: 100%; }
+    .l-sidebar { grid-area: sidebar; width: 368px; position: static; } /* オーバーレイ解除 */
+}
