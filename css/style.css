@@ -105,6 +105,9 @@ li {
   .l-sidebar {
     width: 368px;
     min-height: 2843px;
+    position: static;
+    inset: auto;
+    pointer-events: auto;
   }
 }
 .l-footer {
@@ -655,6 +658,11 @@ li {
 .l-sidebar.is-open .c-sidebar-overlay {
   opacity: 1;
 }
+@media (min-width: 835px) {
+  .c-sidebar-overlay {
+    display: none;
+  }
+}
 
 .c-sidebar-title {
   position: absolute;
@@ -997,6 +1005,9 @@ li {
 }
 @media (min-width: 835px) {
   .p-sidebar {
+    position: static;
+    right: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     width: 100%;

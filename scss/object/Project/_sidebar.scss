@@ -19,6 +19,9 @@
     z-index: 901;        //オーバーレイより手前
 
     @include mixin.breakpoint(pc) {
+        position: static;
+        right: auto;
+        height: auto;
         display: flex;
         flex-direction: column;
         width: 100%;

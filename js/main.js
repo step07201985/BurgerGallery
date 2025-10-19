@@ -12,18 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!openBtn || !sidebar || !panel || !overlay) return;
 
-    // 初期状態:閉じ
-    panel.style.transform = 'translateX(100%)';   //画面の右外で待機
-    overlay.style.display = 'none';     // オーバーレイ非表示
-    sidebar.classList.remove('is-open');
-    sidebar.setAttribute('aria-hidden', 'true'); 
-    openBtn.setAttribute('aria-expanded', 'false');
+    const desktopQuery = window.matchMedia('(min-width: 835px)');
+    let isMobileMode = false;
 
     // 開く (ムーブイン Right:ease-out / 300ms / delay 1ms)
     function openSidebar() {
         overlay.style.display = 'block';
         sidebar.classList.add('is-open');
-        
+
         panel.getAnimations().forEach((animation) => animation.cancel()); // 既存のアニメーションをキャンセル
 
         panel.animate(
@@ -38,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 delay: 1          // animation delay 1ms
             }
         );
-        
+
         sidebar.setAttribute('aria-hidden', 'false');
         openBtn.setAttribute('aria-expanded', 'true');
     }
@@ -64,8 +60,47 @@ document.addEventListener('DOMContentLoaded', () => {
         openBtn.setAttribute('aria-expanded', 'false');
     }
 
-    //イベントの割当
-    openBtn.addEventListener('click', openSidebar);
-    closeEls.forEach((el) => el.addEventListener('click', closeSidebarInstant));
+    function enterMobileMode() {
+        if (isMobileMode) return;
+        isMobileMode = true;
 
+        panel.style.transform = 'translateX(100%)';   //画面の右外で待機
+        overlay.style.display = 'none';     // オーバーレイ非表示
+        sidebar.classList.remove('is-open');
+        sidebar.setAttribute('aria-hidden', 'true');
+        openBtn.setAttribute('aria-expanded', 'false');
+
+        openBtn.addEventListener('click', openSidebar);
+        closeEls.forEach((el) => el.addEventListener('click', closeSidebarInstant));
+    }
+
+    function exitMobileMode() {
+        if (typeof panel.getAnimations === 'function') {
+            panel.getAnimations().forEach((animation) => animation.cancel());
+        }
+
+        panel.style.removeProperty('transform');
+        overlay.style.removeProperty('display');
+        sidebar.classList.add('is-open');
+        sidebar.setAttribute('aria-hidden', 'false');
+        openBtn.setAttribute('aria-expanded', 'true');
+
+        if (isMobileMode) {
+            openBtn.removeEventListener('click', openSidebar);
+            closeEls.forEach((el) => el.removeEventListener('click', closeSidebarInstant));
+            isMobileMode = false;
+        }
+    }
+
+    function handleViewportChange(e) {
+        const isDesktop = e.matches ?? desktopQuery.matches;
+        if (isDesktop) {
+            exitMobileMode();
+        } else {
+            enterMobileMode();
+        }
+    }
+
+    handleViewportChange(desktopQuery);
+    desktopQuery.addEventListener('change', handleViewportChange);
 });

@@ -24,5 +24,8 @@
     .l-sidebar {
         width: 368px;
         min-height: 2843px;
+        position: static;
+        inset: auto;
+        pointer-events: auto;
     }
 }
