@@ -20,3 +20,9 @@
     }   
 }
 
+@include mixin.breakpoint(pc) {
+    .l-sidebar {
+        width: 368px;
+        min-height: 2843px;
+    }
+}

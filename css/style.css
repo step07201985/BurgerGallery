@@ -101,6 +101,12 @@ li {
   pointer-events: auto;
 }
 
+@media (min-width: 835px) {
+  .l-sidebar {
+    width: 368px;
+    min-height: 2843px;
+  }
+}
 .l-footer {
   position: relative;
   width: 100%;
@@ -634,6 +640,16 @@ li {
   line-height: 36px;
   color: #707070;
 }
+@media (min-width: 835px) {
+  .c-sidebar-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 34px;
+    line-height: 40px;
+    color: #707070;
+  }
+}
 
 .c-close-button {
   position: absolute;
@@ -952,6 +968,18 @@ li {
   overflow-y: auto;
   background: #F2EDE9;
   z-index: 901;
+}
+@media (min-width: 835px) {
+  .p-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 2843px;
+    background: #F2EDE9;
+    padding-top: 84px;
+    padding-left: 46px;
+    padding-right: 0;
+  }
 }
 
 .l-sidebar.is-open .p-sidebar {

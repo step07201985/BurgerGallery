@@ -17,6 +17,17 @@
     overflow-y: auto;
     background: vars.$color-bg-sidebar;
     z-index: 901;        //オーバーレイより手前
+
+    @include mixin.breakpoint(pc) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 2843px;
+        background: vars.$color-bg-sidebar;
+        padding-top: 84px;
+        padding-left: 46px;
+        padding-right: 0;
+    }
 }
 
 .l-sidebar.is-open .p-sidebar {
