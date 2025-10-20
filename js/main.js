@@ -24,8 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 要素チェック
     if (!elements.openBtn || !elements.sidebar || !elements.panel || !elements.overlay) {
         console.warn('サイドバー要素が見つかりません');
+        console.log('openBtn:', elements.openBtn);
+        console.log('sidebar:', elements.sidebar);
+        console.log('panel:', elements.panel);
+        console.log('overlay:', elements.overlay);
         return;
     }
+
+    console.log('サイドバー初期化開始');
 
     const desktopQuery = window.matchMedia(`(min-width: ${CONFIG.BREAKPOINT_PC}px)`);
     let isMobileMode = false;
@@ -86,12 +92,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isMobileMode) return;
         isMobileMode = true;
 
+        console.log('モバイルモード開始');
+
+        // サイドバーを画面外に配置
         panel.style.transform = 'translateX(100%)';
         overlay.style.display = 'none';
         sidebar.classList.remove('is-open');
         sidebar.setAttribute('aria-hidden', 'true');
         openBtn.setAttribute('aria-expanded', 'false');
 
+        console.log('panel.style.transform:', panel.style.transform);
+
+        // イベントリスナー登録
         openBtn.addEventListener('click', openSidebar);
         elements.closeEls.forEach((el) => el.addEventListener('click', closeSidebarInstant));
         document.addEventListener('keydown', handleKeyDown);
@@ -120,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ビューポート変更ハンドラ
     function handleViewportChange(e) {
         const isDesktop = e.matches ?? desktopQuery.matches;
+        console.log('ビューポート変更:', isDesktop ? 'デスクトップ' : 'モバイル');
         if (isDesktop) {
             exitMobileMode();
         } else {
@@ -128,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 初期化
+    console.log('初期化実行');
     handleViewportChange(desktopQuery);
     desktopQuery.addEventListener('change', handleViewportChange);
 });

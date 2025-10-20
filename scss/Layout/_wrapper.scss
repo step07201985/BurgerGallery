@@ -3,6 +3,12 @@
 @use "../Foundation/_variables" as vars;
 @use "../Foundation/_typography" as typography;
 
+/* スマホ・タブレット: デフォルトレイアウト */
+.l-wrapper {
+    position: relative;
+}
+
+/* PC画面のみ: グリッドレイアウト */
 @include mixin.breakpoint(pc) {
     .l-wrapper {
         /* PCキャンバスの最大幅をFigmaに合わせて中央寄せ */

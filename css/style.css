@@ -148,6 +148,12 @@ li {
   }
 }
 
+/* スマホ・タブレット: デフォルトレイアウト */
+.l-wrapper {
+  position: relative;
+}
+
+/* PC画面のみ: グリッドレイアウト */
 @media (min-width: 835px) {
   .l-wrapper {
     /* PCキャンバスの最大幅をFigmaに合わせて中央寄せ */
@@ -665,15 +671,17 @@ li {
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
+  display: none;
   transition: opacity 200ms ease;
   z-index: 800;
 }
 .l-sidebar.is-open .c-sidebar-overlay {
   opacity: 1;
+  display: block;
 }
 @media (min-width: 835px) {
   .c-sidebar-overlay {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -1109,7 +1117,7 @@ li {
 
 .p-sidebar {
   position: fixed;
-  right: -328px;
+  right: 0;
   top: 0;
   width: 328px;
   height: 100vh;
@@ -1131,10 +1139,6 @@ li {
     padding-left: 46px;
     padding-right: 46px;
   }
-}
-
-.l-sidebar.is-open .p-sidebar {
-  right: 0;
 }
 
 .p-sidebar__header {

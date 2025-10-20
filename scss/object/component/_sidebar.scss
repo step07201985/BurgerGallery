@@ -13,15 +13,17 @@
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
+    display: none;  // 初期状態で非表示
     transition: opacity 200ms ease;
     z-index: 800;
 
     .l-sidebar.is-open & {
         opacity: 1;
+        display: block;  // 開いた時に表示
     }
 
     @include mixin.breakpoint(pc) {
-        display: none;
+        display: none !important;  // PC画面では常に非表示
     }
 }
 
