@@ -39,12 +39,11 @@
         text-align: center;
     }
     
-    /* ========== PC (835px〜)：横方向を%化 ========== */
+    /* ========== PC (835px〜)：ヘッダー内での固定位置 ========== */
     @include mixin.breakpoint(pc) {
-        left: mixin.pcw(65px);
+        left: 65px;
         top: 66px;
-        width: mixin.pcw(325px);
-        min-width: 325px;
+        width: 325px;
         height: 84px;
         .c-site-title__link {
             font-size: 64px;

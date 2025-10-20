@@ -27,6 +27,9 @@
         position: sticky;
         z-index: 999;              //zの値は調整
         top: 0;
+        /* 左コンテンツエリア全体に広げる（左側のみ） */
+        margin-left: -48px;
+        width: calc(100% + 48px);
         padding-left: 48px;
         padding-right: 48px;
     }

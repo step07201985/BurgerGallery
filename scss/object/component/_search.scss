@@ -35,9 +35,10 @@
 
     // PCサイズ (835px〜)
     @include mixin.breakpoint(pc) {
-        left: mixin.pcw(976px);        // 976 / 1920 = 50.833%
+        left: auto;
+        right: 48px;
         top: 86px;
-        width: mixin.pcw(546px);        // 546 / 1920 = 28.438%
+        width: 546px;
         height: 46px;
         gap: 14px;
     }
