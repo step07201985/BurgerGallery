@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('サイドバー初期化開始');
 
+    // 要素を変数に展開
+    const { openBtn, sidebar, panel, overlay, closeEls } = elements;
+
     const desktopQuery = window.matchMedia(`(min-width: ${CONFIG.BREAKPOINT_PC}px)`);
     let isMobileMode = false;
 
@@ -105,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // イベントリスナー登録
         openBtn.addEventListener('click', openSidebar);
-        elements.closeEls.forEach((el) => el.addEventListener('click', closeSidebarInstant));
+        closeEls.forEach((el) => el.addEventListener('click', closeSidebarInstant));
         document.addEventListener('keydown', handleKeyDown);
     }
 
@@ -123,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isMobileMode) {
             openBtn.removeEventListener('click', openSidebar);
-            elements.closeEls.forEach((el) => el.removeEventListener('click', closeSidebarInstant));
+            closeEls.forEach((el) => el.removeEventListener('click', closeSidebarInstant));
             document.removeEventListener('keydown', handleKeyDown);
             isMobileMode = false;
         }
