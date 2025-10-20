@@ -80,7 +80,6 @@ li {
 @media (min-width: 835px) {
   .l-header {
     height: 217px;
-    position: -webkit-sticky;
     position: sticky;
     z-index: 999;
     top: 0;
@@ -154,8 +153,7 @@ li {
     padding: 0;
     /* 2カラムグリッド: サイドバーを一番上から配置 */
     display: grid;
-    -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
     grid-template-columns: 1fr 368px; /* 左=可変(1552px相当), 右=固定368px */
     grid-template-rows: auto auto; /* 各行はコンテンツサイズに追従 */
     grid-template-areas: "header  sidebar" "main    sidebar";
@@ -187,8 +185,6 @@ li {
   height: 47px;
   margin: 0;
   color: #707070;
-  /* ========== Tablet (400–834px) ========== */
-  /* ========== PC (835px〜)：横方向を%化 ========== */
 }
 .c-site-title__link {
   font-family: "Roboto", sans-serif;
@@ -203,12 +199,18 @@ li {
   line-height: 1.175;
   padding-block: 3px;
 }
+.c-site-title {
+  /* ========== Tablet (400–834px) ========== */
+}
 @media (min-width: 400px) and (max-width: 834px) {
   .c-site-title {
     top: 40px;
     left: 316px;
     text-align: center;
   }
+}
+.c-site-title {
+  /* ========== PC (835px〜)：横方向を%化 ========== */
 }
 @media (min-width: 835px) {
   .c-site-title {
@@ -242,8 +244,6 @@ li {
   color: #EAEAEA;
   font-size: 41px;
   line-height: 48px;
-  /* ---------- 下線（カラー可変） ---------- */
-  /* ---------- タイトル白バリアント（文字色/サイズ違い） ---------- */
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .c-section-title {
@@ -265,6 +265,9 @@ li {
     line-height: 94px;
   }
 }
+.c-section-title {
+  /* ---------- 下線（カラー可変） ---------- */
+}
 .c-section-title__line {
   position: absolute;
   left: 15.5px;
@@ -272,7 +275,6 @@ li {
   width: 33.89px;
   height: 0;
   border: 4px solid #FFFFFF;
-  /* ---- 白線バリアント（タイトル下の短い白線） ---- */
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .c-section-title__line {
@@ -288,6 +290,9 @@ li {
     width: 63px;
     border-width: 8px;
   }
+}
+.c-section-title__line {
+  /* ---- 白線バリアント（タイトル下の短い白線） ---- */
 }
 .c-section-title__line--white {
   position: absolute;
@@ -310,6 +315,9 @@ li {
     top: 189.5px;
     width: 75px;
   }
+}
+.c-section-title {
+  /* ---------- タイトル白バリアント（文字色/サイズ違い） ---------- */
 }
 .c-section-title--white {
   position: absolute;
@@ -357,8 +365,6 @@ li {
   flex-direction: column;
   gap: 8px;
   background-color: rgba(255, 255, 255, 0.8);
-  /* ------- タイトル ------- */
-  /* ------- 本文テキスト ------- */
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .c-info-box {
@@ -403,6 +409,9 @@ li {
     top: auto;
   }
 }
+.c-info-box {
+  /* ------- タイトル ------- */
+}
 .c-info-box__title {
   margin: 0;
   width: 105px;
@@ -429,6 +438,9 @@ li {
     font-size: 24px;
     line-height: 24px;
   }
+}
+.c-info-box {
+  /* ------- 本文テキスト ------- */
 }
 .c-info-box__text {
   margin: 0;
@@ -677,6 +689,8 @@ li {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-style: normal;
+    left: 46px;
+    top: 40px;
     font-size: 34px;
     line-height: 40px;
     color: #707070;
@@ -892,8 +906,7 @@ li {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-start;
-    -moz-column-gap: 41px;
-         column-gap: 41px;
+    column-gap: 41px;
   }
 }
 @media (min-width: 835px) {
@@ -901,8 +914,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    -moz-column-gap: 5.2190721649%;
-         column-gap: 5.2190721649%;
+    column-gap: 5.2190721649%;
   }
 }
 
@@ -912,7 +924,6 @@ li {
   max-width: 335px;
   height: 642px;
   margin: 0 auto 32px;
-  /* ====== ヘッダー層（見出し/ラインなどの基準面） ====== */
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .p-service-card {
@@ -928,6 +939,9 @@ li {
     height: 1197px;
     margin: 0;
   }
+}
+.p-service-card {
+  /* ====== ヘッダー層（見出し/ラインなどの基準面） ====== */
 }
 .p-service-card__header {
   box-sizing: border-box;
@@ -982,10 +996,16 @@ li {
 }
 @media (min-width: 835px) {
   .p-main-visual {
-    /* 右サイド常設のため、左カラム幅に合わせて最大幅を%で制御 */
-    max-width: 80.8333333333%;
+    /* 左コンテンツエリア全体に広げる */
+    width: 100%;
+    max-width: none;
     height: 530px;
-    margin: 0 auto;
+    margin: 0;
+    /* 左右のpaddingを打ち消して画面端まで広げる */
+    margin-left: -48px;
+    margin-right: -48px;
+    /* 幅を再計算してpaddingを補う */
+    width: calc(100% + 96px);
   }
 }
 .p-main-visual__inner {
@@ -1021,7 +1041,7 @@ li {
 }
 @media (min-width: 835px) {
   .p-main-visual__title {
-    left: 86px;
+    left: 134px;
     top: 234px;
     width: auto;
     height: 59px;
@@ -1104,7 +1124,7 @@ li {
     width: 100%;
     min-height: 2843px;
     background: #F2EDE9;
-    padding-top: 84px;
+    padding-top: 0;
     padding-left: 46px;
     padding-right: 46px;
   }
@@ -1117,6 +1137,11 @@ li {
 .p-sidebar__header {
   position: relative;
   height: 140px;
+}
+@media (min-width: 835px) {
+  .p-sidebar__header {
+    height: 120px;
+  }
 }
 
 .p-footer {
@@ -1146,4 +1171,5 @@ li {
     padding-bottom: 27px;
   }
 }
+
 /*# sourceMappingURL=style.css.map */

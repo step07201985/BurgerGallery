@@ -37,6 +37,8 @@
 
     @include mixin.breakpoint(pc) {
         @include typography.roboto-bold;
+        left: 46px;
+        top: 40px;
         font-size: 34px;
         line-height: 40px;
         color: vars.$color-text-heading;    //#707070

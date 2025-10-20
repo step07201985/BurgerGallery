@@ -27,7 +27,7 @@
         width: 100%;
         min-height: 2843px;
         background: vars.$color-bg-sidebar;
-        padding-top: 84px;
+        padding-top: 0;
         padding-left: 46px;
         padding-right: 46px;
     }
@@ -40,4 +40,8 @@
 .p-sidebar__header {
     position: relative;
     height: 140px;
+
+    @include mixin.breakpoint(pc) {
+        height: 120px;
+    }
 }

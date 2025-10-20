@@ -21,10 +21,16 @@
     }
 
     @include mixin.breakpoint(pc) {
-        /* 右サイド常設のため、左カラム幅に合わせて最大幅を%で制御 */
-        max-width: mixin.pcw(1552px);           // 1552 / 1920 ≒ 80.833%
+        /* 左コンテンツエリア全体に広げる */
+        width: 100%;
+        max-width: none;
         height: 530px;
-        margin: 0 auto;
+        margin: 0;
+        /* 左右のpaddingを打ち消して画面端まで広げる */
+        margin-left: -48px;
+        margin-right: -48px;
+        /* 幅を再計算してpaddingを補う */
+        width: calc(100% + 96px);
     }
 
     &__inner {
@@ -58,7 +64,7 @@
         }
 
         @include mixin.breakpoint(pc) {
-            left: 86px;                // 画像コンテナ内の左端から
+            left: 134px;               // 画像コンテナ内の左端から (48px padding + 86px)
             top: 234px;
             width: auto;
             height: 59px;
