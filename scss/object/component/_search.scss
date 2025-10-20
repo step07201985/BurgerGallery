@@ -8,11 +8,6 @@
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
-// PCカンプ基準幅（横方向%化の基準値）
-$pc-canvas: 1920px;
-@function pcw($px) { @return ($px / $pc-canvas) * 100%; }
-
-
 .c-search {
     position: absolute;
     left: 31px;
@@ -40,9 +35,9 @@ $pc-canvas: 1920px;
 
     // PCサイズ (835px〜)
     @include mixin.breakpoint(pc) {
-        left: pcw(976px);        // 976 / 1920 = 50.833%
+        left: mixin.pcw(976px);        // 976 / 1920 = 50.833%
         top: 86px;
-        width: pcw(546px);        // 546 / 1920 = 28.438%
+        width: mixin.pcw(546px);        // 546 / 1920 = 28.438%
         height: 46px;
         gap: 14px;
     }

@@ -1,1 +1,10 @@
+# macOS
 .DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ビルド成果物(CSS)は管理対象とするため除外しない
+# css/

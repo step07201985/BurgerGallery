@@ -3,11 +3,6 @@
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
-
-/* PCカンプの横幅（%化の基準） */
-$pc-canvas: 1920px;
-@function pcw($px) { @return ($px / $pc-canvas) * 100%; }
-
 /* ================================
  * Component: アクセス内テキストボックス
  * ================================ */
@@ -34,12 +29,11 @@ $pc-canvas: 1920px;
 
     // PC (835px-)
     @include mixin.breakpoint(pc) {
-        left: pcw(119px);    // 119px / 1920px * 100%= 6.198%
+        left: 119px;
         top: 248px;
-        width: pcw(697px);   // 697px / 1920px * 100%= 36.302%
+        width: 697px;
         height: 326px;
         font-size: 16px;
         line-height: 33px;
-        min-width: 697px;
     }
 }

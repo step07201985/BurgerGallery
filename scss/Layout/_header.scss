@@ -2,16 +2,6 @@
 @use "../Foundation/_base" as base;
 @use "../Foundation/_variables" as vars;
 
-
-// PCカンプ基準幅（％化の基準）
-$pc-canvas: 1920px;
-
-// px→%（PCカンプ基準）の補助関数（横方向の値に使用）
-@function pcw($px) {
-  @return ($px / $pc-canvas) * 100%;
-}
-
-
 /* =========================
  * Layout: ヘッダー
  * - SP基準で全幅（100%）
@@ -38,7 +28,7 @@ $pc-canvas: 1920px;
         z-index: 999;              //zの値は調整
         top: 0;
         // 右常設サイドバー 368px を％で確保（背景は全幅、内容が潜り込まないように右余白を取る）
-        padding-right: pcw(368px);         
+        padding-right: mixin.pcw(368px);
     }
 }
 

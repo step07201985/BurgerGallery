@@ -10,14 +10,6 @@
  * - PCのみ横方向を%化（カンプ基準 1920px）
  * ========================================= */
 
-$pc-canvas: 1920px; // PCカンプの横幅（%化の基準）
-
-/* px → %（横方向のみで使用） */
-@function pcw($px) {
-    @return ($px / $pc-canvas) * 100%;
-}
-
-
 .c-site-title {
     position: absolute;
     left: 86px;
@@ -49,9 +41,9 @@ $pc-canvas: 1920px; // PCカンプの横幅（%化の基準）
     
     /* ========== PC (835px〜)：横方向を%化 ========== */
     @include mixin.breakpoint(pc) {
-        left: pcw(65px);
+        left: mixin.pcw(65px);
         top: 66px;
-        width: pcw(325px);
+        width: mixin.pcw(325px);
         min-width: 325px;
         height: 84px;
         .c-site-title__link {

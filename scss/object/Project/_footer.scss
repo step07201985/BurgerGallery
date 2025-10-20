@@ -3,15 +3,6 @@
 @use "../../Foundation/_mixin" as mixin;
 @use "../../Foundation/_typography" as typography;
 
-// PCカンプ基準幅（％化の基準）
-$pc-canvas: 1920px;
-
-// px→%（PCカンプ基準）の補助関数（横方向の値に使用）
-@function pcw($px) {
-  @return ($px / $pc-canvas) * 100%;
-}
-
-
 .p-footer {
     display: flex;
     flex-direction: column;

@@ -10,21 +10,6 @@
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
-
-// --- PCカンプの基準幅 & 左コンテンツ幅（PCは右サイド常設：368px） ---
-$pc-canvas: 1920px;
-$pc-right: 368px;
-$pc-left-col: $pc-canvas - $pc-right; // 1552px
-
-// 左コンテンツ幅（1552px）に対する%変換（内部カードの横幅比率に使用）
-@function pclw($px) {
-  @return ($px / $pc-left-col) * 100%;
-}
-
-
-
-
-
 .c-info-box {
     box-sizing: border-box;
     position: absolute;
@@ -35,7 +20,7 @@ $pc-left-col: $pc-canvas - $pc-right; // 1552px
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background-color: rgb(vars.$color-text-overlay, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
 
     // tabletサイズ
     // ========== Tablet (400–834px) ==========
@@ -48,9 +33,14 @@ $pc-left-col: $pc-canvas - $pc-right; // 1552px
     // PCサイズ
     // ========== PC (835px〜) ==========
     @include mixin.breakpoint(pc) {
-        // PCは内部カードの横方向を%化（左コンテンツ幅=1552px基準）
-        width: pclw(584px);        // 584 / 1552 ≒ 37.6%
-        height: 161px;
+        // PC版では自然な流れで配置（absoluteを解除）
+        position: static;
+        width: 100%;
+        max-width: 552px;
+        height: auto;
+        margin: 0 0 20px 0;
+        left: auto;
+        top: auto;
     }
 
 
@@ -62,7 +52,7 @@ $pc-left-col: $pc-canvas - $pc-right; // 1552px
         }
         // PCサイズ
         @include mixin.breakpoint(pc) {
-            top: 839px;
+            top: auto;
         }
     }
 
@@ -74,7 +64,7 @@ $pc-left-col: $pc-canvas - $pc-right; // 1552px
         }
         // PCサイズ
         @include mixin.breakpoint(pc) {
-            top: 1016px;
+            top: auto;
         }
     }
 

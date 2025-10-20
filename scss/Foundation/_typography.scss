@@ -1,18 +1,9 @@
 @use "_variables.scss" as vars;
 
-
-// Roboto bold 700
-@import url('//fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap');
-// 読み込みのサイトで、httpsとhttpを判断してくれる
-
-// M PLUS 1p bold 700
-@import url('//fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;700&display=swap');
-
-// M PLUS 1
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap');
-
-// Noto Sans 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+// フォント最適化: 使用するウェイトのみ読み込み
+// Roboto: 700 (bold)のみ
+// M PLUS 1p: 400 (regular), 700 (bold)のみ
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=M+PLUS+1p:wght@400;700&display=swap');
 
 $font-roboto: "Roboto", sans-serif;
 $font-m-plus-1p: "M PLUS 1p", sans-serif;

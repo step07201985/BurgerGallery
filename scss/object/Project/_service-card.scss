@@ -10,17 +10,6 @@
 @use "../../Foundation/_mixin" as mixin;
 @use "../../Foundation/_typography" as typography;
 
-
-// --- PCカンプ基準（1920px）と左コンテンツ幅（右サイド368px常設） ---
-$pc-canvas: 1920px;
-$pc-right: 368px;
-$pc-left-col: $pc-canvas - $pc-right; // 1552px
-
-// 画面全体に対する%（PC全体レイアウト用）              
-@function pcw($px) { @return ($px / $pc-canvas) * 100%; }
-// 左コンテンツ幅（1552px）に対する%（PC内部レイアウト用）
-@function pclw($px) { @return ($px / $pc-left-col) * 100%; }
-
 .p-service-card {
     position: relative;
     width: 100%;
@@ -38,7 +27,7 @@ $pc-left-col: $pc-canvas - $pc-right; // 1552px
     // PC (835px - )
     @include mixin.breakpoint(pc) {
         // カード幅616px → 左コンテンツ1552pxに対して約39.69%
-        width: pclw(616px);   // 39.69%
+        width: mixin.pclw(616px);   // 39.69%
         max-width: 616px;
         height: 1197px;
         margin: 0;    // 左右の余白は親要素で管理
@@ -57,6 +46,15 @@ $pc-left-col: $pc-canvas - $pc-right; // 1552px
         position: relative;
         width: 100%;
         height: 100%;
+
+        // PC版: Flexboxで情報ボックスを下部に配置
+        @include mixin.breakpoint(pc) {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            box-sizing: border-box;
+        }
     }
 
 

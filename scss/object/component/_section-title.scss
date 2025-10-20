@@ -5,14 +5,6 @@
 
 // セクションタイトル「Take Out」「Eat In」のスタイル
 
-// PCカンプ横幅（%化の基準）: 1920px
-$pc-canvas: 1920px;
-
-// 横方向(px)→PC％変換の補助関数（width/leftなど=親がページ幅基準のときに使用）
-@function pcw($px) {
-    @return ($px / $pc-canvas) * 100%;
-}
-
 /* =========================================
  * Component: セクションタイトル
  * - BEM: .c-section-title / &__line / &--white / &__line--white
@@ -44,15 +36,14 @@ $pc-canvas: 1920px;
     }
 
     // PC
-    // === PC (835px〜)：横方向は％に変換 ===
+    // === PC (835px〜)：カード内の絶対位置 ===
     @include mixin.breakpoint(pc) {
-        left: pcw(10px);       // 10 / 1920 *100 = 0.5208%
-        top: 24px;             // 縦は親の高さ基準になるためpx維持
-        width: pcw(319px);      // 319 /1920 *100 = 16.6146% 
+        left: 24px;            // カード左端から24px
+        top: 24px;             // カード上端から24px
+        width: auto;
         height: 94px;
         font-size: 80px;
         line-height: 94px;
-        min-width: 319px;
     }
 
     /* ---------- 下線（カラー可変） ---------- */
@@ -75,11 +66,10 @@ $pc-canvas: 1920px;
 
         // PC
         @include mixin.breakpoint(pc) {
-            left: pcw(17.5px);         // ≒0.9115%
-            top: 161px;
-            width: pcw(63px);          // ≒3.2813%
+            left: 24px;                // タイトルと揃える
+            top: 120px;                // タイトル下
+            width: 63px;
             border-width: 8px;
-            min-width: 63px;
         }
 
         /* ---- 白線バリアント（タイトル下の短い白線） ---- */
@@ -101,10 +91,9 @@ $pc-canvas: 1920px;
 
             // PC
             @include mixin.breakpoint(pc) {
-                left: pcw(119.5px);            
+                left: 119.5px;
                 top: 189.5px;
-                width: pcw(75px);
-                min-width: 75px;
+                width: 75px;
                 // border-top幅は据え置き
             }
         }
@@ -138,14 +127,13 @@ $pc-canvas: 1920px;
 
             // PC
             @include mixin.breakpoint(pc) {
-                left: pcw(119px);
+                left: 119px;
                 top: 86px;
-                width: pcw(288px);
+                width: 288px;
                 height: 53px;
 
                 font-size: 36px;
                 line-height: 53px;
-                min-width: 288px;
             }
 
     }

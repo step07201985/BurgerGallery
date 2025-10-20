@@ -1,7 +1,23 @@
 // === Breakpoints (プロジェクト基準) ===
 // SP:    ～399px
-// Tablet:400px ～ 834px 
+// Tablet:400px ～ 834px
 // PC:    835px～
+
+// === PC Canvas Width ===
+$pc-canvas: 1920px;
+$pc-right-sidebar: 368px;
+$pc-left-col: $pc-canvas - $pc-right-sidebar; // 1552px
+
+// === Utility Functions ===
+// PCカンプ基準（1920px）での横方向%変換
+@function pcw($px) {
+    @return calc($px / $pc-canvas * 100%);
+}
+
+// 左コンテンツ幅基準（1552px）での横方向%変換
+@function pclw($px) {
+    @return calc($px / $pc-left-col * 100%);
+}
 
 
 

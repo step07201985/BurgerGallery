@@ -1,54 +1,36 @@
-// Foundation
+// ===================================
+// メインスタイルシート
+// ===================================
 
-@use "Foundation/_mixin" as mixin ;
-@use "Foundation/_base" as base ;
+// Foundation
+@use "Foundation/_mixin" as mixin;
+@use "Foundation/_base" as base;
 @use "Foundation/_typography" as typography;
 @use "Foundation/_variables" as vars;
 
 // Layout
-@use "Layout/_header" as header;      //OK
-@use "Layout/_sidebar" as sidebar;            
+@use "Layout/_header" as header;
+@use "Layout/_sidebar" as sidebar;
 @use "Layout/_footer" as footer;
 @use "Layout/_wrapper" as wrapper;
-// @use "Layout/_hero" as hero;
-// @use "Layout/_main" as main;
-// @use "Layout/_contents" as contents;
 
-
-
-// Object
-
-// Component
-
-// @use "Object/Component/_button" as button;
-// @use "Object/Component/_menu" as menu;
-// @use "Object/Component/_overlay" as overlay;
-// @use "Object/Component/_search-input" as search-input;
-// @use "Object/Component/_title" as title;
-// @use "Object/Component/_hero__image" as hero__image;
-// @use "Object/Component/_hero__text" as hero__text;
-// @use "Object/Component/_logo" as logo;
-@use "Object/Component/_site-title" as site_title;    //OK
-@use "Object/Component/_section-title" as section_title;      //OK
-@use "Object/Component/_info-box" as info-box;         //OK
-@use "Object/Component/_menu-button" as menu-button;            //OK
-@use "Object/Component/_search" as search;    //OK
-@use "Object/Component/_textBox" as textBox;       //OK
-@use "Object/Component/_sidebar" as sidebar_component;  
+// Object - Component
+@use "Object/Component/_site-title" as site_title;
+@use "Object/Component/_section-title" as section_title;
+@use "Object/Component/_info-box" as info-box;
+@use "Object/Component/_menu-button" as menu-button;
+@use "Object/Component/_search" as search;
+@use "Object/Component/_textBox" as textBox;
+@use "Object/Component/_sidebar" as sidebar_component;
+@use "Object/Component/_navigation" as navigation;
 @use "Object/Component/_closeButton" as closeButton;
 @use "Object/Component/_footer-nav" as footer-nav;
 @use "Object/Component/_copyright" as copyright;
 
-
-// Project
-// @use "Object/Project/_header" as _header;
-// @use "Object/Project/_articleCardTakeOut" as _articleCardTakeOut;
-// @use "Object/Project/_hero" as _hero;
-@use "Object/Project/_service-menu" as _service-menu;    //OK
-@use "Object/Project/_service-card" as _service-card;   //OK
-@use "Object/Project/_main-visual" as _main-visual;    //OK
-@use "Object/Project/_access" as _access;             //OK
+// Object - Project
+@use "Object/Project/_service-menu" as _service-menu;
+@use "Object/Project/_service-card" as _service-card;
+@use "Object/Project/_main-visual" as _main-visual;
+@use "Object/Project/_access" as _access;
 @use "Object/Project/_sidebar" as _sidebar;
-@use "Object/Project/_footer" as _footer_project;    //OK
-
-// Utility
+@use "Object/Project/_footer" as _footer_project;

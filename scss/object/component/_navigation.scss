@@ -3,357 +3,99 @@
 @use "../../Foundation/_variables" as vars;
 @use "../../Foundation/_typography" as typography;
 
-
 // =========================
-// ナビ本体
+// Component: ナビゲーションメニュー
+// position:absoluteをやめてFlexboxで実装
 // =========================
-
-.c-navigation__title {
-    position: absolute;
-    @include typography.m-plus-1p-bold;
-    font-size: 24px;
-    line-height: 36px;
-    color: vars.$color-text-heading;
-}
 
 .c-navigation {
-    &__item:nth-child(1) .c-navigation__title {
-        left: 46px;
-        right: 186px;
-        top: 178px;
-        bottom: 2502px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 90px 46px 0;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
     }
-    &__item:nth-child(2) .c-navigation__title {
-        left: 46px;
-        right: 210px;
-        top: 644px;
-        bottom: 2036px;
+
+    &__title {
+        @include typography.m-plus-1p-bold;
+        font-size: 24px;
+        line-height: 36px;
+        color: vars.$color-text-heading;
     }
-    &__item:nth-child(3) .c-navigation__title {
-        left: 46px;
-        right: 186px;
-        top: 960px;
-        bottom: 1720px;
+
+    &__submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-left: 20px;
     }
-    &__item:nth-child(1) .c-navigation__submenu {
-        position: absolute;
-        width: 180px;
-        height: 330px;
-        left: 66px;
-        top: 254px;
-    }
-    // ハンバーガー
-    &__item:nth-child(1) .c-navigation__subitem:nth-child(1) .c-navigation__link {
-        position: absolute;
-        width: 120px;
-        height: 30px;
-        left: 66px;
-        top: 254px;
+
+    &__link {
         @include typography.m-plus-1p-regular;
         font-size: 20px;
         line-height: 30px;
-        color: vars.$color-text-heading;     // #707070
-    }
-    // チーズバーガー
-    &__item:nth-child(1) .c-navigation__subitem:nth-child(2) .c-navigation__link {
-        position: absolute;
-        width: 140px;
-        height: 30px;
-        left: 66px;
-        top: 304px;
-        @include typography.m-plus-1p-regular;
-        font-size: 20px;
-        line-height: 30px;
-        color: vars.$color-text-heading;     // #707070
-    }
-    // テリヤキバーガー
-    &__item:nth-child(1) .c-navigation__subitem:nth-child(3) .c-navigation__link {
-        position: absolute;
-        width: 160px;
-        height: 30px;
-        left: 66px;
-        top: 354px;
-        @include typography.m-plus-1p-regular;
-        font-size: 20px;
-        line-height: 30px;
-        color: vars.$color-text-heading;     // #707070
-    }
-    // アボカドバーガー
-    &__item:nth-child(1) .c-navigation__subitem:nth-child(4) .c-navigation__link {
-        position: absolute;
-        width: 160px;
-        height: 30px;
-        left: 66px;
-        top: 404px;
-        @include typography.m-plus-1p-regular;
-        font-size: 20px;
-        line-height: 30px;
-        color: vars.$color-text-heading;     // #707070
-    }
-    // フィッシュバーガー
-    &__item:nth-child(1) .c-navigation__subitem:nth-child(5) .c-navigation__link {
-        position: absolute;
-        width: 180px;
-        height: 30px;
-        left: 66px;
-        top: 454px;
-        @include typography.m-plus-1p-regular;
-        font-size: 20px;
-        line-height: 30px;
-        color: vars.$color-text-heading;     // #707070
-    }
-    // ベーコンバーガー
-    &__item:nth-child(1) .c-navigation__subitem:nth-child(6) .c-navigation__link {
-        position: absolute;
-        width: 180px;
-        height: 30px;
-        left: 66px;
-        top: 454px;
-        @include typography.m-plus-1p-regular;
-        font-size: 20px;
-        line-height: 30px;
-        color: vars.$color-text-heading;     // #707070
-    }
-    // チキンバーガー
-    &__item:nth-child(1) .c-navigation__subitem:nth-child(7) .c-navigation__link {
-        position: absolute;
-        width: 140px;
-        height: 30px;
-        left: 66px;
-        top: 554px;
-        @include typography.m-plus-1p-regular;
-        font-size: 20px;
-        line-height: 30px;
-        color: vars.$color-text-heading;     // #707070
-    }
-    &__item:nth-child(2) {
-        & .c-navigation__submenu {
-            position: absolute;
-            width: 80px;
-            height: 180px;
-            left: 66px;
-            top: 720px;
-        }
-        // ポテト
-        & .c-navigation__subitem:nth-child(1) .c-navigation__link {
-            position: absolute;
-            width: 60px;
-            height: 30px;
-            left: 66px;
-            top: 720px;
-            @include typography.m-plus-1p-regular;
-            font-size: 20px;
-            line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
-        }
-        // サラダ
-        & .c-navigation__subitem:nth-child(2) .c-navigation__link {
-            position: absolute;
-            width: 60px;
-            height: 30px;
-            left: 66px;
-            top: 770px;
-            @include typography.m-plus-1p-regular;
-            font-size: 20px;
-            line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
-        }
-        // ナゲット
-        & .c-navigation__subitem:nth-child(3) .c-navigation__link {
-            position: absolute;
-            width: 80px;
-            height: 30px;
-            left: 66px;
-            top: 820px;
-            @include typography.m-plus-1p-regular;
-            font-size: 20px;
-            line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
-        }
-        // コーン
-        & .c-navigation__subitem:nth-child(4) .c-navigation__link {
-            position: absolute;
-            width: 60px;
-            height: 30px;
-            left: 66px;
-            top: 870px;
-            @include typography.m-plus-1p-regular;
-            font-size: 20px;
-            line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
-        }
-    }
-    &__item:nth-child(3) {
-        & .c-navigation__submenu {
-            position: absolute;
-            width: 190px;
-            height: 280px;
-            left: 66px;
-            top: 1036px;
-        }
-        // コーラ
-        & .c-navigation__subitem:nth-child(1) .c-navigation__link {
-            position: absolute;
-            width: 60px;
-            height: 30px;
-            left: 66px;
-            top: 1036px;
-            @include typography.m-plus-1p-regular;
-            font-size: 20px;
-            line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
-        }
-        // ファンタ
-        & .c-navigation__subitem:nth-child(2) .c-navigation__link {
-            position: absolute;
-            width: 80px;
-            height: 30px;
-            left: 66px;
-            top: 1086px;
-            @include typography.m-plus-1p-regular;
-            font-size: 20px;
-            line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
-        }
-        // オレンジ
-        & .c-navigation__subitem:nth-child(3) .c-navigation__link {
-            position: absolute;
-            width: 80px;
-            height: 30px;
-            left: 66px;
-            top: 1136px;
-            @include typography.m-plus-1p-regular;
-            font-size: 20px;
-            line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
-        }
-        // アップル
-        & .c-navigation__subitem:nth-child(4) .c-navigation__link {
-            position: absolute;
-            width: 80px;
-            height: 30px;
-            left: 66px;
-            top: 1186px;
-            @include typography.m-plus-1p-regular;
-            font-size: 20px;
-            line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
-        }
-        // 紅茶(Ice/Hot)
-        & .c-navigation__subitem:nth-child(5) .c-navigation__link {
-            position: absolute;
-            width: 150px;
-            height: 30px;
-            left: 66px;
-            top: 1236px;
-            @include typography.m-plus-1p-regular;
-            font-size: 20px;
-            line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
-        }
-        // コーヒー(Ice/Hot)
-        & .c-navigation__subitem:nth-child(6) .c-navigation__link {
-            position: absolute;
-            width: 190px;
-            height: 30px;
-            left: 66px;
-            top: 1286px;
-            @include typography.m-plus-1p-regular;
-            font-size: 20px;
-            line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
+        color: vars.$color-text-heading;
+        transition: color 0.2s ease;
+
+        &:hover,
+        &:focus {
+            color: vars.$color-accent;
+            text-decoration: underline;
         }
     }
 
+    // PC版は同じ構造だがフォントとギャップを調整
     @include mixin.breakpoint(pc) {
-        display: flex;
-        flex-direction: column;
-        &__item {
-            display: flex;
-            flex-direction: column;
-            &:nth-child(1) .c-navigation__title {
-                margin-top: 90px;
-            }
-            &:nth-child(2) .c-navigation__title {
-                margin-top: 48px;
-            }
-            &:nth-child(3) .c-navigation__title {
-                margin-top: 48px;
-            }
-            &:nth-child(1) .c-navigation__submenu {
-                width: 180px;
-                height: 330px;
-            }
-            &:nth-child(2) .c-navigation__submenu {
-                width: 80px;
-                height: 180px;
-            }
-            &:nth-child(3) .c-navigation__submenu {
-                width: 194px;
-                height: 280px;
-            }
-        }
+        gap: 48px;
+        padding: 90px 46px 0;
+
         &__title {
             @include typography.roboto-bold;
             font-size: 24px;
             line-height: 36px;
-            color: vars.$color-text-heading;
         }
+
         &__submenu {
+            gap: 20px;
             margin-left: 20px;
-            margin-top: 32px;
-            list-style: none;
-            padding: 0;
         }
+
         &__link {
-            display: inline-block;
-            @include typography.m-plus-1p-regular;
             font-size: 20px;
             line-height: 30px;
-            color: vars.$color-text-heading;     // #707070
-            height: 30px;
         }
-        &__subitem + .c-navigation__subitem {
-            margin-top: 20px;
-        }
-        &__item:nth-child(1) {
-            .c-navigation__subitem:nth-child(1) .c-navigation__link { width: 120px; }
-            .c-navigation__subitem:nth-child(2) .c-navigation__link { width: 140px; }
-            .c-navigation__subitem:nth-child(3) .c-navigation__link { width: 160px; }
-            .c-navigation__subitem:nth-child(4) .c-navigation__link { width: 160px; }
-            .c-navigation__subitem:nth-child(5) .c-navigation__link { width: 180px; }
-            .c-navigation__subitem:nth-child(6) .c-navigation__link { width: 160px; }
-            .c-navigation__subitem:nth-child(7) .c-navigation__link { width: 140px; }
-        }
-        &__item:nth-child(2) {
-            .c-navigation__subitem:nth-child(1) .c-navigation__link { width: 60px; }
-            .c-navigation__subitem:nth-child(2) .c-navigation__link { width: 60px; }
-            .c-navigation__subitem:nth-child(3) .c-navigation__link { width: 80px; }
-            .c-navigation__subitem:nth-child(4) .c-navigation__link { width: 60px; }
-        }
-        &__item:nth-child(3) {
-            .c-navigation__subitem:nth-child(1) .c-navigation__link { width: 60px; }
-            .c-navigation__subitem:nth-child(2) .c-navigation__link { width: 80px; }
-            .c-navigation__subitem:nth-child(3) .c-navigation__link { width: 80px; }
-            .c-navigation__subitem:nth-child(4) .c-navigation__link { width: 80px; }
-            .c-navigation__subitem:nth-child(5) .c-navigation__link { width: 154px; }
-            .c-navigation__subitem:nth-child(6) .c-navigation__link { width: 194px; }
-        }                   
     }
 }
 
+// 閉じるボタン
 .c-close-button {
     position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
     &__line {
-        left: 0;
-        right: 0;
+        position: absolute;
+        left: 2px;
+        right: 2px;
         top: 50%;
-        border-top: 6px solid vars.$color-text-heading;  // #707070
+        border-top: 6px solid vars.$color-text-heading;
+
         &:first-child {
             transform: translateY(-50%) rotate(45deg);
         }
+
         &:last-child {
-            transform: rotateY(-50%) rotate(135deg);
+            transform: translateY(-50%) rotate(135deg);
         }
     }
 }

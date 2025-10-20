@@ -9,17 +9,6 @@
 @use "../../Foundation/_mixin" as mixin;
 @use "../../Foundation/_typography" as typography;
 
-// PCカンプの横幅と、右サイド固定幅
-$pc-canvas: 1920px;
-$pc-right: 368px;
-$pc-left-col: $pc-canvas - $pc-right; // = 1552px
-
-// 画面全体に対する% 
-@function pcw($px) { @return ($px / $pc-canvas) * 100%; }
-// 左コンテンツ幅(1552px)に対する%：PC内部の横寸に使用 
-@function pclw($px) { @return ($px / $pc-left-col) * 100%; }
-
-
 .p-access {
     box-sizing: border-box;
     position: relative;
@@ -37,7 +26,7 @@ $pc-left-col: $pc-canvas - $pc-right; // = 1552px
 
     // PC  (835px以上)
     @include mixin.breakpoint(pc) {
-        max-width: pcw($pc-left-col);    // 1552/1920=  80.83%
+        max-width: mixin.pclw(1552px);    // 100% of left column
         height: 649px;
     }
 
@@ -66,7 +55,7 @@ $pc-left-col: $pc-canvas - $pc-right; // = 1552px
 
         // PC
         @include mixin.breakpoint(pc) {
-            width: pclw(950px);      // 950/1552 = 61.24%
+            width: mixin.pclw(950px);      // 950/1552 = 61.24%
             height: 100%;
         }
 

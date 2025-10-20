@@ -1,39 +1,58 @@
-// figmaの指定
-// - アフターディレイ: 1ms
-// - ムーブイン Right（ease-out / 300ms）でオーバーレイを開く
-// - クリック時は即時（0ms）で閉じる
+// ==================================
+// サイドバーメニュー制御
+// ==================================
+
+// 設定を外部化
+const CONFIG = {
+    BREAKPOINT_PC: 835,
+    ANIMATION: {
+        DURATION: 300,
+        DELAY: 1,
+        EASING: 'ease-out'
+    }
+};
 
 document.addEventListener('DOMContentLoaded', () => {
-    const openBtn = document.querySelector('.js-menu-toggle');    //開くボタン
-    const sidebar = document.querySelector('.l-sidebar');        //サイドバー外枠(role="dialog")
-    const panel = document.querySelector('.p-sidebar');          //パネル本体
-    const overlay = document.querySelector('.c-sidebar-overlay');  //黒いオーバーレイ
-    const closeEls = document.querySelectorAll('.js-sidebar-close');  //閉じるトリガー（✕ボタン/オーバーレイ）
+    const elements = {
+        openBtn: document.querySelector('.js-menu-toggle'),
+        sidebar: document.querySelector('.l-sidebar'),
+        panel: document.querySelector('.p-sidebar'),
+        overlay: document.querySelector('.c-sidebar-overlay'),
+        closeEls: document.querySelectorAll('.js-sidebar-close')
+    };
 
-    if (!openBtn || !sidebar || !panel || !overlay) return;
+    // 要素チェック
+    if (!elements.openBtn || !elements.sidebar || !elements.panel || !elements.overlay) {
+        console.warn('サイドバー要素が見つかりません');
+        return;
+    }
 
-    const desktopQuery = window.matchMedia('(min-width: 835px)');
+    const desktopQuery = window.matchMedia(`(min-width: ${CONFIG.BREAKPOINT_PC}px)`);
     let isMobileMode = false;
+
+    // アニメーション安全実行
+    function safeAnimate(element, keyframes, options) {
+        if (typeof element.animate === 'function' && typeof element.getAnimations === 'function') {
+            element.getAnimations().forEach(anim => anim.cancel());
+            return element.animate(keyframes, options);
+        }
+        return null;
+    }
 
     // 開く (ムーブイン Right:ease-out / 300ms / delay 1ms)
     function openSidebar() {
         overlay.style.display = 'block';
         sidebar.classList.add('is-open');
 
-        panel.getAnimations().forEach((animation) => animation.cancel()); // 既存のアニメーションをキャンセル
-
-        panel.animate(
-            [
-                { transform: 'translateX(100%)' },
-                { transform: 'translateX(0)' }
-            ],
-            {
-                duration: 300,    // animation duration 300ms
-                easing: 'ease-out',  // animation timing function ease-out
-                fill: 'forwards',
-                delay: 1          // animation delay 1ms
-            }
-        );
+        safeAnimate(panel, [
+            { transform: 'translateX(100%)' },
+            { transform: 'translateX(0)' }
+        ], {
+            duration: CONFIG.ANIMATION.DURATION,
+            easing: CONFIG.ANIMATION.EASING,
+            fill: 'forwards',
+            delay: CONFIG.ANIMATION.DELAY
+        });
 
         sidebar.setAttribute('aria-hidden', 'false');
         openBtn.setAttribute('aria-expanded', 'true');
@@ -41,18 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 閉じる (即時 0ms)
     function closeSidebarInstant() {
-        panel.getAnimations().forEach((animation) => animation.cancel());
-
-        panel.animate(
-            [
-                { transform: 'translateX(0)' },
-                { transform: 'translateX(100%)' }
-            ],
-            {
-                duration: 0,  // animation duration : 0ms(即時)
-                fill: 'forwards'
-            }
-        );
+        safeAnimate(panel, [
+            { transform: 'translateX(0)' },
+            { transform: 'translateX(100%)' }
+        ], {
+            duration: 0,
+            fill: 'forwards'
+        });
 
         overlay.style.display = 'none';
         sidebar.classList.remove('is-open');
@@ -60,20 +74,30 @@ document.addEventListener('DOMContentLoaded', () => {
         openBtn.setAttribute('aria-expanded', 'false');
     }
 
+    // Escキー対応
+    function handleKeyDown(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
+            closeSidebarInstant();
+        }
+    }
+
+    // モバイルモード開始
     function enterMobileMode() {
         if (isMobileMode) return;
         isMobileMode = true;
 
-        panel.style.transform = 'translateX(100%)';   //画面の右外で待機
-        overlay.style.display = 'none';     // オーバーレイ非表示
+        panel.style.transform = 'translateX(100%)';
+        overlay.style.display = 'none';
         sidebar.classList.remove('is-open');
         sidebar.setAttribute('aria-hidden', 'true');
         openBtn.setAttribute('aria-expanded', 'false');
 
         openBtn.addEventListener('click', openSidebar);
-        closeEls.forEach((el) => el.addEventListener('click', closeSidebarInstant));
+        elements.closeEls.forEach((el) => el.addEventListener('click', closeSidebarInstant));
+        document.addEventListener('keydown', handleKeyDown);
     }
 
+    // モバイルモード終了
     function exitMobileMode() {
         if (typeof panel.getAnimations === 'function') {
             panel.getAnimations().forEach((animation) => animation.cancel());
@@ -87,11 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isMobileMode) {
             openBtn.removeEventListener('click', openSidebar);
-            closeEls.forEach((el) => el.removeEventListener('click', closeSidebarInstant));
+            elements.closeEls.forEach((el) => el.removeEventListener('click', closeSidebarInstant));
+            document.removeEventListener('keydown', handleKeyDown);
             isMobileMode = false;
         }
     }
 
+    // ビューポート変更ハンドラ
     function handleViewportChange(e) {
         const isDesktop = e.matches ?? desktopQuery.matches;
         if (isDesktop) {
@@ -101,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // 初期化
     handleViewportChange(desktopQuery);
     desktopQuery.addEventListener('change', handleViewportChange);
 });
