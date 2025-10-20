@@ -27,7 +27,8 @@
         position: sticky;
         z-index: 999;              //zの値は調整
         top: 0;
-        // サイドバーはグリッドで独立した列なので、padding-rightは不要
+        padding-left: 48px;
+        padding-right: 48px;
     }
 }
 

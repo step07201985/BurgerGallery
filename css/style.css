@@ -84,6 +84,8 @@ li {
     position: sticky;
     z-index: 999;
     top: 0;
+    padding-left: 48px;
+    padding-right: 48px;
   }
 }
 
@@ -149,12 +151,12 @@ li {
     /* PCキャンバスの最大幅をFigmaに合わせて中央寄せ */
     max-width: 1920px;
     margin: 0 auto;
-    padding-inline: 48px;
+    padding: 0;
     /* 2カラムグリッド: サイドバーを一番上から配置 */
     display: grid;
-    -moz-column-gap: 48px;
-         column-gap: 48px;
-    grid-template-columns: minmax(0, 1fr) 368px; /* 左=可変, 右=固定368px */
+    -moz-column-gap: 0;
+         column-gap: 0;
+    grid-template-columns: 1fr 368px; /* 左=可変(1552px相当), 右=固定368px */
     grid-template-rows: auto auto; /* 各行はコンテンツサイズに追従 */
     grid-template-areas: "header  sidebar" "main    sidebar";
   }
@@ -1102,9 +1104,9 @@ li {
     width: 100%;
     min-height: 2843px;
     background: #F2EDE9;
-    padding-top: 0;
+    padding-top: 84px;
     padding-left: 46px;
-    padding-right: 0;
+    padding-right: 46px;
   }
 }
 
