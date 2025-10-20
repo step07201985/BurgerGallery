@@ -91,6 +91,11 @@ li {
   }
 }
 
+.l-main {
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
 .l-sidebar {
   position: fixed;
   inset: 0;
@@ -156,7 +161,7 @@ li {
     /* 2カラムグリッド */
     display: grid;
     grid-template-columns: minmax(0, 1fr) 368px; /* 左=可変, 右=固定368px */
-    grid-template-rows: auto 1fr; /* 1行目=ヘッダー, 2行目=コンテンツ */
+    grid-template-rows: auto auto; /* 各行はコンテンツサイズに追従 */
     grid-template-areas: "header header" "main   sidebar";
   }
   /* 各領域の割当（HTMLのクラスそのまま） */
@@ -165,7 +170,6 @@ li {
   }
   .l-main {
     grid-area: main;
-    max-width: 1553px;
     width: 100%;
   }
   .l-sidebar {
