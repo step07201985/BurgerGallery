@@ -13,6 +13,11 @@
     border: none;
     background: transparent;
     cursor: pointer;
+
+    // PC画面幅では非表示
+    @include mixin.breakpoint(pc) {
+        display: none;
+    }
 }
 
 .c-close-button__line {

@@ -10,14 +10,14 @@
         margin: 0 auto;
         padding-inline: 48px;
 
-        /* 2カラムグリッド */
+        /* 2カラムグリッド: サイドバーを一番上から配置 */
         display: grid;
         column-gap: 48px;
         grid-template-columns: minmax(0, 1fr) 368px; /* 左=可変, 右=固定368px */
         grid-template-rows: auto auto;               /* 各行はコンテンツサイズに追従 */
         grid-template-areas:
-        "header header"
-        "main   sidebar";
+        "header  sidebar"
+        "main    sidebar";
     }
 
     /* 各領域の割当（HTMLのクラスそのまま） */

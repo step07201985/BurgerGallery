@@ -27,8 +27,7 @@
         position: sticky;
         z-index: 999;              //zの値は調整
         top: 0;
-        // 右常設サイドバー 368px を％で確保（背景は全幅、内容が潜り込まないように右余白を取る）
-        padding-right: mixin.pcw(368px);
+        // サイドバーはグリッドで独立した列なので、padding-rightは不要
     }
 }
 

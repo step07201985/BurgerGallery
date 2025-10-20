@@ -28,7 +28,7 @@
         @include mixin.breakpoint(pc) {
             max-width: mixin.pcw(1552px);   // 1552 / 1920 ≒ 80.833%
             margin: 120px auto;
-            padding-right: mixin.pcw(368px);   // 368 / 1920 ≒ 19.167%
+            // サイドバーはグリッドで独立した列なので、padding-rightは不要
         }
     }
 
