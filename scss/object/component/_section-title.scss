@@ -1,12 +1,12 @@
-@use "../../Foundation/_base" as base;
-@use "../../Foundation/_mixin" as mixin;
-@use "../../Foundation/_variables" as vars;
-@use "../../Foundation/_typography" as typography;
+@use "../../foundation/_base" as base;
+@use "../../foundation/_mixin" as mixin;
+@use "../../foundation/_variables" as vars;
+@use "../../foundation/_typography" as typography;
 
 // セクションタイトル「Take Out」「Eat In」のスタイル
 
 /* =========================================
- * Component: セクションタイトル
+ * component: セクションタイトル
  * - BEM: .c-section-title / &__line / &--white / &__line--white
  * - SP基準 → Tablet(400–834) → PC(835〜)
  * ========================================= */

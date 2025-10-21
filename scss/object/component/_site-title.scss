@@ -1,11 +1,11 @@
-@use "../../Foundation/_base" as base;
-@use "../../Foundation/_mixin" as mixin;
-@use "../../Foundation/_variables" as vars;
-@use "../../Foundation/_typography" as typography;
+@use "../../foundation/_base" as base;
+@use "../../foundation/_mixin" as mixin;
+@use "../../foundation/_variables" as vars;
+@use "../../foundation/_typography" as typography;
 
 // サイト名 ｈ１ Hamburger
 /* =========================================
- * Component: サイト名（h1）.c-site-title
+ * component: サイト名（h1）.c-site-title
  * - SP基準 → Tablet(400–834) → PC(835〜)
  * - PCのみ横方向を%化（カンプ基準 1920px）
  * ========================================= */

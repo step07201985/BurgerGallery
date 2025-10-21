@@ -1,9 +1,9 @@
-@use "../Foundation/_mixin" as mixin;
-@use "../Foundation/_base" as base;
-@use "../Foundation/_variables" as vars;
+@use "../foundation/_mixin" as mixin;
+@use "../foundation/_base" as base;
+@use "../foundation/_variables" as vars;
 
 /* =========================
- * Layout: ヘッダー
+ * layout: ヘッダー
  * - SP基準で全幅（100%）
  * - Tabletは高さだけ差分
  * - PCは全幅のまま、右サイド（368px=19.1667%）分の幅を％で確保

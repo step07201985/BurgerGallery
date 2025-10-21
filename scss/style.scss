@@ -2,35 +2,37 @@
 // メインスタイルシート
 // ===================================
 
-// Foundation
-@use "Foundation/_mixin" as mixin;
-@use "Foundation/_base" as base;
-@use "Foundation/_typography" as typography;
-@use "Foundation/_variables" as vars;
+// foundation
+@use "foundation/_mixin" as mixin;
+@use "foundation/_base" as base;
+@use "foundation/_typography" as typography;
+@use "foundation/_variables" as vars;
 
-// Layout
-@use "Layout/_header" as header;
-@use "Layout/_sidebar" as sidebar;
-@use "Layout/_footer" as footer;
-@use "Layout/_wrapper" as wrapper;
+// layout
+@use "layout/_header" as header;
+@use "layout/_sidebar" as sidebar;
+@use "layout/_footer" as footer;
 
-// Object - Component
-@use "Object/Component/_site-title" as site_title;
-@use "Object/Component/_section-title" as section_title;
-@use "Object/Component/_info-box" as info-box;
-@use "Object/Component/_menu-button" as menu-button;
-@use "Object/Component/_search" as search;
-@use "Object/Component/_textBox" as textBox;
-@use "Object/Component/_sidebar" as sidebar_component;
-@use "Object/Component/_navigation" as navigation;
-@use "Object/Component/_closeButton" as closeButton;
-@use "Object/Component/_footer-nav" as footer-nav;
-@use "Object/Component/_copyright" as copyright;
 
-// Object - Project
-@use "Object/Project/_service-menu" as _service-menu;
-@use "Object/Project/_service-card" as _service-card;
-@use "Object/Project/_main-visual" as _main-visual;
-@use "Object/Project/_access" as _access;
-@use "Object/Project/_sidebar" as _sidebar;
-@use "Object/Project/_footer" as _footer_project;
+// object - component
+@use "object/component/_site-title" as site_title;
+@use "object/component/_section-title" as section_title;
+@use "object/component/_info-box" as info-box;
+@use "object/component/_menu-button" as menu-button;
+@use "object/component/_search" as search;
+@use "object/component/_textBox" as textBox;
+@use "object/component/_sidebar" as sidebar_component;
+@use "object/component/_navigation" as navigation;
+@use "object/component/_closeButton" as closeButton;
+@use "object/component/_footer-nav" as footer-nav;
+@use "object/component/_copyright" as copyright;
+@use "object/component//_wrapper" as wrapper;
+
+// object - project
+@use "object/project/_service-menu" as _service-menu;
+@use "object/project/_service-card" as _service-card;
+@use "object/project/_main-visual" as _main-visual;
+@use "object/project/_access" as _access;
+@use "object/project/_sidebar" as _sidebar;
+@use "object/project/_footer" as _footer_project;
+@use "object/project/_hero" as _hero;

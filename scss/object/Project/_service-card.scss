@@ -5,10 +5,10 @@
 // ===================================
 
 
-@use "../../Foundation/_variables.scss" as vars;
-@use "../../Foundation/_base" as base;
-@use "../../Foundation/_mixin" as mixin;
-@use "../../Foundation/_typography" as typography;
+@use "../../foundation/_variables.scss" as vars;
+@use "../../foundation/_base" as base;
+@use "../../foundation/_mixin" as mixin;
+@use "../../foundation/_typography" as typography;
 
 .p-service-card {
     position: relative;
