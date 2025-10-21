@@ -7,15 +7,13 @@ const CONFIG = {
     BREAKPOINT_PC: 835,
     ANIMATION: {
         DURATION: 300,
-        DELAY: 1,
+        DELAY: 300, 
         EASING: 'ease-out',
         EXIT_DURATION: 0
     },
     OVERLAY: {
-        SHOW_KEYFRAMES: [
-            { transform: 'translateX(100%)', opacity: 0 },
-            { transform: 'translateX(0)', opacity: 1 }
-        ]
+        SHOW_KEYFRAMES: [{ opacity: 0 }, { opacity: 1 }],
+        HIDE_KEYFRAMES: [{ opacity: 1 }, { opacity: 0 }]
     }
 };
 
@@ -55,23 +53,27 @@ document.addEventListener('DOMContentLoaded', () => {
         return null;
     }
 
-    function animateOverlay(isVisible) {
+    function animateOverlay(isVisible, { instant = false } = {}) {
         if (typeof overlay.getAnimations === 'function') {
-            overlay.getAnimations().forEach((animation) => animation.cancel());
+            overlay.getAnimations().forEach(anim => anim.cancel());
         }
 
-        if (!isVisible) {
-            overlay.style.removeProperty('opacity');
-            overlay.style.removeProperty('transform');
-            overlay.style.display = 'none';
+        if (instant) {
+            if (isVisible) {
+                overlay.style.display = 'block';
+                overlay.style.opacity = '1';
+            } else {
+                overlay.style.removeProperty('opacity');
+                overlay.style.display = 'none';
+            }
             return;
         }
 
-        const keyframes = CONFIG.OVERLAY.SHOW_KEYFRAMES;
         if (isVisible) {
             overlay.style.display = 'block';
         }
 
+        const keyframes = isVisible ? CONFIG.OVERLAY.SHOW_KEYFRAMES : CONFIG.OVERLAY.HIDE_KEYFRAMES;
         const animation = safeAnimate(overlay, keyframes, {
             duration: CONFIG.ANIMATION.DURATION,
             easing: CONFIG.ANIMATION.EASING,
@@ -79,14 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (!animation) {
-            overlay.style.opacity = '1';
-            overlay.style.transform = 'translateX(0)';
+            if (isVisible) {
+                overlay.style.opacity = '1';
+            } else {
+                overlay.style.removeProperty('opacity');
+                overlay.style.display = 'none';
+            }
             return;
         }
 
         animation.onfinish = () => {
-            overlay.style.opacity = '';
-            overlay.style.transform = '';
+            overlay.style.removeProperty('opacity');
             if (!isVisible) {
                 overlay.style.display = 'none';
             }
@@ -144,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // サイドバーを画面外に配置
         panel.style.transform = 'translateX(100%)';
-        animateOverlay(false);
+        animateOverlay(false, { instant: true });
         sidebar.classList.remove('is-open');
         sidebar.setAttribute('aria-hidden', 'true');
         openBtn.setAttribute('aria-expanded', 'false');
@@ -164,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         panel.style.removeProperty('transform');
-        animateOverlay(false);
+        animateOverlay(false, { instant: true });
         sidebar.classList.add('is-open');
         sidebar.setAttribute('aria-hidden', 'false');
         openBtn.setAttribute('aria-expanded', 'true');

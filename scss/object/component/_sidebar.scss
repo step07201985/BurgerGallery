@@ -14,7 +14,7 @@
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     display: none;  // 初期状態で非表示
-    transition: opacity 200ms ease;
+    transition: opacity 300ms ease-out;
     z-index: 800;
 
     .l-sidebar.is-open & {

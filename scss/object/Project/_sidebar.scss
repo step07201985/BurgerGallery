@@ -46,3 +46,13 @@
         height: 120px;
     }
 }
+
+.l-sidebar.is-open {
+    .p-sidebar__header {
+        display: none;
+
+        @include mixin.breakpoint(pc) {
+            display: block;
+        }
+    }
+}
