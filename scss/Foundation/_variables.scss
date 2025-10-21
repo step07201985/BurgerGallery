@@ -16,6 +16,7 @@ $color-text-heading: #707070;  // H1 サイドメニュー
 $color-text-overlay: #FFFFFF;  // 背景画像上
 $color-text-light: #EAEAEA;    // 薄い文字
 $color-black: #000000; //オーバーレイ
+$color-white: #FFFFFF;
 
 
 // アクセント リンク色
@@ -45,3 +46,10 @@ $line-height-base: 1.6;
 $line-height-heading: 1.4;
 
 $transition-normal: 0.3s;
+
+// spacing scale
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 40px;

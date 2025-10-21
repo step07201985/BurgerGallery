@@ -8,7 +8,14 @@ const CONFIG = {
     ANIMATION: {
         DURATION: 300,
         DELAY: 1,
-        EASING: 'ease-out'
+        EASING: 'ease-out',
+        EXIT_DURATION: 0
+    },
+    OVERLAY: {
+        SHOW_KEYFRAMES: [
+            { transform: 'translateX(100%)', opacity: 0 },
+            { transform: 'translateX(0)', opacity: 1 }
+        ]
     }
 };
 
@@ -48,9 +55,47 @@ document.addEventListener('DOMContentLoaded', () => {
         return null;
     }
 
+    function animateOverlay(isVisible) {
+        if (typeof overlay.getAnimations === 'function') {
+            overlay.getAnimations().forEach((animation) => animation.cancel());
+        }
+
+        if (!isVisible) {
+            overlay.style.removeProperty('opacity');
+            overlay.style.removeProperty('transform');
+            overlay.style.display = 'none';
+            return;
+        }
+
+        const keyframes = CONFIG.OVERLAY.SHOW_KEYFRAMES;
+        if (isVisible) {
+            overlay.style.display = 'block';
+        }
+
+        const animation = safeAnimate(overlay, keyframes, {
+            duration: CONFIG.ANIMATION.DURATION,
+            easing: CONFIG.ANIMATION.EASING,
+            fill: 'forwards'
+        });
+
+        if (!animation) {
+            overlay.style.opacity = '1';
+            overlay.style.transform = 'translateX(0)';
+            return;
+        }
+
+        animation.onfinish = () => {
+            overlay.style.opacity = '';
+            overlay.style.transform = '';
+            if (!isVisible) {
+                overlay.style.display = 'none';
+            }
+        };
+    }
+
     // 開く (ムーブイン Right:ease-out / 300ms / delay 1ms)
     function openSidebar() {
-        overlay.style.display = 'block';
+        animateOverlay(true);
         sidebar.classList.add('is-open');
 
         safeAnimate(panel, [
@@ -67,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
         openBtn.setAttribute('aria-expanded', 'true');
     }
 
-    // 閉じる (即時 0ms)
-    function closeSidebarInstant() {
+    // 閉じる (オーバーレイ: ディゾルブ / 300ms)
+    function closeSidebar() {
         safeAnimate(panel, [
             { transform: 'translateX(0)' },
             { transform: 'translateX(100%)' }
@@ -77,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fill: 'forwards'
         });
 
-        overlay.style.display = 'none';
+        animateOverlay(false);
         sidebar.classList.remove('is-open');
         sidebar.setAttribute('aria-hidden', 'true');
         openBtn.setAttribute('aria-expanded', 'false');
@@ -86,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Escキー対応
     function handleKeyDown(e) {
         if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
-            closeSidebarInstant();
+            closeSidebar();
         }
     }
 
@@ -99,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // サイドバーを画面外に配置
         panel.style.transform = 'translateX(100%)';
-        overlay.style.display = 'none';
+        animateOverlay(false);
         sidebar.classList.remove('is-open');
         sidebar.setAttribute('aria-hidden', 'true');
         openBtn.setAttribute('aria-expanded', 'false');
@@ -108,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // イベントリスナー登録
         openBtn.addEventListener('click', openSidebar);
-        closeEls.forEach((el) => el.addEventListener('click', closeSidebarInstant));
+        closeEls.forEach((el) => el.addEventListener('click', closeSidebar));
         document.addEventListener('keydown', handleKeyDown);
     }
 
@@ -119,14 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         panel.style.removeProperty('transform');
-        overlay.style.removeProperty('display');
+        animateOverlay(false);
         sidebar.classList.add('is-open');
         sidebar.setAttribute('aria-hidden', 'false');
         openBtn.setAttribute('aria-expanded', 'true');
 
         if (isMobileMode) {
             openBtn.removeEventListener('click', openSidebar);
-            closeEls.forEach((el) => el.removeEventListener('click', closeSidebarInstant));
+            closeEls.forEach((el) => el.removeEventListener('click', closeSidebar));
             document.removeEventListener('keydown', handleKeyDown);
             isMobileMode = false;
         }

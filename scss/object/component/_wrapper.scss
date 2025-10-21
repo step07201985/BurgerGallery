@@ -1,7 +1,7 @@
-@use "../foundation/_base" as base;
-@use "../foundation/_mixin" as mixin;
-@use "../foundation/_variables" as vars;
-@use "../foundation/_typography" as typography;
+@use "../../foundation/_base" as base;
+@use "../../foundation/_mixin" as mixin;
+@use "../../foundation/_variables" as vars;
+@use "../../foundation/_typography" as typography;
 
 /* スマホ・タブレット: デフォルトレイアウト */
 .l-wrapper {
