@@ -15,7 +15,7 @@
     width: 100%;
     max-width: 375px;
     height: 691px;
-    margin: 0 auto;
+    margin: 0 auto 0 auto;
     background: vars.$color-black;
     display: block;
 
@@ -23,12 +23,14 @@
     @include mixin.breakpoint(tablet) {
         max-width: 834px;
         height: 415px;
+        margin: 0 auto 0 auto;
     }
 
     // PC  (835px以上)
     @include mixin.breakpoint(pc) {
         max-width: mixin.pclw(1552px);    // 100% of left column
         height: 649px;
+        margin: 0 auto 0 auto;
     }
 
     // 背景マップ

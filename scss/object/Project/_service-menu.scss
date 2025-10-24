@@ -22,7 +22,7 @@
         @include mixin.breakpoint(tablet) {
             max-width: 834px;
             margin: 40px auto;
-        }                                               
+        }
 
         // PC：左コンテンツ幅 1552px を%で指定（＝80.833%）
         @include mixin.breakpoint(pc) {

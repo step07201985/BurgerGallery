@@ -20,13 +20,13 @@
 @use "object/component/_info-box" as info-box;
 @use "object/component/_menu-button" as menu-button;
 @use "object/component/_search" as search;
-@use "object/component/_textBox" as textBox;
+@use "object/component/_textbox" as textbox;
 @use "object/component/_sidebar" as sidebar_component;
 @use "object/component/_navigation" as navigation;
 @use "object/component/_closeButton" as closeButton;
 @use "object/component/_footer-nav" as footer-nav;
 @use "object/component/_copyright" as copyright;
-@use "object/component//_wrapper" as wrapper;
+@use "object/component/_wrapper" as wrapper;
 
 // object - project
 @use "object/project/_service-menu" as _service-menu;

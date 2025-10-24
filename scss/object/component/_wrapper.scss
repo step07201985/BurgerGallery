@@ -6,6 +6,8 @@
 /* スマホ・タブレット: デフォルトレイアウト */
 .l-wrapper {
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 /* PC画面のみ: グリッドレイアウト */
@@ -13,13 +15,13 @@
     .l-wrapper {
         /* PCキャンバスの最大幅をFigmaに合わせて中央寄せ */
         max-width: 1920px;
-        margin: 0 auto;
+        margin: 0 auto 0 auto;
         padding: 0;
 
         /* 2カラムグリッド: サイドバーを一番上から配置 */
         display: grid;
         column-gap: 0;
-        grid-template-columns: 1fr 368px; /* 左=可変(1552px相当), 右=固定368px */
+        grid-template-columns: 1fr minmax(300px, 368px); /* 左=可変, 右=300px〜368px */
         grid-template-rows: auto auto;    /* 各行はコンテンツサイズに追従 */
         grid-template-areas:
         "header  sidebar"
@@ -28,6 +30,6 @@
 
     /* 各領域の割当（HTMLのクラスそのまま） */
     .l-header  { grid-area: header; }
-    .l-main    { grid-area: main;   width: 100%; }
-    .l-sidebar { grid-area: sidebar; width: 368px; position: static; } /* オーバーレイ解除 */
+    .l-main    { grid-area: main;   width: 100%; align-self: start; }
+    .l-sidebar { grid-area: sidebar; width: 100%; max-width: 368px; min-width: 300px; position: static; } /* オーバーレイ解除 */
 }

@@ -60,6 +60,11 @@ li {
   margin: 0;
 }
 
+section {
+  margin: 0;
+  padding: 0;
+}
+
 /* =========================
  * layout: ヘッダー
  * - SP基準で全幅（100%）
@@ -498,7 +503,8 @@ li {
   left: 31px;
   right: 26px;
   top: 130px;
-  min-width: 318px;
+  min-width: 0;
+  max-width: calc(100% - 57px);
   height: 46px;
   display: flex;
   align-items: center;
@@ -507,10 +513,10 @@ li {
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .c-search {
-    left: 144px;
+    left: clamp(50px, 15%, 144px);
     top: 131px;
-    right: auto;
-    width: 546px;
+    right: clamp(50px, 15%, 144px);
+    max-width: 546px;
     height: 46px;
     gap: 14px;
     margin-bottom: 40px;
@@ -522,13 +528,15 @@ li {
     right: 48px;
     top: 86px;
     width: 546px;
+    max-width: 546px;
     height: 46px;
     gap: 14px;
   }
 }
 .c-search__input {
   position: relative;
-  min-width: 216px;
+  flex: 1 1 auto;
+  min-width: 0;
   height: 46px;
   box-sizing: border-box;
   background: #FFFFFF;
@@ -542,7 +550,8 @@ li {
 }
 @media (min-width: 400px) and (max-width: 834px) {
   .c-search__input {
-    width: 396px;
+    flex: 1 1 auto;
+    max-width: 396px;
     height: 46px;
     border-radius: 10px;
     font-size: 16px;
@@ -554,6 +563,7 @@ li {
 }
 @media (min-width: 835px) {
   .c-search__input {
+    flex: 0 0 396px;
     width: 396px;
     height: 46px;
     border-radius: 10px;
@@ -628,6 +638,7 @@ li {
     top: 116px;
     width: 763px;
     height: 259px;
+    color: #FFFFFF;
   }
 }
 @media (min-width: 835px) {
@@ -638,6 +649,7 @@ li {
     height: 326px;
     font-size: 16px;
     line-height: 33px;
+    color: #FFFFFF;
   }
 }
 
@@ -865,6 +877,8 @@ li {
 /* スマホ・タブレット: デフォルトレイアウト */
 .l-wrapper {
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 /* PC画面のみ: グリッドレイアウト */
@@ -872,12 +886,12 @@ li {
   .l-wrapper {
     /* PCキャンバスの最大幅をFigmaに合わせて中央寄せ */
     max-width: 1920px;
-    margin: 0 auto;
+    margin: 0 auto 0 auto;
     padding: 0;
     /* 2カラムグリッド: サイドバーを一番上から配置 */
     display: grid;
     column-gap: 0;
-    grid-template-columns: 1fr 368px; /* 左=可変(1552px相当), 右=固定368px */
+    grid-template-columns: 1fr minmax(300px, 368px); /* 左=可変, 右=300px〜368px */
     grid-template-rows: auto auto; /* 各行はコンテンツサイズに追従 */
     grid-template-areas: "header  sidebar" "main    sidebar";
   }
@@ -888,10 +902,13 @@ li {
   .l-main {
     grid-area: main;
     width: 100%;
+    align-self: start;
   }
   .l-sidebar {
     grid-area: sidebar;
-    width: 368px;
+    width: 100%;
+    max-width: 368px;
+    min-width: 300px;
     position: static;
   } /* オーバーレイ解除 */
 }
@@ -1075,7 +1092,7 @@ li {
   width: 100%;
   max-width: 375px;
   height: 691px;
-  margin: 0 auto;
+  margin: 0 auto 0 auto;
   background: #000000;
   display: block;
 }
@@ -1083,12 +1100,14 @@ li {
   .p-access {
     max-width: 834px;
     height: 415px;
+    margin: 0 auto 0 auto;
   }
 }
 @media (min-width: 835px) {
   .p-access {
     max-width: 100%;
     height: 649px;
+    margin: 0 auto 0 auto;
   }
 }
 .p-access__background {

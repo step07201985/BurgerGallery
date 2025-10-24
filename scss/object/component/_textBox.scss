@@ -17,14 +17,15 @@
     @include typography.m-plus-1p-bold; // M PLUS 1p 700
     font-size: 14px;
     line-height: 33px;
-    color: vars.$color-text-overlay; //#FFFFFF
+    color: vars.$color-text-overlay;
 
     // tablet (400px-834px)
     @include mixin.breakpoint(tablet) {
         left: 42px;
         top: 116px;
         width: 763px;
-        height: 259px;       
+        height: 259px;
+        color: vars.$color-text-overlay;
     }
 
     // PC (835px-)
@@ -35,5 +36,6 @@
         height: 326px;
         font-size: 16px;
         line-height: 33px;
+        color: vars.$color-text-overlay;
     }
 }

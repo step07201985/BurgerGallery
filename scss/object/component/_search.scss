@@ -13,21 +13,20 @@
     left: 31px;
     right: 26px;
     top: 130px;
-    min-width: 318px;
+    min-width: 0;
+    max-width: calc(100% - 57px);
     height: 46px;
     display: flex;
     align-items: center;
-    gap: 8px; //入力とボタンの間隔
+    gap: 8px;
     box-sizing: border-box;
 
-    // tabletサイズ (480px〜834px)
+    // tabletサイズ (400px〜834px)
     @include mixin.breakpoint(tablet) {
-        left: 144px;
+        left: clamp(50px, 15%, 144px);
         top: 131px;
-
-        // 幅は固定で扱い、内部はflexで横並び（子にabsoluteは使わない）
-        right: auto;
-        width: 546px;
+        right: clamp(50px, 15%, 144px);
+        max-width: 546px;
         height: 46px;
         gap: 14px;
         margin-bottom: 40px;
@@ -39,13 +38,15 @@
         right: 48px;
         top: 86px;
         width: 546px;
+        max-width: 546px;
         height: 46px;
         gap: 14px;
     }
 
     &__input {
         position: relative;
-        min-width: 216px;
+        flex: 1 1 auto;
+        min-width: 0;
         height: 46px;
         box-sizing: border-box;
         background: vars.$color-text-overlay; //#FFFFFF
@@ -62,7 +63,8 @@
 
         // tabletサイズ
         @include mixin.breakpoint(tablet) {
-            width: 396px;
+            flex: 1 1 auto;
+            max-width: 396px;
             height: 46px;
             border-radius: 10px;
             font-size: 16px;
@@ -74,7 +76,8 @@
 
         // PCサイズ
         @include mixin.breakpoint(pc) {
-            width: 396px;        
+            flex: 0 0 396px;
+            width: 396px;
             height: 46px;
             border-radius: 10px;
             font-size: 16px;
