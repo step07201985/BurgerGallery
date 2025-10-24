@@ -9,15 +9,19 @@
     min-height: 150px;
     background:vars.$color-footer-bg url(../images/footer-imge.png) center/cover no-repeat;
     color: vars.$color-text-overlay;   // #FFFFFF
+    margin: 0;
+    padding: 0;
     &__inner {
         max-width: 375px;       // スマホ画面サイズ
         margin: 0 auto;
-        box-sizing: border-box;  
+        box-sizing: border-box;
     }
 
     // --- Tablet (400–834px)：最小限の差分 ---
     @include mixin.breakpoint(tablet) {
         min-height: 149px;  // iPadカンプの高さ
+        margin: 0;
+        padding: 0;
         &__inner {
         max-width: 834px;       // tablet画面サイズ
         width: 100%;
@@ -32,11 +36,13 @@
 
     @include mixin.breakpoint(pc) {
         width: 100%;
+        margin: 0;
+        padding: 0;
         &__inner {
             max-width: 1920px;
             min-height: 150px;
             margin: 0 auto;
         }
-    
+
     }
 }

@@ -17,6 +17,7 @@
     height: 691px;
     margin: 0 auto;
     background: vars.$color-black;
+    display: block;
 
     // tablet (400-834px)
     @include mixin.breakpoint(tablet) {
