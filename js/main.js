@@ -7,7 +7,7 @@ const CONFIG = {
     BREAKPOINT_PC: 835,
     ANIMATION: {
         DURATION: 300,
-        DELAY: 300, 
+        DELAY: 300,
         EASING: 'ease-out',
         EXIT_DURATION: 0
     },

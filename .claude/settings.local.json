@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npx sass scss/style.scss:css/style.css --style=expanded)",
-      "Bash(npx sass scss/style.scss:css/style.min.css --style=compressed)"
+      "Bash(npx sass scss/style.scss:css/style.min.css --style=compressed)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

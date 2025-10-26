@@ -8,124 +8,119 @@
     <link rel="icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
-    
+
     <script src="js/main.js" defer></script>
 
     <title>Hamburger 神戸の絶品ジューシーバーガー専門店</title>
-    
+
 </head>
 <body>
     <!-- l-wrapper:全体のコンテナ -->
-    <div class="l-wrapper">
-
-        <!-- l-header: サイト全体のヘッダー領域 -->
-        <header class="l-header">
-            <div>
-                <div>
-                    <!-- c-menu-button: メニューボタン -->
-                    <button class="c-menu-button js-menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="sidebar-menu">
-                        <span class="c-menu-button__text">Menu</span>
-                    </button>
-
-                    <!-- c-site-title: サイトタイトル -->
-                    <h1 class="c-site-title">
-                        <a href="/" class="c-site-title__link">Hamburger</a>
-                    </h1>
-
-                    <!-- c-search-form: 検索フォーム -->
-                    <div class="c-search">
-                        <input class="c-search__input" type="text" placeholder="" aria-label="検索">
+    <div class="l-container">
+        <div class="l-body">
+            <!-- l-header: サイト全体のヘッダー領域 -->
+            <header class="l-header p-header">
+                <!-- c-menu-button: メニューボタン -->
+                <button class="c-menu-button js-menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="sidebar-menu">
+                    <span class="c-menu-button__text">Menu</span>
+                </button>
+            
+                <!-- c-site-title: サイトタイトル -->
+                <h1 class="c-site-title">
+                    <a href="index.html" class="c-site-title__link">Hamburger</a>
+                </h1>
+            
+                <!-- c-search-form: 検索フォーム -->
+                <form class="p-header__search" action="/search" role="search" method="get">
+                    <div class="p-searchBox c-search">
+                        <label for="search-input" class="u-visuallyHidden">サイト内検索</label>
+                        <input class="c-search__input" type="search" id="search-input" name="q" placeholder="検索" aria-label="検索" autocomplete="off" required>
                         <button class="c-search__button" type="button">
                             <span class="c-search__button-text">検索</span>
                         </button>
                     </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- l-main: メインコンテンツ領域 -->
-        <main class="l-main">
-            <!-- p-main-visual: メインビジュアル -->
-            <section class="p-main-visual">
-                <div class="p-main-visual__inner">
+                </form>
+            </header>
+            
+            <!-- l-main: メインコンテンツ領域 -->
+            <main class="l-main">
+                <!-- p-main-visual: メインビジュアル -->
+                <div class="p-main-visual p-main-visual__inner">
                     <h2 class="p-main-visual__title">ダミーサイト</h2>
                 </div>
-            </section>
-
-            <!-- p-service-menu:提供メニュー -->
-            <section class="p-service-menu">
-                <div class="p-service-menu__inner">
+            
+                <!-- p-service-menu:提供メニュー -->
+                <div class="p-service-menu p-service-menu__inner">
                     <div class="p-service-menu__container">
+
                         <!-- Take Out -->
-                        <div class="p-service-card p-service-card--takeout">
+                        <section class="p-service-card p-service-card--takeout">
                             <div class="p-service-card__header">
                                 <h3 class="c-section-title">Take Out</h3>
                                 <span class="c-section-title__line"></span>
                             </div>
-
-                            <div class="p-service-card__content">
+                            <dl class="p-service-card__content">
                                 <div class="c-info-box">
-                                    <h4 class="c-info-box__title">Take OUT</h4>
-                                    <p class="c-info-box__text">
+                                    <dt class="c-info-box__title">Take OUT</dt>
+                                    <dd class="c-info-box__text">
                                         当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています
-                                    </p>
+                                    </dd>
                                 </div>
-
+            
                                 <div class="c-info-box">
-                                    <h4 class="c-info-box__title">Take OUT</h4>
-                                    <p class="c-info-box__text">
+                                    <dt class="c-info-box__title">Take OUT</dt>
+                                    <dd class="c-info-box__text">
                                         当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています
-                                    </p>
+                                    </dd>
                                 </div>
-                            </div>
-                        </div>
+                            </dl>
+                        </section>
 
                         <!-- Eat In -->
-                        <div class="p-service-card p-service-card--eatin">
+                        <section class="p-service-card p-service-card--eatin">
                             <div class="p-service-card__header">
                                 <h3 class="c-section-title">Eat In</h3>
                                 <span class="c-section-title__line"></span>
                             </div>
 
-                            <div class="p-service-card__content">
+                            <dl class="p-service-card__content">
                                 <div class="c-info-box">
-                                    <h4 class="c-info-box__title">Eat In</h4>
-                                    <p class="c-info-box__text">
+                                    <dt class="c-info-box__title">Eat In</dt>
+                                    <dd class="c-info-box__text">
                                         店内でお食事いただけるメニューです店内でお食事いただけるメニューです
-                                    </p>
+                                    </dd>
                                 </div>
 
                                 <div class="c-info-box">
-                                    <h4 class="c-info-box__title">Eat In</h4>
-                                    <p class="c-info-box__text">
+                                    <dt class="c-info-box__title">Eat In</dt>
+                                    <dd class="c-info-box__text">
                                         店内でお食事いただけるメニューです店内でお食事いただけるメニューです
-                                    </p>
+                                    </dd>
                                 </div>
-                            </div>
-                        </div>
+                            </dl>
+                        </section>
 
                     </div>
                 </div>
-            </section>
-
-            <!-- p-access: アクセス情報 -->
-            <section class="p-access">
-                <div class="p-access__background">
+            
+                <!-- p-access: アクセス情報 -->
+                <div class="p-access">
+                    <div class="p-access__background"></div>
                     <div class="p-access__overlay">
-                        <div class="p-access__content">
+                        <section class="p-access__content">
                             <h3 class="c-section-title c-section-title--white">見出しが入ります</h3>
                             <span class="c-section-title__line c-section-title__line--white"></span>
                             <p class="c-textBox">
                                 テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                             </p>
-                        </div>
+                        </section>
                     </div>
                 </div>
-            </section>
-        </main>
+            </main>
+        </div>
 
         <!-- l-sidebar: サイドバー -->
-        <aside class="l-sidebar js-sidebar" aria-hidden="true" id="sidebar-menu" role="dialog" aria-labelledby="sidebar-title">
+        <aside class="l-sidebar js-sidebar" aria-hidden="true" id="sidebar-menu" role="dialog" aria-labelledby="サイドメニュー">
             <!-- c-sidebar-overlay: サイドバー背景オーバーレイ -->
             <div class="c-sidebar-overlay js-sidebar-close"></div>
 
@@ -143,7 +138,9 @@
                 <!-- c-navigation: ナビゲーションメニュー -->
                 <ul class="c-navigation">
                     <li class="c-navigation__item">
-                        <h3 class="c-navigation__title">ハンバーガー</h3>
+                        <h3 class="c-navigation__title">
+                            <a href="#">バーガー</a>
+                        </h3>
                         <ul class="c-navigation__submenu">
                             <li class="c-navigation__subitem">
                                 <a href="#" class="c-navigation__link">ハンバーガー</a>
@@ -170,7 +167,9 @@
                     </li>
 
                     <li class="c-navigation__item">
-                        <h3 class="c-navigation__title">サイド</h3>
+                        <h3 class="c-navigation__title">
+                            <a href="#">サイド</a>
+                        </h3>
                         <ul class="c-navigation__submenu">
                             <li class="c-navigation__subitem">
                                 <a href="#" class="c-navigation__link">ポテト</a>
@@ -188,7 +187,9 @@
                     </li>
 
                     <li class="c-navigation__item">
-                        <h3 class="c-navigation__title">ドリンク</h3>
+                        <h3 class="c-navigation__title">
+                            <a href="#">ドリンク</a>
+                        </h3>
                         <ul class="c-navigation__submenu">
                             <li class="c-navigation__subitem">
                                 <a href="#" class="c-navigation__link">コーラ</a>
@@ -212,7 +213,6 @@
                     </li>
                 </ul>
             </nav>
-
         </aside>
     </div>
 
@@ -237,6 +237,6 @@
                 <small class="c-copyright">Copyright: RaiseTech</small>
             </div>
         </div>
-    </footer>    
+    </footer>
 </body>
 </html>
